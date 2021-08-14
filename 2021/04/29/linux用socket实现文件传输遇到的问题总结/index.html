@@ -18,7 +18,7 @@
   <meta name="author" content="Brraida Hu">
   <meta name="keywords" content="">
   
-  <title>Hello World - SunMonkey</title>
+  <title>linux用socket实现文件传输遇到的问题总结 - SunMonkey</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -163,7 +163,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Hello World">
+            <span class="h2" id="subtitle" title="linux用socket实现文件传输遇到的问题总结">
               
             </span>
 
@@ -173,8 +173,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-08-14 17:04" pubdate>
-        2021年8月14日 下午
+      <time datetime="2021-04-29 09:34" pubdate>
+        2021年4月29日 上午
       </time>
     </span>
   
@@ -210,28 +210,80 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hello World</h1>
+            <h1 style="display: none">linux用socket实现文件传输遇到的问题总结</h1>
             
             <div class="markdown-body">
-              <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
+              <p>​    最近在写linux作业，要求是这样的：</p>
+<ol>
+<li><p>实现一个网络文件传输工具，可以使用文件和目录的传输；</p>
+</li>
+<li><p>增加共享目录，可以增加和删除共享的目录和文件，供网络查看；</p>
+</li>
+<li><p>可以查看对方共享目录和文件，并选择下载；</p>
+</li>
+<li><p>可以向对方传送文件和目录，并且该文件和目录会自动被对方共享。</p>
+</li>
+</ol>
+<p>​    然后使用socket完成了在本地上文件的传输，之后想使用不同主机尝试传输，发现不行。开始了查找原因之旅，解决了之后mark一下。</p>
+<p><strong>我使用的linux是centos8.1.1911-x86_64</strong></p>
+<p><strong>室友的是ubuntu20.0.4</strong>(版本记不清了)</p>
+<h4 id="可能造成的原因"><a href="#可能造成的原因" class="headerlink" title="可能造成的原因"></a>可能造成的原因</h4><ol>
+<li><p>校园网</p>
+</li>
+<li><p>防火墙</p>
+</li>
+<li><p>NAT、网桥</p>
+</li>
+</ol>
+<hr>
+<h4 id="校园网"><a href="#校园网" class="headerlink" title="校园网"></a>校园网</h4><p>​    这个就比较神奇了，我先扎个坑，以后有机会在解释。同学说校园网不是局域网，要同一局域网下才行。这不是局域网震惊我一整年。查了一下校园网就是局域网，他想表达的意思应该是校园网内部是一块块的，所以你可能在这一块，而室友的电脑在那一块，导致不能连接。<strong>mark！！！</strong> 我是不太信的，我之后看清楚socket和校园网、局域网再说话。</p>
+<p>​    先按他是对的来，进行了同一路由器下实验。结果是失败的。</p>
+<hr>
+<h4 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h4><p>​    这个听了就比较合理，以前做计网实验的时候，就是因为防火墙而导致ping不通另一台主机。</p>
+<p>​    关闭防火墙出现了问题，这里记录一下。我装了<strong>火绒</strong>，然后按照百度的方法，根本就关闭不了防火墙。（不行的方法就应该早点下架。。。）</p>
+<p>​    <strong>可行的方法:</strong></p>
+<ol>
+<li>打开控制面板（windows+r，然后输入control）</li>
+<li>点击系统和安全</li>
+<li>点击Windows Defender防火墙</li>
+<li>点击启动或关闭Windows Defender防火墙</li>
+<li>关闭就可以了</li>
+</ol>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>​    这样子后，我就成功地和室友ping通了。但是文件传输还是不行。之后听另一个室友讲，可能是NAT的问题。因为弄网桥麻烦，所以我都是直接NAT的。</p>
+<hr>
+<h4 id="NAT、桥接"><a href="#NAT、桥接" class="headerlink" title="NAT、桥接"></a>NAT、桥接</h4><p>​    <del>以后有时间在写NAT和桥接是啥，</del></p>
+<blockquote>
+<p> <a target="_blank" rel="noopener" href="https://www.cnblogs.com/wzzkaifa/p/6806843.html">桥接模式和NAT模式差别 - wzzkaifa - 博客园 (cnblogs.com)</a></p>
+<p>一句话，就是桥接可以让虚拟机在网络中像一台独立的主机，拥有ip地址,即拥有了通信能力。</p>
+</blockquote>
+<p>现在开始配置网桥。</p>
+<blockquote>
+<p>​    <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_47354826/article/details/114888325">2021/3/16 “VMware虚拟机网络配置—桥接模式”_一切因为是码农-CSDN博客</a></p>
+</blockquote>
+<p>​    这位博主写的很详细，大致过程都没有问题。不过在配置的时候，有一处需要更正。在进行网卡配置的时候，写的是ifcfg-ens33文件，而这个是可读文件，常规的 <strong>!wq</strong> 命令是保存不了的。这时要使用</p>
+<blockquote>
+<p>w ! sudo tee %</p>
+</blockquote>
+<p>​    命令才可以写入。</p>
+<p>​    最后终于和室友socket成功。</p>
+<hr>
+<h4 id="说些其他"><a href="#说些其他" class="headerlink" title="说些其他"></a>说些其他</h4><p>​    虚拟机是桥接模式下，必须与主机的网关一样，不然后果就是连不上外网。所以如果电脑这是连校园网，配置的是校园网的网关。待会连热点，就会不能访问外网。</p>
+<p>​    我感觉是可以自动配置的，但是现在不想捯饬了，之后对linux感兴趣了，就补一下。</p>
 
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/linux/">linux</a>
+                    
+                  </div>
                 
               </div>
               
@@ -246,12 +298,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2021/05/12/office-word/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">word相关技巧</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/08/02/ttrss/">
-                        <span class="hidden-mobile">ttrss</span>
+                      <a href="/2021/04/16/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">
+                        <span class="hidden-mobile">Markdown基本语法</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
