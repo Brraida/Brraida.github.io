@@ -30,7 +30,7 @@
     
     
       
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/agate.min.css" />
     
   
 
@@ -224,45 +224,45 @@
 <p>去官网看最新的或是最稳定的版本号，将下列语句的版本号（v14.17.0）改一下，执行。</p>
 </li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">wget https://nodejs.org/dist/v14.17.0/node-v14.17.0-linux-x64.tar.xz<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">wget https://nodejs.org/dist/v14.17.0/node-v14.17.0-linux-x64.tar.xz<br></code></pre></div></td></tr></table></figure>
 
 <ol start="2">
 <li>解压</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">tar zxvf node-v14.17.0-linux-x64.tar.xz<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">tar zxvf node-v14.17.0-linux-x64.tar.xz<br></code></pre></div></td></tr></table></figure>
 
 <ol start="3">
 <li><p>移动</p>
 <p>一般都是将软件放在/usr/local路径下（也可以自定义）</p>
 </li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">mv node-v14.17.0-linux-x64 /usr/local/node-v14<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">mv node-v14.17.0-linux-x64 /usr/local/node-v14<br></code></pre></div></td></tr></table></figure>
 
 <ol start="4">
 <li><p>软链接</p>
 <p>就是快捷键一个意思</p>
 </li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">ls -s /usr/local/node-v14/bin/node /usr/local/bin/node # 添加软链<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">ls -s /usr/local/node-v14/bin/node /usr/local/bin/node # 添加软链<br></code></pre></div></td></tr></table></figure>
 
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">ls -rf /usr/local/bin/node # 删除软链(如果不小心软链错了，先删除软链，再重新添加)<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">ls -rf /usr/local/bin/node # 删除软链(如果不小心软链错了，先删除软链，再重新添加)<br></code></pre></div></td></tr></table></figure>
 
 <ol start="5">
 <li>查看</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">node -v<br>npm -v<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">node -v<br>npm -v<br></code></pre></div></td></tr></table></figure>
 
 <ol start="6">
 <li><p>配置npm环境变量</p>
 <p>将 <strong>/usr/local/node-v14/bin</strong> 目录添加到 $PATH 环境变量中可以方便地使用通过 npm 全局安装的第三方工具</p>
 </li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">echo &#x27;export PATH=/usr/local/node-v14/bin:$PATH&#x27; &gt;&gt; /etc/profile<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">echo &#x27;export PATH=/usr/local/node-v14/bin:$PATH&#x27; &gt;&gt; /etc/profile<br></code></pre></div></td></tr></table></figure>
 
 <ol start="7">
 <li>生效环境变量</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">source /etc/profile<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">source /etc/profile<br></code></pre></div></td></tr></table></figure>
 
 
 
