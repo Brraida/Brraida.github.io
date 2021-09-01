@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-08-14T09:04:08.230Z</updated>
+  <updated>2021-09-01T06:48:12.231Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>右键新建Markdown文件</title>
+    <link href="http://example.com/2021/09/01/%E5%8F%B3%E9%94%AE%E6%96%B0%E5%BB%BAmarkdown%E6%96%87%E4%BB%B6/"/>
+    <id>http://example.com/2021/09/01/%E5%8F%B3%E9%94%AE%E6%96%B0%E5%BB%BAmarkdown%E6%96%87%E4%BB%B6/</id>
+    <published>2021-08-31T16:00:00.000Z</published>
+    <updated>2021-09-01T06:48:12.231Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;新建一个&lt;code&gt;txt&lt;/code&gt;文本，写入:&lt;/p&gt;
+&lt;figure class=&quot;highlight markdown&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter hljs&quot;&gt;&lt;div class=&quot;hljs</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Markdown" scheme="http://example.com/tags/Markdown/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
