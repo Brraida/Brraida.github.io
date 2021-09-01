@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>SunMonkey</title>
+  <icon>http://example.com/icon.png</icon>
+  
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2021-08-14T09:04:08.230Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>Brraida Hu</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://example.com/2021/08/14/hello-world/"/>
+    <id>http://example.com/2021/08/14/hello-world/</id>
+    <published>2021-08-14T09:04:08.230Z</published>
+    <updated>2021-08-14T09:04:08.230Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ttrss</title>
+    <link href="http://example.com/2021/08/02/ttrss/"/>
+    <id>http://example.com/2021/08/02/ttrss/</id>
+    <published>2021-08-02T01:05:54.000Z</published>
+    <updated>2021-08-21T10:06:09.010Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;​    第一次部署ttrss可能没有那么简单，需要耐点心。&lt;/p&gt;
+&lt;p&gt;​   </summary>
+        
+      
+    
+    
+    
+    
+    <category term="rss" scheme="http://example.com/tags/rss/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>安装-redis</title>
+    <link href="http://example.com/2021/07/22/%E5%AE%89%E8%A3%85-redis/"/>
+    <id>http://example.com/2021/07/22/%E5%AE%89%E8%A3%85-redis/</id>
+    <published>2021-07-22T11:05:58.000Z</published>
+    <updated>2021-08-14T14:21:45.379Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;该博客写于2021年7月22号&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;腾讯云，centos7.6，linux3.10.0-1160.11.1.el7.x86_64&lt;/p&gt;
+&lt;h2 id=&quot;redis安装&quot;&gt;&lt;a href=&quot;#redis安装&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="安装" scheme="http://example.com/tags/%E5%AE%89%E8%A3%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>os-suspend</title>
+    <link href="http://example.com/2021/07/08/os-suspend/"/>
+    <id>http://example.com/2021/07/08/os-suspend/</id>
+    <published>2021-07-08T01:22:18.000Z</published>
+    <updated>2021-07-08T01:32:27.625Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;​    今天我想一个进程挂起，cpu要监督，所以简单的就想这个进程肯定有一部分是要占用内存的。其实，不然，cpu和内存是不能等价的。&lt;/p&gt;
+&lt;p&gt;​    进程挂起的结果是从内存转移到外存，所以&lt;strong&gt;挂起不占内存&lt;/strong&gt;的。&lt;/p&gt;
+&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="os" scheme="http://example.com/tags/os/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hadoop&amp;spark安装</title>
+    <link href="http://example.com/2021/06/21/hadoop&amp;spark/"/>
+    <id>http://example.com/2021/06/21/hadoop&amp;spark/</id>
+    <published>2021-06-20T16:00:00.000Z</published>
+    <updated>2021-08-16T07:40:24.899Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;该博文写于2021-6-21&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;环境：腾讯云，centos7.6，linux3.10.0-1160.11.1.el7.x86_64&lt;/strong&gt;&lt;/p&gt;
+&lt;h1</summary>
+        
+      
+    
+    
+    
+    
+    <category term="bigData" scheme="http://example.com/tags/bigData/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>py-lambda</title>
+    <link href="http://example.com/2021/06/14/py-lambda/"/>
+    <id>http://example.com/2021/06/14/py-lambda/</id>
+    <published>2021-06-13T16:00:00.000Z</published>
+    <updated>2021-08-16T07:41:42.392Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;​    今天复习到了定积分，重新学了定积分的概念。迫不及待的使用python的lambda来实验实验。&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    
+    <category term="python" scheme="http://example.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一些基础linux指令</title>
+    <link href="http://example.com/2021/06/13/linux-%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E6%8C%87%E4%BB%A4/"/>
+    <id>http://example.com/2021/06/13/linux-%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E6%8C%87%E4%BB%A4/</id>
+    <published>2021-06-12T16:00:00.000Z</published>
+    <updated>2021-08-16T07:40:37.202Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;linux&quot;&gt;&lt;a href=&quot;#linux&quot; class=&quot;headerlink&quot; title=&quot;linux&quot;&gt;&lt;/a&gt;linux&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;修改文件名或目录名&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight</summary>
+        
+      
+    
+    
+    
+    
+    <category term="linux" scheme="http://example.com/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows快捷键</title>
+    <link href="http://example.com/2021/06/08/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    <id>http://example.com/2021/06/08/%E5%BF%AB%E6%8D%B7%E9%94%AE/</id>
+    <published>2021-06-07T16:00:00.000Z</published>
+    <updated>2021-06-21T03:50:49.555Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Windows&quot;&gt;&lt;a href=&quot;#Windows&quot; class=&quot;headerlink&quot; title=&quot;Windows&quot;&gt;&lt;/a&gt;Windows&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;alt+tab 快速切换窗口，松开就切换&lt;/li&gt;
+&lt;li&gt;windows+tab</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>py study note</title>
+    <link href="http://example.com/2021/06/07/py-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://example.com/2021/06/07/py-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <published>2021-06-06T16:00:00.000Z</published>
+    <updated>2021-08-16T07:41:16.964Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;6月7号    :sunny:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;继承-inheritance&quot;&gt;&lt;a href=&quot;#继承-inheritance&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="python" scheme="http://example.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>node.js安装</title>
+    <link href="http://example.com/2021/06/02/%E5%AE%89%E8%A3%85-node.js/"/>
+    <id>http://example.com/2021/06/02/%E5%AE%89%E8%A3%85-node.js/</id>
+    <published>2021-06-01T16:00:00.000Z</published>
+    <updated>2021-08-16T07:39:51.219Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;​    我终于知道为什么要下载安装包，而不是直接用yum源了。因为yum源里的版本可能会比较旧，去官网下载就不一样了，可以获取最新的、更好的版本。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;该博客写于2021年6月2号&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;​   </summary>
+        
+      
+    
+    
+    
+    
+    <category term="安装" scheme="http://example.com/tags/%E5%AE%89%E8%A3%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>nginx安装</title>
+    <link href="http://example.com/2021/06/01/%E5%AE%89%E8%A3%85-nginx/"/>
+    <id>http://example.com/2021/06/01/%E5%AE%89%E8%A3%85-nginx/</id>
+    <published>2021-06-01T02:04:46.000Z</published>
+    <updated>2021-08-16T07:40:00.528Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;该博文写于2021.6.1&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;​    腾讯云，centos7.6，linux3.10.0-1160.11.1.el7.x86_64&lt;/p&gt;
+&lt;p&gt;​   </summary>
+        
+      
+    
+    
+    
+    
+    <category term="安装" scheme="http://example.com/tags/%E5%AE%89%E8%A3%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>nginx相关记录</title>
+    <link href="http://example.com/2021/05/31/nginx%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/"/>
+    <id>http://example.com/2021/05/31/nginx%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/</id>
+    <published>2021-05-31T00:49:59.000Z</published>
+    <updated>2021-08-16T07:38:14.561Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;该博文写于2021.5.31&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;nginx安装与部署&quot;&gt;&lt;a href=&quot;#nginx安装与部署&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="nginx" scheme="http://example.com/tags/nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>杂记</title>
+    <link href="http://example.com/2021/05/18/%E6%9D%82%E8%AE%B0/"/>
+    <id>http://example.com/2021/05/18/%E6%9D%82%E8%AE%B0/</id>
+    <published>2021-05-18T12:48:09.000Z</published>
+    <updated>2021-08-16T07:42:45.624Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;2021-5-17&lt;/p&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;花了我100多大洋买了个服务器，搞起来！&lt;/li&gt;
+&lt;li&gt;将项目移植到其他地方，改了半天的绝对路径。突然发现绝对路径的好处。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;2021-6-9&lt;/p&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Y</summary>
+        
+      
+    
+    
+    
+    
+    <category term="咋咋嘴" scheme="http://example.com/tags/%E5%92%8B%E5%92%8B%E5%98%B4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>编译原理1</title>
+    <link href="http://example.com/2021/05/18/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
+    <id>http://example.com/2021/05/18/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/</id>
+    <published>2021-05-18T12:47:30.000Z</published>
+    <updated>2021-08-16T07:38:48.051Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;DFA与NFA的区别   </summary>
+        
+      
+    
+    
+    
+    
+    <category term="编译原理" scheme="http://example.com/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>py指令</title>
+    <link href="http://example.com/2021/05/18/py-%E6%8C%87%E4%BB%A4/"/>
+    <id>http://example.com/2021/05/18/py-%E6%8C%87%E4%BB%A4/</id>
+    <published>2021-05-18T09:27:08.000Z</published>
+    <updated>2021-08-16T07:41:32.599Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;在cmd窗口查看python&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter hljs&quot;&gt;&lt;div class=&quot;hljs</summary>
+        
+      
+    
+    
+    
+    
+    <category term="python" scheme="http://example.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>py爆破</title>
+    <link href="http://example.com/2021/05/18/py-%E7%88%86%E7%A0%B4/"/>
+    <id>http://example.com/2021/05/18/py-%E7%88%86%E7%A0%B4/</id>
+    <published>2021-05-18T09:27:08.000Z</published>
+    <updated>2021-08-14T15:24:05.895Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;​    有时候想白嫖一些资源，但是总会有些资源是压缩加密的。就因为这个，我对爆破很感兴趣。之后有学了python，所以就兴致冲冲地写了爆破脚本。记录一下遇到的问题和解决的方法。&lt;/p&gt;
+&lt;p&gt;​   </summary>
+        
+      
+    
+    
+    
+    
+    <category term="python" scheme="http://example.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>word相关技巧</title>
+    <link href="http://example.com/2021/05/12/office-word/"/>
+    <id>http://example.com/2021/05/12/office-word/</id>
+    <published>2021-05-12T02:03:46.000Z</published>
+    <updated>2021-08-16T07:41:01.351Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;​    最近和小组合作完成os课设，每个人写的项目不一样，所以最后各自文档合并的时候就不得不进行排版。下面是我为了完成某个目的的word技巧的记录。&lt;/p&gt;
+&lt;p&gt;我用的是word版本是&lt;strong&gt;office 2016&lt;/strong&gt;&lt;/p&gt;
+&lt;h1</summary>
+        
+      
+    
+    
+    
+    
+    <category term="word" scheme="http://example.com/tags/word/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux用socket实现文件传输遇到的问题总结</title>
+    <link href="http://example.com/2021/04/29/linux%E7%94%A8socket%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
+    <id>http://example.com/2021/04/29/linux%E7%94%A8socket%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/</id>
+    <published>2021-04-29T01:34:04.000Z</published>
+    <updated>2021-08-16T07:40:43.267Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;​   </summary>
+        
+      
+    
+    
+    
+    
+    <category term="linux" scheme="http://example.com/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Markdown基本语法</title>
+    <link href="http://example.com/2021/04/16/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/"/>
+    <id>http://example.com/2021/04/16/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</id>
+    <published>2021-04-16T07:58:52.000Z</published>
+    <updated>2021-08-14T14:25:13.468Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Markdown基本常用语法&quot;&gt;&lt;a href=&quot;#Markdown基本常用语法&quot; class=&quot;headerlink&quot; title=&quot;Markdown基本常用语法&quot;&gt;&lt;/a&gt;Markdown基本常用语法&lt;/h1&gt;&lt;h2 id=&quot;标题&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Markdown" scheme="http://example.com/tags/Markdown/"/>
+    
+  </entry>
+  
+</feed>

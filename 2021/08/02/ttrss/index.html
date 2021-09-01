@@ -60,7 +60,8 @@
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="SunMonkey" type="application/atom+xml">
+</head>
 
 
 <body>
@@ -136,6 +137,18 @@
               <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
                 关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" target="_blank" rel="noopener" href="https://brraida.github.io/atom.xml">
+                <i class="iconfont icon-rss"></i>
+                rss
               </a>
             </li>
           
@@ -317,6 +330,19 @@
 <p>你可能需要:</p>
 <blockquote>
 <p>[Nginx配置文件详解 - 程序员自由之路 - 博客园 (cnblogs.com)](<a target="_blank" rel="noopener" href="https://www.cnblogs.com/54chensongxia/p/12938929.html#:~:text=Nginx%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%A6%E8%A7%A3">https://www.cnblogs.com/54chensongxia/p/12938929.html#:~:text=Nginx配置文件详解</a>. Nginx的主配置文件是nginx.conf，这个配置文件一共由三部分组成，分别为 全局块、events块和http块 。. 在http块中，又包含http全局块、多个server块。.,每个server块中，可以包含server全局块和多个location块。. 在同一配置块中嵌套的配置块，各个之间不存在次序关系。. 配置文件支持大量可配置的指令，绝大多数指令不是特定属于某一个块的。. 同一个指令放在不同层级的块中，其作用域也不同，一般情况下，高一级块中的指令可以作用于自身所在的块和此块包含的所有低层级块。. 如果某个指令在两个不同层级的块中同时出现，则采用”就近原则”，即以较低层级块中的配置为准。.)</p>
+</blockquote>
+<hr>
+<p>2021-08-21</p>
+<p>​    实践之后进行理论填充。之前搭建的ttrss是没有开启防火墙的情况下，看了一些书籍之后，感受到了安全的重要性。所以进行防火墙的补充、遇到问题的解决办法和懒人脚本补充。</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">systemctl status firewalld <span class="hljs-comment"># 防火墙状态</span><br>systemctl stop firewalld   <span class="hljs-comment"># 防火墙关闭</span><br>systemctl start firewalld  <span class="hljs-comment"># 防火墙开启</span><br><br>firewall-cmd --zone=public --add-port=80/tcp --permanent <span class="hljs-comment"># 打开80端口</span><br>firewall-cmd --list-all    <span class="hljs-comment"># 查看防火墙开启的端口</span><br></code></pre></div></td></tr></table></figure>
+
+
+
+<p>问题：PostgreSQL: Could not connect to server: TCP/IP connections on port 5432</p>
+<p>​    ttrss用的是PostgreSQL，所以别忘记开5432端口。开启后，运行<code>docker-compose down</code>，将容器停下来，然后运行<code>service docker restart</code>，不然可能遇到<strong>ERROR: Failed to Setup IP tables: Unable to enable SKIP DNAT rule</strong>，然后就可以运行<code>docker-compose up -d</code>了。</p>
+<p>​    大佬做好的一键安装脚本，容我膜拜一下。</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.ioiox.com/archives/139.html">https://www.ioiox.com/archives/139.html</a></p>
 </blockquote>
 
             </div>
