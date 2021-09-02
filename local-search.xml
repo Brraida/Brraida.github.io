@@ -4,11 +4,24 @@
   
   
   <entry>
+    <title>test_5</title>
+    <link href="/2021/09/02/test-5/"/>
+    <url>/2021/09/02/test-5/</url>
+    
+    <content type="html"><![CDATA[<p>李白白白</p><p>金樽清酒斗十千，玉盘珍羞直万钱。<br>停杯投箸不能食，拔剑四顾心茫然。<br>欲渡黄河冰塞川，将登太行雪满山。<br>闲来垂钓碧溪上，忽复乘舟梦日边。<br>行路难！行路难！多歧路，今安在？<br>长风破浪会有时，直挂云帆济沧海。</p><p>金樽清酒斗十千，玉盘珍羞直万钱。<br>停杯投箸不能食，拔剑四顾心茫然。<br>欲渡黄河冰塞川，将登太行雪满山。<br>闲来垂钓碧溪上，忽复乘舟梦日边。</p><p>行路难！行路难！多歧路，今安在？</p><p>长风破浪会有时，直挂云帆济沧海。</p><p>金樽清酒斗十千，玉盘珍羞直万钱。<br>停杯投箸不能食，拔剑四顾心茫然。<br>欲渡黄河冰塞川，将登太行雪满山。<br>闲来垂钓碧溪上，忽复乘舟梦日边。<br>行路难！行路难！多歧路，今安在？<br>长风破浪会有时，直挂云帆济沧海。</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>test_4</title>
     <link href="/2021/09/01/test-4/"/>
     <url>/2021/09/01/test-4/</url>
     
-    <content type="html"><![CDATA[<p>test</p><p>test</p><p>test</p><p>test</p><p>金樽清酒斗十千，玉盘珍羞直万钱。<br>停杯投箸不能食，拔剑四顾心茫然。<br>欲渡黄河冰塞川，将登太行雪满山。<br>闲来垂钓碧溪上，忽复乘舟梦日边。<br>行路难！行路难！多歧路，今安在？<br>长风破浪会有时，直挂云帆济沧海。</p><p>金樽清酒斗十千，玉盘珍羞直万钱。<br>停杯投箸不能食，拔剑四顾心茫然。<br>欲渡黄河冰塞川，将登太行雪满山。<br>闲来垂钓碧溪上，忽复乘舟梦日边。<br>行路难！行路难！多歧路，今安在？<br>长风破浪会有时，直挂云帆济沧海。</p><p>金樽清酒斗十千，玉盘珍羞直万钱。<br>停杯投箸不能食，拔剑四顾心茫然。<br>欲渡黄河冰塞川，将登太行雪满山。<br>闲来垂钓碧溪上，忽复乘舟梦日边。<br>行路难！行路难！多歧路，今安在？<br>长风破浪会有时，直挂云帆济沧海。</p>]]></content>
+    <content type="html"><![CDATA[<p>test</p><p>test</p><p>test</p><p>test</p><p>金樽清酒斗十千，玉盘珍羞直万钱。<br>停杯投箸不能食，拔剑四顾心茫然。<br>欲渡黄河冰塞川，将登太行雪满山。<br>闲来垂钓碧溪上，忽复乘舟梦日边。<br>行路难！行路难！多歧路，今安在？<br>长风破浪会有时，直挂云帆济沧海。</p><p>金樽清酒斗十千，玉盘珍羞直万钱。<br>停杯投箸不能食，拔剑四顾心茫然。<br>欲渡黄河冰塞川，将登太行雪满山。<br>闲来垂钓碧溪上，忽复乘舟梦日边。</p><p>行路难！行路难！多歧路，今安在？</p><p>长风破浪会有时，直挂云帆济沧海。</p><p>金樽清酒斗十千，玉盘珍羞直万钱。<br>停杯投箸不能食，拔剑四顾心茫然。<br>欲渡黄河冰塞川，将登太行雪满山。<br>闲来垂钓碧溪上，忽复乘舟梦日边。<br>行路难！行路难！多歧路，今安在？<br>长风破浪会有时，直挂云帆济沧海。</p>]]></content>
     
     
     
@@ -86,7 +99,7 @@
     <link href="/2021/09/01/%E5%8F%B3%E9%94%AE%E6%96%B0%E5%BB%BAmarkdown%E6%96%87%E4%BB%B6/"/>
     <url>/2021/09/01/%E5%8F%B3%E9%94%AE%E6%96%B0%E5%BB%BAmarkdown%E6%96%87%E4%BB%B6/</url>
     
-    <content type="html"><![CDATA[<p>新建一个<code>txt</code>文本，写入:</p><figure class="highlight markdown"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs markdown">Windows Registry Editor Version 5.00<br><br>[HKEY<span class="hljs-emphasis">_CLASSES_</span>ROOT\.md]<br>@=&quot;Typora.md&quot;<br>&quot;Content Type&quot;=&quot;text/markdown&quot;<br>&quot;PerceivedType&quot;=&quot;text&quot;<br><br>[HKEY<span class="hljs-emphasis">_CLASSES_</span>ROOT\.md\ShellNew]<br>&quot;NullFile&quot;=&quot;&quot;<br></code></pre></div></td></tr></table></figure><p>然后修改<code>.txt</code>后缀为  <code>.reg</code>的注册表文件。</p><p>双击运行。</p><p>参考链接:</p><p><a href="https://www.cnblogs.com/zhoujiayingvana/p/12357812.html">Typora添加右键新建Markdown文件 - 墨莲玦 - 博客园 (cnblogs.com)</a></p>]]></content>
+    <content type="html"><![CDATA[<p>新建一个<code>txt</code>文本，写入:</p><figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs tsx">Windows Registry Editor Version 5.00<br><br>[HKEY_CLASSES_ROOT\.md]<br>@=&quot;Typora.md&quot;<br>&quot;Content Type&quot;=&quot;text/markdown&quot;<br>&quot;PerceivedType&quot;=&quot;text&quot;<br><br>[HKEY_CLASSES_ROOT\.md\ShellNew]<br>&quot;NullFile&quot;=&quot;&quot;<br></code></pre></div></td></tr></table></figure><p>然后修改<code>.txt</code>后缀为  <code>.reg</code>的注册表文件。</p><p>双击运行。</p><p>参考链接:</p><p><a href="https://www.cnblogs.com/zhoujiayingvana/p/12357812.html">Typora添加右键新建Markdown文件 - 墨莲玦 - 博客园 (cnblogs.com)</a></p>]]></content>
     
     
     
