@@ -3,11 +3,11 @@
   <title>SunMonkey</title>
   
   
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="https://brraida.github.io/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
+  <link href="https://brraida.github.io/"/>
   <updated>2021-09-02T03:59:43.690Z</updated>
-  <id>http://example.com/</id>
+  <id>https://brraida.github.io/</id>
   
   <author>
     <name>Brraida Hu</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>制作hexo博客的rss源</title>
-    <link href="http://example.com/2021/09/02/%E5%88%B6%E4%BD%9Chexo%E5%8D%9A%E5%AE%A2%E7%9A%84rss%E6%BA%90/"/>
-    <id>http://example.com/2021/09/02/%E5%88%B6%E4%BD%9Chexo%E5%8D%9A%E5%AE%A2%E7%9A%84rss%E6%BA%90/</id>
+    <link href="https://brraida.github.io/posts/d56f63a7/"/>
+    <id>https://brraida.github.io/posts/d56f63a7/</id>
     <published>2021-09-02T03:49:52.000Z</published>
     <updated>2021-09-02T03:59:43.690Z</updated>
     
@@ -34,14 +34,14 @@
     
     
     
-    <category term="rss" scheme="http://example.com/tags/rss/"/>
+    <category term="rss" scheme="https://brraida.github.io/tags/rss/"/>
     
   </entry>
   
   <entry>
     <title>test_5</title>
-    <link href="http://example.com/2021/09/02/test-5/"/>
-    <id>http://example.com/2021/09/02/test-5/</id>
+    <link href="https://brraida.github.io/posts/31415c0f/"/>
+    <id>https://brraida.github.io/posts/31415c0f/</id>
     <published>2021-09-02T03:11:15.000Z</published>
     <updated>2021-09-02T03:32:05.108Z</updated>
     
@@ -60,8 +60,8 @@
   
   <entry>
     <title>test_4</title>
-    <link href="http://example.com/2021/09/01/test-4/"/>
-    <id>http://example.com/2021/09/01/test-4/</id>
+    <link href="https://brraida.github.io/posts/46466c99/"/>
+    <id>https://brraida.github.io/posts/46466c99/</id>
     <published>2021-09-01T14:52:03.000Z</published>
     <updated>2021-09-02T03:11:47.633Z</updated>
     
@@ -80,8 +80,8 @@
   
   <entry>
     <title>test_3</title>
-    <link href="http://example.com/2021/09/01/test-3/"/>
-    <id>http://example.com/2021/09/01/test-3/</id>
+    <link href="https://brraida.github.io/posts/d822f93a/"/>
+    <id>https://brraida.github.io/posts/d822f93a/</id>
     <published>2021-09-01T13:17:48.000Z</published>
     <updated>2021-09-01T13:18:02.871Z</updated>
     
@@ -100,8 +100,8 @@
   
   <entry>
     <title>test_2</title>
-    <link href="http://example.com/2021/09/01/test-2/"/>
-    <id>http://example.com/2021/09/01/test-2/</id>
+    <link href="https://brraida.github.io/posts/af25c9ac/"/>
+    <id>https://brraida.github.io/posts/af25c9ac/</id>
     <published>2021-09-01T13:10:01.000Z</published>
     <updated>2021-09-01T13:10:32.549Z</updated>
     
@@ -120,8 +120,8 @@
   
   <entry>
     <title>test_1</title>
-    <link href="http://example.com/2021/09/01/test-1/"/>
-    <id>http://example.com/2021/09/01/test-1/</id>
+    <link href="https://brraida.github.io/posts/362c9816/"/>
+    <id>https://brraida.github.io/posts/362c9816/</id>
     <published>2021-09-01T12:20:18.000Z</published>
     <updated>2021-09-01T12:47:02.494Z</updated>
     
@@ -140,8 +140,8 @@
   
   <entry>
     <title>test12</title>
-    <link href="http://example.com/2021/09/01/test12/"/>
-    <id>http://example.com/2021/09/01/test12/</id>
+    <link href="https://brraida.github.io/posts/545b8f85/"/>
+    <id>https://brraida.github.io/posts/545b8f85/</id>
     <published>2021-09-01T11:15:05.000Z</published>
     <updated>2021-09-01T12:12:21.557Z</updated>
     
@@ -160,8 +160,8 @@
   
   <entry>
     <title>test_rss.md</title>
-    <link href="http://example.com/2021/09/01/test-rss-md/"/>
-    <id>http://example.com/2021/09/01/test-rss-md/</id>
+    <link href="https://brraida.github.io/posts/f56446b/"/>
+    <id>https://brraida.github.io/posts/f56446b/</id>
     <published>2021-09-01T07:20:26.000Z</published>
     <updated>2021-09-01T07:20:55.459Z</updated>
     
@@ -180,8 +180,8 @@
   
   <entry>
     <title>右键新建Markdown文件</title>
-    <link href="http://example.com/2021/09/01/%E5%8F%B3%E9%94%AE%E6%96%B0%E5%BB%BAmarkdown%E6%96%87%E4%BB%B6/"/>
-    <id>http://example.com/2021/09/01/%E5%8F%B3%E9%94%AE%E6%96%B0%E5%BB%BAmarkdown%E6%96%87%E4%BB%B6/</id>
+    <link href="https://brraida.github.io/posts/dedab3/"/>
+    <id>https://brraida.github.io/posts/dedab3/</id>
     <published>2021-08-31T16:00:00.000Z</published>
     <updated>2021-09-02T03:22:01.880Z</updated>
     
@@ -196,14 +196,14 @@
     
     
     
-    <category term="Markdown" scheme="http://example.com/tags/Markdown/"/>
+    <category term="Markdown" scheme="https://brraida.github.io/tags/Markdown/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://example.com/2021/08/14/hello-world/"/>
-    <id>http://example.com/2021/08/14/hello-world/</id>
+    <link href="https://brraida.github.io/posts/4a17b156/"/>
+    <id>https://brraida.github.io/posts/4a17b156/</id>
     <published>2021-08-14T09:04:08.230Z</published>
     <updated>2021-08-14T09:04:08.230Z</updated>
     
@@ -222,8 +222,8 @@
   
   <entry>
     <title>ttrss</title>
-    <link href="http://example.com/2021/08/02/ttrss/"/>
-    <id>http://example.com/2021/08/02/ttrss/</id>
+    <link href="https://brraida.github.io/posts/b4463054/"/>
+    <id>https://brraida.github.io/posts/b4463054/</id>
     <published>2021-08-02T01:05:54.000Z</published>
     <updated>2021-08-21T10:06:09.010Z</updated>
     
@@ -238,14 +238,14 @@
     
     
     
-    <category term="rss" scheme="http://example.com/tags/rss/"/>
+    <category term="rss" scheme="https://brraida.github.io/tags/rss/"/>
     
   </entry>
   
   <entry>
     <title>安装-redis</title>
-    <link href="http://example.com/2021/07/22/%E5%AE%89%E8%A3%85-redis/"/>
-    <id>http://example.com/2021/07/22/%E5%AE%89%E8%A3%85-redis/</id>
+    <link href="https://brraida.github.io/posts/6bcf3639/"/>
+    <id>https://brraida.github.io/posts/6bcf3639/</id>
     <published>2021-07-22T11:05:58.000Z</published>
     <updated>2021-08-14T14:21:45.379Z</updated>
     
@@ -260,14 +260,14 @@
     
     
     
-    <category term="安装" scheme="http://example.com/tags/%E5%AE%89%E8%A3%85/"/>
+    <category term="安装" scheme="https://brraida.github.io/tags/%E5%AE%89%E8%A3%85/"/>
     
   </entry>
   
   <entry>
     <title>os-suspend</title>
-    <link href="http://example.com/2021/07/08/os-suspend/"/>
-    <id>http://example.com/2021/07/08/os-suspend/</id>
+    <link href="https://brraida.github.io/posts/c4a439f8/"/>
+    <id>https://brraida.github.io/posts/c4a439f8/</id>
     <published>2021-07-08T01:22:18.000Z</published>
     <updated>2021-07-08T01:32:27.625Z</updated>
     
@@ -282,14 +282,14 @@
     
     
     
-    <category term="os" scheme="http://example.com/tags/os/"/>
+    <category term="os" scheme="https://brraida.github.io/tags/os/"/>
     
   </entry>
   
   <entry>
     <title>hadoop&amp;spark安装</title>
-    <link href="http://example.com/2021/06/21/hadoop&amp;spark/"/>
-    <id>http://example.com/2021/06/21/hadoop&amp;spark/</id>
+    <link href="https://brraida.github.io/posts/1426aaf4/"/>
+    <id>https://brraida.github.io/posts/1426aaf4/</id>
     <published>2021-06-20T16:00:00.000Z</published>
     <updated>2021-08-16T07:40:24.899Z</updated>
     
@@ -304,14 +304,14 @@
     
     
     
-    <category term="bigData" scheme="http://example.com/tags/bigData/"/>
+    <category term="bigData" scheme="https://brraida.github.io/tags/bigData/"/>
     
   </entry>
   
   <entry>
     <title>py-lambda</title>
-    <link href="http://example.com/2021/06/14/py-lambda/"/>
-    <id>http://example.com/2021/06/14/py-lambda/</id>
+    <link href="https://brraida.github.io/posts/69805bbd/"/>
+    <id>https://brraida.github.io/posts/69805bbd/</id>
     <published>2021-06-13T16:00:00.000Z</published>
     <updated>2021-08-16T07:41:42.392Z</updated>
     
@@ -326,14 +326,14 @@
     
     
     
-    <category term="python" scheme="http://example.com/tags/python/"/>
+    <category term="python" scheme="https://brraida.github.io/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>一些基础linux指令</title>
-    <link href="http://example.com/2021/06/13/linux-%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E6%8C%87%E4%BB%A4/"/>
-    <id>http://example.com/2021/06/13/linux-%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E6%8C%87%E4%BB%A4/</id>
+    <link href="https://brraida.github.io/posts/72475525/"/>
+    <id>https://brraida.github.io/posts/72475525/</id>
     <published>2021-06-12T16:00:00.000Z</published>
     <updated>2021-08-16T07:40:37.202Z</updated>
     
@@ -348,14 +348,14 @@
     
     
     
-    <category term="linux" scheme="http://example.com/tags/linux/"/>
+    <category term="linux" scheme="https://brraida.github.io/tags/linux/"/>
     
   </entry>
   
   <entry>
     <title>Windows快捷键</title>
-    <link href="http://example.com/2021/06/08/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
-    <id>http://example.com/2021/06/08/%E5%BF%AB%E6%8D%B7%E9%94%AE/</id>
+    <link href="https://brraida.github.io/posts/459f9e41/"/>
+    <id>https://brraida.github.io/posts/459f9e41/</id>
     <published>2021-06-07T16:00:00.000Z</published>
     <updated>2021-06-21T03:50:49.555Z</updated>
     
@@ -374,8 +374,8 @@
   
   <entry>
     <title>py study note</title>
-    <link href="http://example.com/2021/06/07/py-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>http://example.com/2021/06/07/py-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <link href="https://brraida.github.io/posts/a29203f1/"/>
+    <id>https://brraida.github.io/posts/a29203f1/</id>
     <published>2021-06-06T16:00:00.000Z</published>
     <updated>2021-08-16T07:41:16.964Z</updated>
     
@@ -390,14 +390,14 @@
     
     
     
-    <category term="python" scheme="http://example.com/tags/python/"/>
+    <category term="python" scheme="https://brraida.github.io/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>node.js安装</title>
-    <link href="http://example.com/2021/06/02/%E5%AE%89%E8%A3%85-node.js/"/>
-    <id>http://example.com/2021/06/02/%E5%AE%89%E8%A3%85-node.js/</id>
+    <link href="https://brraida.github.io/posts/63a2d85/"/>
+    <id>https://brraida.github.io/posts/63a2d85/</id>
     <published>2021-06-01T16:00:00.000Z</published>
     <updated>2021-08-16T07:39:51.219Z</updated>
     
@@ -412,14 +412,14 @@
     
     
     
-    <category term="安装" scheme="http://example.com/tags/%E5%AE%89%E8%A3%85/"/>
+    <category term="安装" scheme="https://brraida.github.io/tags/%E5%AE%89%E8%A3%85/"/>
     
   </entry>
   
   <entry>
     <title>nginx安装</title>
-    <link href="http://example.com/2021/06/01/%E5%AE%89%E8%A3%85-nginx/"/>
-    <id>http://example.com/2021/06/01/%E5%AE%89%E8%A3%85-nginx/</id>
+    <link href="https://brraida.github.io/posts/16fe430b/"/>
+    <id>https://brraida.github.io/posts/16fe430b/</id>
     <published>2021-06-01T02:04:46.000Z</published>
     <updated>2021-08-16T07:40:00.528Z</updated>
     
@@ -434,14 +434,14 @@
     
     
     
-    <category term="安装" scheme="http://example.com/tags/%E5%AE%89%E8%A3%85/"/>
+    <category term="安装" scheme="https://brraida.github.io/tags/%E5%AE%89%E8%A3%85/"/>
     
   </entry>
   
   <entry>
     <title>nginx相关记录</title>
-    <link href="http://example.com/2021/05/31/nginx%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/"/>
-    <id>http://example.com/2021/05/31/nginx%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/</id>
+    <link href="https://brraida.github.io/posts/dbc31271/"/>
+    <id>https://brraida.github.io/posts/dbc31271/</id>
     <published>2021-05-31T00:49:59.000Z</published>
     <updated>2021-08-16T07:38:14.561Z</updated>
     
@@ -456,14 +456,14 @@
     
     
     
-    <category term="nginx" scheme="http://example.com/tags/nginx/"/>
+    <category term="nginx" scheme="https://brraida.github.io/tags/nginx/"/>
     
   </entry>
   
   <entry>
     <title>杂记</title>
-    <link href="http://example.com/2021/05/18/%E6%9D%82%E8%AE%B0/"/>
-    <id>http://example.com/2021/05/18/%E6%9D%82%E8%AE%B0/</id>
+    <link href="https://brraida.github.io/posts/430d67de/"/>
+    <id>https://brraida.github.io/posts/430d67de/</id>
     <published>2021-05-18T12:48:09.000Z</published>
     <updated>2021-08-16T07:42:45.624Z</updated>
     
@@ -478,14 +478,14 @@
     
     
     
-    <category term="咋咋嘴" scheme="http://example.com/tags/%E5%92%8B%E5%92%8B%E5%98%B4/"/>
+    <category term="咋咋嘴" scheme="https://brraida.github.io/tags/%E5%92%8B%E5%92%8B%E5%98%B4/"/>
     
   </entry>
   
   <entry>
     <title>编译原理1</title>
-    <link href="http://example.com/2021/05/18/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
-    <id>http://example.com/2021/05/18/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/</id>
+    <link href="https://brraida.github.io/posts/cc129669/"/>
+    <id>https://brraida.github.io/posts/cc129669/</id>
     <published>2021-05-18T12:47:30.000Z</published>
     <updated>2021-08-16T07:38:48.051Z</updated>
     
@@ -500,14 +500,14 @@
     
     
     
-    <category term="编译原理" scheme="http://example.com/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
+    <category term="编译原理" scheme="https://brraida.github.io/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
     
   </entry>
   
   <entry>
     <title>py指令</title>
-    <link href="http://example.com/2021/05/18/py-%E6%8C%87%E4%BB%A4/"/>
-    <id>http://example.com/2021/05/18/py-%E6%8C%87%E4%BB%A4/</id>
+    <link href="https://brraida.github.io/posts/c669871/"/>
+    <id>https://brraida.github.io/posts/c669871/</id>
     <published>2021-05-18T09:27:08.000Z</published>
     <updated>2021-08-16T07:41:32.599Z</updated>
     
@@ -522,14 +522,14 @@
     
     
     
-    <category term="python" scheme="http://example.com/tags/python/"/>
+    <category term="python" scheme="https://brraida.github.io/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>py爆破</title>
-    <link href="http://example.com/2021/05/18/py-%E7%88%86%E7%A0%B4/"/>
-    <id>http://example.com/2021/05/18/py-%E7%88%86%E7%A0%B4/</id>
+    <link href="https://brraida.github.io/posts/3cc1efd6/"/>
+    <id>https://brraida.github.io/posts/3cc1efd6/</id>
     <published>2021-05-18T09:27:08.000Z</published>
     <updated>2021-08-14T15:24:05.895Z</updated>
     
@@ -544,14 +544,14 @@
     
     
     
-    <category term="python" scheme="http://example.com/tags/python/"/>
+    <category term="python" scheme="https://brraida.github.io/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>word相关技巧</title>
-    <link href="http://example.com/2021/05/12/office-word/"/>
-    <id>http://example.com/2021/05/12/office-word/</id>
+    <link href="https://brraida.github.io/posts/a629f612/"/>
+    <id>https://brraida.github.io/posts/a629f612/</id>
     <published>2021-05-12T02:03:46.000Z</published>
     <updated>2021-08-16T07:41:01.351Z</updated>
     
@@ -566,14 +566,14 @@
     
     
     
-    <category term="word" scheme="http://example.com/tags/word/"/>
+    <category term="word" scheme="https://brraida.github.io/tags/word/"/>
     
   </entry>
   
   <entry>
     <title>linux用socket实现文件传输遇到的问题总结</title>
-    <link href="http://example.com/2021/04/29/linux%E7%94%A8socket%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
-    <id>http://example.com/2021/04/29/linux%E7%94%A8socket%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/</id>
+    <link href="https://brraida.github.io/posts/4f19d5af/"/>
+    <id>https://brraida.github.io/posts/4f19d5af/</id>
     <published>2021-04-29T01:34:04.000Z</published>
     <updated>2021-08-16T07:40:43.267Z</updated>
     
@@ -588,14 +588,14 @@
     
     
     
-    <category term="linux" scheme="http://example.com/tags/linux/"/>
+    <category term="linux" scheme="https://brraida.github.io/tags/linux/"/>
     
   </entry>
   
   <entry>
     <title>Markdown基本语法</title>
-    <link href="http://example.com/2021/04/16/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/"/>
-    <id>http://example.com/2021/04/16/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</id>
+    <link href="https://brraida.github.io/posts/5d36ff15/"/>
+    <id>https://brraida.github.io/posts/5d36ff15/</id>
     <published>2021-04-16T07:58:52.000Z</published>
     <updated>2021-08-14T14:25:13.468Z</updated>
     
@@ -610,7 +610,7 @@
     
     
     
-    <category term="Markdown" scheme="http://example.com/tags/Markdown/"/>
+    <category term="Markdown" scheme="https://brraida.github.io/tags/Markdown/"/>
     
   </entry>
   
