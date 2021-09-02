@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-09-02T03:32:05.108Z</updated>
+  <updated>2021-09-02T03:59:43.690Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>制作hexo博客的rss源</title>
+    <link href="http://example.com/2021/09/02/%E5%88%B6%E4%BD%9Chexo%E5%8D%9A%E5%AE%A2%E7%9A%84rss%E6%BA%90/"/>
+    <id>http://example.com/2021/09/02/%E5%88%B6%E4%BD%9Chexo%E5%8D%9A%E5%AE%A2%E7%9A%84rss%E6%BA%90/</id>
+    <published>2021-09-02T03:49:52.000Z</published>
+    <updated>2021-09-02T03:59:43.690Z</updated>
+    
+    <content type="html"><![CDATA[<p>为自己的hexo博客制作rss源。</p><p>使用的是hexo的<code>hexo-generator-feed</code>插件。</p><blockquote><p>官方文档与相关配置信息链接:</p><p><a href="https://github.com/hexojs/hexo-generator-feed">hexojs/hexo-generator-feed: Feed generator for Hexo. (github.com)</a></p></blockquote><p>在_config.yml文件中,在Extensions中添加配置（便于管理）。</p><figure class="highlight yaml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs yaml"><span class="hljs-comment"># Feed Atom</span><br><span class="hljs-attr">feed:</span><br>  <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">atom</span><br>  <span class="hljs-attr">path:</span> <span class="hljs-string">atom.xml</span><br>  <span class="hljs-attr">limit:</span> <span class="hljs-literal">false</span><br>  <span class="hljs-attr">hub:</span><br>  <span class="hljs-attr">content:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-attr">content_limit:</span> <br>  <span class="hljs-attr">content_limit_delim:</span> <br>  <span class="hljs-attr">order_by:</span> <span class="hljs-string">-date</span><br>  <span class="hljs-attr">icon:</span> <br>  <span class="hljs-attr">autodiscovery:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-attr">template:</span><br></code></pre></div></td></tr></table></figure><p>​    运行<code>hexo clean &amp;&amp; hexo g</code>，即可在根目录下看到public文件夹，在public文件夹下有atom.xml则制作成功。    在自己的博客主页地址后面加**/atom.xml**，即可看源信息。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html"></summary>
+      
+    
+    
+    
+    
+    <category term="rss" scheme="http://example.com/tags/rss/"/>
+    
+  </entry>
   
   <entry>
     <title>test_5</title>
