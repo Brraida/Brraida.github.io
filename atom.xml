@@ -6,7 +6,7 @@
   <link href="https://brraida.github.io/atom.xml" rel="self"/>
   
   <link href="https://brraida.github.io/"/>
-  <updated>2021-09-03T13:30:10.809Z</updated>
+  <updated>2021-09-03T15:06:36.944Z</updated>
   <id>https://brraida.github.io/</id>
   
   <author>
@@ -17,11 +17,31 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>tets_8</title>
+    <link href="https://brraida.github.io/posts/d7680e8e/"/>
+    <id>https://brraida.github.io/posts/d7680e8e/</id>
+    <published>2021-09-03T15:05:10.000Z</published>
+    <updated>2021-09-03T15:06:36.944Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="tets-8.assets/fate.jpg" alt="image"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html"></summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>test_7</title>
     <link href="https://brraida.github.io/posts/df4f3d23/"/>
     <id>https://brraida.github.io/posts/df4f3d23/</id>
     <published>2021-09-03T13:29:31.000Z</published>
-    <updated>2021-09-03T13:30:10.809Z</updated>
+    <updated>2021-09-03T13:30:34.429Z</updated>
     
     <content type="html"><![CDATA[<p>test sfsdfsaf hjgjejgoi eoeoi</p>]]></content>
     
