@@ -6,7 +6,7 @@
   <link href="https://brraida.github.io/atom.xml" rel="self"/>
   
   <link href="https://brraida.github.io/"/>
-  <updated>2021-09-07T04:55:16.055Z</updated>
+  <updated>2021-09-07T12:49:59.120Z</updated>
   <id>https://brraida.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>funAlgorithm</title>
+    <link href="https://brraida.github.io/posts/d1c9f41/"/>
+    <id>https://brraida.github.io/posts/d1c9f41/</id>
+    <published>2021-09-07T12:36:45.000Z</published>
+    <updated>2021-09-07T12:49:59.120Z</updated>
+    
+    <content type="html"><![CDATA[<p>​    第一次遇到概率论的问题与编程的递归思维结合的题目，除了新奇的感觉之外，还感受到了数学与代码之间细微的美妙。</p><p>​    <img src="/img/article/funAlgorithm/%E6%A6%82%E7%8E%87%E8%AE%BA%E7%9A%84%E9%97%AE%E9%A2%98%E4%B8%8E%E7%BC%96%E7%A8%8B%E7%9A%84%E9%80%92%E5%BD%92%E6%80%9D%E7%BB%B4%E7%BB%93%E5%90%88%E7%9A%84%E9%A2%98%E7%9B%AE.png" alt="题目"></p><p>​    解决这个题目有几个要点，一是定球的位置数量要从大到小；二是定球的位置数量最多的那种情况和次多的情况是一样的，所以不要考虑次多的情况。</p><p>​    有空或是无聊的时候再来补充这个题目的代码。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html"></summary>
+      
+    
+    
+    
+    
+    <category term="algorithm" scheme="https://brraida.github.io/tags/algorithm/"/>
+    
+  </entry>
   
   <entry>
     <title>tmpmail</title>
@@ -411,13 +433,13 @@
   </entry>
   
   <entry>
-    <title>py指令</title>
-    <link href="https://brraida.github.io/posts/c669871/"/>
-    <id>https://brraida.github.io/posts/c669871/</id>
+    <title>py爆破</title>
+    <link href="https://brraida.github.io/posts/3cc1efd6/"/>
+    <id>https://brraida.github.io/posts/3cc1efd6/</id>
     <published>2021-05-18T09:27:08.000Z</published>
-    <updated>2021-09-02T05:47:42.200Z</updated>
+    <updated>2021-09-02T05:47:42.203Z</updated>
     
-    <content type="html"><![CDATA[<ol><li><p>在cmd窗口查看python</p><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python">python --version<br></code></pre></div></td></tr></table></figure></li><li><p>查看安装模块或是库</p><figure class="highlight ebnf"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ebnf"><span class="hljs-attribute">pip list</span><br></code></pre></div></td></tr></table></figure></li></ol>]]></content>
+    <content type="html"><![CDATA[<p>​    有时候想白嫖一些资源，但是总会有些资源是压缩加密的。就因为这个，我对爆破很感兴趣。之后有学了python，所以就兴致冲冲地写了爆破脚本。记录一下遇到的问题和解决的方法。</p><p>​    首先，学信安的小伙伴和我讲有字典就简单，代码很简单的。所以我在github在找了如下的字典库。</p><blockquote><p><a href="https://github.com/YueYongDev/Blasting_dictionary">YueYongDev/Blasting_dictionary: 爆破字典 (github.com)</a></p></blockquote><p>​    之后cv网上代码，他用的是zipfile模块（python内置的模块）、rarfile模块(github大佬写的，接口和zipfile差不多)。然后出现问题。</p><h2 id="使用zipfile模块"><a href="#使用zipfile模块" class="headerlink" title="使用zipfile模块"></a>使用zipfile模块</h2><p>​    用zipfile不能解压不是用传统加密的文件。经过科学上网查询得到这样的解答与解决。</p><p><img src="/img/article/py-%E7%88%86%E7%A0%B4/zipfile%E4%B8%8D%E5%8F%AF%E7%94%A8%E8%A7%A3%E7%AD%94.jpg"></p><p>​    <strong>AES</strong>：密码学中的高级加密标准（Advanced Encryption Standard，AES），又称Rijndael加密法，是美国联邦政府采用的一种区块加密标准。</p><p>​    现在加密一般都是按这个标准。</p><h2 id="使用pyzipper模块"><a href="#使用pyzipper模块" class="headerlink" title="使用pyzipper模块"></a>使用pyzipper模块</h2><p>​    所以使用pyzipper模块代替zipfile模块。</p><p>​    给上可执行正确的代码：</p><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> pyzipper<br><br>f1 = <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;D:\\1\\pwd.txt&#x27;</span>, <span class="hljs-string">&#x27;r&#x27;</span>)<br><span class="hljs-keyword">with</span> pyzipper.AESZipFile(<span class="hljs-string">&#x27;D:\\1\\test.zip&#x27;</span>, <span class="hljs-string">&#x27;r&#x27;</span>) <span class="hljs-keyword">as</span> f:<br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> f1:<br>        i = i.rstrip(<span class="hljs-string">&#x27;\n&#x27;</span>)<br>        f.pwd = <span class="hljs-built_in">str</span>.encode(i)<br>        <span class="hljs-keyword">try</span>:<br>            f.extractall(<span class="hljs-string">&#x27;D:\\1\\2&#x27;</span>)<br>            <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;The correct password is:&quot;</span> + i)<br>            <span class="hljs-keyword">break</span><br>        <span class="hljs-keyword">except</span> Exception:<br>            <span class="hljs-keyword">pass</span><br>f1.close()<br></code></pre></div></td></tr></table></figure><h2 id="rarfile模块"><a href="#rarfile模块" class="headerlink" title="rarfile模块"></a>rarfile模块</h2><p>​    使用rarfile模块解压rar文件问题就多了。它解压其实借助的是电脑的解压软件的unrar.exe进行解压。(可以在pypi中查看此模块，可以得到此模块的相关信息与工作原理)</p><p>​    然后我嫌下载unrar太麻烦，还要配置环境变量等等操作，并且我本地用的是WinRAR，所以将WinRAR所在的路径加入环境就解决了。</p><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> rarfile <br><br>path1 = <span class="hljs-string">&#x27;D:\\1\\2.rar&#x27;</span> <br>despath = <span class="hljs-string">&#x27;D:\\1\\2&#x27;</span>  <br><br>rf = rarfile.RarFile(path1)<br>rf.extractall(path=despath)<br>rf.close()<br></code></pre></div></td></tr></table></figure><p>​    经过测试，解压没有密码压缩的可以；解压加密的压缩包里面没有文件的可以。但是不可以解压加密的有文件的压缩包。编译错误显示下图所示：</p><p><img src="/img/article/py-%E7%88%86%E7%A0%B4/%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF%E6%98%BE%E7%A4%BA.png"></p><p>​    所以上rarfile这个项目查了一下，其他的使用者也遇到类似这样的问题。然后有人是这么解决的，如下图所示：</p><p><img src="/img/article/py-%E7%88%86%E7%A0%B4/%E6%8F%90%E9%97%AE%E8%80%85%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.png"></p><p>​    不过，这个14年提出来并解决的。我一个21年的，只能是借鉴参考了。看到后面，果然有个20年的朋友也有这样的问题。</p><p><img src="/img/article/py-%E7%88%86%E7%A0%B4/20%E5%B9%B4%E5%90%8C%E6%8F%90%E9%97%AE%E8%80%85.png"></p><p>​    所以大胆猜测，rarfile这个模块里面确实有些问题。</p><hr><p>​    同样的代码，我室友使用rarfile在他的电脑上跑出来了。</p><p>​    我是Windows10，python3.8.3，Pycharm，压缩软件WinRAR</p><p>​    室友用的是manjaro，python3.9.4，idle，压缩软件是系统自带的</p><hr><h2 id="展望"><a href="#展望" class="headerlink" title="展望"></a>展望</h2><p>​    瞅我这暴脾气，最近考试月。考试月过了，我在搞一下。</p><ol><li>Windows下，下那个unrar，搞配置尝试</li><li>1不行就去CenOs7.4服务器搭个环境尝试</li><li>2不行我也开manjaro尝试</li><li>以上都失败，就可以砸电脑了</li></ol><p>搞成功地进一步设想。</p><ol><li>zip可以了，rar可以了，怎么可以不把它们整合在一起的道理呢。</li><li>爆破怎么可以不搞多线程呢。</li><li>python怎么可以不搞封装呢。</li><li>整个界面。</li></ol>]]></content>
     
     
       
@@ -433,13 +455,13 @@
   </entry>
   
   <entry>
-    <title>py爆破</title>
-    <link href="https://brraida.github.io/posts/3cc1efd6/"/>
-    <id>https://brraida.github.io/posts/3cc1efd6/</id>
+    <title>py指令</title>
+    <link href="https://brraida.github.io/posts/c669871/"/>
+    <id>https://brraida.github.io/posts/c669871/</id>
     <published>2021-05-18T09:27:08.000Z</published>
-    <updated>2021-09-02T05:47:42.203Z</updated>
+    <updated>2021-09-02T05:47:42.200Z</updated>
     
-    <content type="html"><![CDATA[<p>​    有时候想白嫖一些资源，但是总会有些资源是压缩加密的。就因为这个，我对爆破很感兴趣。之后有学了python，所以就兴致冲冲地写了爆破脚本。记录一下遇到的问题和解决的方法。</p><p>​    首先，学信安的小伙伴和我讲有字典就简单，代码很简单的。所以我在github在找了如下的字典库。</p><blockquote><p><a href="https://github.com/YueYongDev/Blasting_dictionary">YueYongDev/Blasting_dictionary: 爆破字典 (github.com)</a></p></blockquote><p>​    之后cv网上代码，他用的是zipfile模块（python内置的模块）、rarfile模块(github大佬写的，接口和zipfile差不多)。然后出现问题。</p><h2 id="使用zipfile模块"><a href="#使用zipfile模块" class="headerlink" title="使用zipfile模块"></a>使用zipfile模块</h2><p>​    用zipfile不能解压不是用传统加密的文件。经过科学上网查询得到这样的解答与解决。</p><p><img src="/img/article/py-%E7%88%86%E7%A0%B4/zipfile%E4%B8%8D%E5%8F%AF%E7%94%A8%E8%A7%A3%E7%AD%94.jpg"></p><p>​    <strong>AES</strong>：密码学中的高级加密标准（Advanced Encryption Standard，AES），又称Rijndael加密法，是美国联邦政府采用的一种区块加密标准。</p><p>​    现在加密一般都是按这个标准。</p><h2 id="使用pyzipper模块"><a href="#使用pyzipper模块" class="headerlink" title="使用pyzipper模块"></a>使用pyzipper模块</h2><p>​    所以使用pyzipper模块代替zipfile模块。</p><p>​    给上可执行正确的代码：</p><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> pyzipper<br><br>f1 = <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;D:\\1\\pwd.txt&#x27;</span>, <span class="hljs-string">&#x27;r&#x27;</span>)<br><span class="hljs-keyword">with</span> pyzipper.AESZipFile(<span class="hljs-string">&#x27;D:\\1\\test.zip&#x27;</span>, <span class="hljs-string">&#x27;r&#x27;</span>) <span class="hljs-keyword">as</span> f:<br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> f1:<br>        i = i.rstrip(<span class="hljs-string">&#x27;\n&#x27;</span>)<br>        f.pwd = <span class="hljs-built_in">str</span>.encode(i)<br>        <span class="hljs-keyword">try</span>:<br>            f.extractall(<span class="hljs-string">&#x27;D:\\1\\2&#x27;</span>)<br>            <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;The correct password is:&quot;</span> + i)<br>            <span class="hljs-keyword">break</span><br>        <span class="hljs-keyword">except</span> Exception:<br>            <span class="hljs-keyword">pass</span><br>f1.close()<br></code></pre></div></td></tr></table></figure><h2 id="rarfile模块"><a href="#rarfile模块" class="headerlink" title="rarfile模块"></a>rarfile模块</h2><p>​    使用rarfile模块解压rar文件问题就多了。它解压其实借助的是电脑的解压软件的unrar.exe进行解压。(可以在pypi中查看此模块，可以得到此模块的相关信息与工作原理)</p><p>​    然后我嫌下载unrar太麻烦，还要配置环境变量等等操作，并且我本地用的是WinRAR，所以将WinRAR所在的路径加入环境就解决了。</p><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> rarfile <br><br>path1 = <span class="hljs-string">&#x27;D:\\1\\2.rar&#x27;</span> <br>despath = <span class="hljs-string">&#x27;D:\\1\\2&#x27;</span>  <br><br>rf = rarfile.RarFile(path1)<br>rf.extractall(path=despath)<br>rf.close()<br></code></pre></div></td></tr></table></figure><p>​    经过测试，解压没有密码压缩的可以；解压加密的压缩包里面没有文件的可以。但是不可以解压加密的有文件的压缩包。编译错误显示下图所示：</p><p><img src="/img/article/py-%E7%88%86%E7%A0%B4/%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF%E6%98%BE%E7%A4%BA.png"></p><p>​    所以上rarfile这个项目查了一下，其他的使用者也遇到类似这样的问题。然后有人是这么解决的，如下图所示：</p><p><img src="/img/article/py-%E7%88%86%E7%A0%B4/%E6%8F%90%E9%97%AE%E8%80%85%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.png"></p><p>​    不过，这个14年提出来并解决的。我一个21年的，只能是借鉴参考了。看到后面，果然有个20年的朋友也有这样的问题。</p><p><img src="/img/article/py-%E7%88%86%E7%A0%B4/20%E5%B9%B4%E5%90%8C%E6%8F%90%E9%97%AE%E8%80%85.png"></p><p>​    所以大胆猜测，rarfile这个模块里面确实有些问题。</p><hr><p>​    同样的代码，我室友使用rarfile在他的电脑上跑出来了。</p><p>​    我是Windows10，python3.8.3，Pycharm，压缩软件WinRAR</p><p>​    室友用的是manjaro，python3.9.4，idle，压缩软件是系统自带的</p><hr><h2 id="展望"><a href="#展望" class="headerlink" title="展望"></a>展望</h2><p>​    瞅我这暴脾气，最近考试月。考试月过了，我在搞一下。</p><ol><li>Windows下，下那个unrar，搞配置尝试</li><li>1不行就去CenOs7.4服务器搭个环境尝试</li><li>2不行我也开manjaro尝试</li><li>以上都失败，就可以砸电脑了</li></ol><p>搞成功地进一步设想。</p><ol><li>zip可以了，rar可以了，怎么可以不把它们整合在一起的道理呢。</li><li>爆破怎么可以不搞多线程呢。</li><li>python怎么可以不搞封装呢。</li><li>整个界面。</li></ol>]]></content>
+    <content type="html"><![CDATA[<ol><li><p>在cmd窗口查看python</p><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python">python --version<br></code></pre></div></td></tr></table></figure></li><li><p>查看安装模块或是库</p><figure class="highlight ebnf"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ebnf"><span class="hljs-attribute">pip list</span><br></code></pre></div></td></tr></table></figure></li></ol>]]></content>
     
     
       
