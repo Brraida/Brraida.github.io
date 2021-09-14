@@ -6,7 +6,7 @@
   <link href="https://brraida.github.io/atom.xml" rel="self"/>
   
   <link href="https://brraida.github.io/"/>
-  <updated>2021-09-14T09:50:00.516Z</updated>
+  <updated>2021-09-14T10:04:06.690Z</updated>
   <id>https://brraida.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://brraida.github.io/posts/aed070af/"/>
     <id>https://brraida.github.io/posts/aed070af/</id>
     <published>2021-09-14T08:34:29.000Z</published>
-    <updated>2021-09-14T09:50:00.516Z</updated>
+    <updated>2021-09-14T10:04:06.690Z</updated>
     
     <content type="html"><![CDATA[<p>​    首先，一个域名对应一个服务。所以我以为买来的主域名只能用一次，即只能对应一个服务。但不是，买来的是主域名，还可以创建二级域名，然后用二级域名对应其他的服务，根本就不需要另外买。</p><h2 id="二级域名设置"><a href="#二级域名设置" class="headerlink" title="二级域名设置"></a>二级域名设置</h2><p><img src="/img/article/nginx-2/%E5%9B%BE1-1.png" alt="图1-1"></p><p><img src="/img/article/nginx-2/%E5%9B%BE1-2.png" alt="图1-2"></p><p>二级域名就搞定了。如果要搞SSL证书，去申请，部署。我下面就是个部署例子。</p><p><a href="https://cloud.tencent.com/document/product/400/35244">SSL 证书 Nginx 服务器 SSL 证书安装部署 - 证书安装 - 文档中心 - 腾讯云 (tencent.com)</a></p><hr><h2 id="nginx反向代理理解"><a href="#nginx反向代理理解" class="headerlink" title="nginx反向代理理解"></a>nginx反向代理理解</h2><p>​    之前理解不了nginx反向代理，个人觉得端口和服务是一一对应的（这是对的），他凭什么可以80/443端口转发到不同服务中。现在也理解了。</p><p>​    我举个我自己弄的例子。</p><p><img src="/img/article/nginx-2/%E5%9B%BE2-1.png" alt="图2-1"></p><p>​    如图，当你以<code>https://cloudreve.bao.com</code>访问时，会被443端口监听到，nginx配置中有cloudreve.bao.com上游，所以会转到5212端口，进行相应的cloudreve服务；同理，以<code>https://ttrss.bao.com</code>访问时，会被443端口监听到，nginx配置中有ttrss.bao.com上游，所以会转到181端口，进行相应的ttrss服务。</p><p>​    nginx配置如下:</p><p><img src="/img/article/nginx-2/%E5%9B%BE2-2.png" alt="图2-2"></p><p>server_name就是上游。location就是转到相应的端口进行相应的服务。</p><p>（完）</p>]]></content>
     
