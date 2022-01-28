@@ -18,7 +18,7 @@
   <meta name="author" content="Brraida Hu">
   <meta name="keywords" content="">
   
-  <title>手机换个开源字体 - SunMonkey</title>
+  <title>InstallGitBySourceCode - SunMonkey</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -176,7 +176,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="手机换个开源字体">
+            <span class="h2" id="subtitle" title="InstallGitBySourceCode">
               
             </span>
 
@@ -186,8 +186,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-01-19 21:16" pubdate>
-        2022年1月19日 晚上
+      <time datetime="2022-01-25 20:30" pubdate>
+        2022年1月25日 晚上
       </time>
     </span>
   
@@ -223,28 +223,41 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">手机换个开源字体</h1>
+            <h1 style="display: none">InstallGitBySourceCode</h1>
             
             <div class="markdown-body">
-              <p>​    有时候就是想换个壁纸、换个头像来替换一下心情。而这回我想换个<strong>字体</strong>。</p>
-<p>​    我用的是华为手机Novo7，鸿蒙系统。不使用第三方工具，使用一套“偷梁换柱”将字体换成你想要的字体。</p>
-<hr>
-<p>​    看到一款开源字体，感觉不错。</p>
-<blockquote>
-<p><strong>霞鹜文楷</strong></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/lxgw/LxgwWenKai">https://github.com/lxgw/LxgwWenKai</a></p>
-</blockquote>
-<p>​    </p>
-<ol>
-<li>打开华为的<strong>主题APP</strong>，选择字体，以<strong>免费</strong>为关键字搜索。</li>
-<li>下载任意一款免费字体。</li>
-<li>再下载你自己想要的一款开源或是某些渠道得到的字体。</li>
-<li>打开<strong>文件管理APP</strong>，将步骤3中所下载的字体解压，得到后缀为ttf的字体文件，将其复制或者移动到步骤2的文件夹（所在位置一般为/Huawei/Themes/HWFonts）中。</li>
-<li>记录步骤2下载的字体文件名字，删除该文件；将步骤3中所下载的文件的文件名替换成步骤2文件的文件名。</li>
-<li>在<strong>主题APP</strong>中<strong>应用</strong>步骤2中下载的字体，从而达到偷梁换柱的目的。</li>
-</ol>
-<hr>
-<p> 我现所遇到的问题，用一些APP的时候会偶尔的闪退。</p>
+              <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>腾讯云、centos7</p>
+<h2 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h2><p>​    可能你为了某种需求（比如必须更好地管理文件）而要卸载git，重新安装git。</p>
+<p><strong>一、</strong> </p>
+<p>​    若通过yum安装git，那么只需要执行</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">yum remove git #卸载git<br>which git<br><span class="hljs-meta">#</span><span class="bash">或者</span><br>whereis git #查询git残留<br></code></pre></div></td></tr></table></figure>
+
+
+
+<p><strong>二、</strong></p>
+<p>​    若通过源码安装git</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">which git<br><span class="hljs-meta">#</span><span class="bash">或者</span><br>whereis git #查询git位置<br><span class="hljs-meta">#</span><span class="bash">去相应位置删除git相关文件</span><br>rm -rf git<br></code></pre></div></td></tr></table></figure>
+
+<p>​    最好可以备份一下，那么就可以大胆一下去删除了。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>​    回归正题。</p>
+<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a><strong>下载</strong></h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">wget https://www.kernel.org/pub/software/scm/git/git-2.9.5.tar.gz<br></code></pre></div></td></tr></table></figure>
+
+<p>P.S. 可以在<a target="_blank" rel="noopener" href="https://mirrors.edge.kernel.org/pub/software/scm/git/">这里</a>查找最新版本的git下载，然后替换一下git的版本数字就行。</p>
+<h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">yum -y install curl-devel expat-devel gettext-devel openssl-devel zlib-devel gcc perl-ExtUtils-MakeMaker<br></code></pre></div></td></tr></table></figure>
+
+<p>​    有些依赖安装git时候不会提示，比如没有<strong>curl-devel、expat-devel</strong>将会发生<strong>git:’remote-https’ is not a git command</strong>。</p>
+<h3 id="解压git安装包"><a href="#解压git安装包" class="headerlink" title="解压git安装包"></a>解压git安装包</h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">tar -zxvf git-2.9.5.tar.gz -C /root #将文件解压到root文件夹下<br></code></pre></div></td></tr></table></figure>
+
+<h3 id="配置git"><a href="#配置git" class="headerlink" title="配置git"></a>配置git</h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">cd /root/git-2.9.5<br>.configure -prefix=/usr/local/git/ #将资源文件集中到一个位置，便于管理<br></code></pre></div></td></tr></table></figure>
+
+<h3 id="编译、安装"><a href="#编译、安装" class="headerlink" title="编译、安装"></a>编译、安装</h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">make &amp;&amp; make install<br></code></pre></div></td></tr></table></figure>
+
+<h3 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">vim /etc/profile.d/git.sh	#不在profile中配置，在这里配置是为了便于管理（不同用户有不同的路径需求，在这里配置能够更加清晰明了）<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash">下方为git.sh文件内容</span><br>GIT_HOME=usr/local/git #这样做是为了使用echo查看单环境变量，大可将下方GIT_HOME取代<br>export PATH=$PATH:GIT_HOME/bin<br>export PATH=$PATH:/usr/local/git/libexe/git-core<br><span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment">### wq!</span></span><br><br>source /etc/profile #环境变量生效<br><br>echo $GIT_HOME #查看环境变量<br></code></pre></div></td></tr></table></figure>
+
+<h3 id="查看版本"><a href="#查看版本" class="headerlink" title="查看版本"></a>查看版本</h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">git --verison<br></code></pre></div></td></tr></table></figure>
+
+
+
 
             </div>
             <hr>
@@ -255,7 +268,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E6%89%8B%E6%9C%BA%E6%8A%80%E5%B7%A7/">手机技巧</a>
+                      <a class="hover-with-bg" href="/tags/%E5%AE%89%E8%A3%85/">安装</a>
                     
                   </div>
                 
@@ -272,9 +285,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/b177cd12/">
+                      <a href="/posts/289d0c5f/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">yumProblem_1</span>
+                        <span class="hidden-mobile">linux环境变量</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -282,8 +295,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/1f0fc3c4/">
-                        <span class="hidden-mobile">电脑最大支持内存</span>
+                      <a href="/posts/855ab908/">
+                        <span class="hidden-mobile">linux_about_make</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

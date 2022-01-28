@@ -6,7 +6,7 @@
   <link href="https://brraida.github.io/atom.xml" rel="self"/>
   
   <link href="https://brraida.github.io/"/>
-  <updated>2022-01-19T13:38:07.902Z</updated>
+  <updated>2022-01-28T13:51:16.653Z</updated>
   <id>https://brraida.github.io/</id>
   
   <author>
@@ -15,6 +15,136 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LinuxBasicKnowledge</title>
+    <link href="https://brraida.github.io/posts/fdfafe7c/"/>
+    <id>https://brraida.github.io/posts/fdfafe7c/</id>
+    <published>2022-01-25T13:15:28.000Z</published>
+    <updated>2022-01-28T13:51:16.653Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="linux之颜色"><a href="#linux之颜色" class="headerlink" title="linux之颜色"></a>linux之颜色</h2><p>linux中文件颜色所代表的含义：</p><ol><li><strong>绿色</strong>文件：可执行文件、可执行程序</li><li><strong>红色</strong>文件：压缩文件或者包文件</li><li><strong>蓝色</strong>文件：目录</li><li><strong>白色</strong>文件：一般性文件，如文本文件，配置文件，源码文件</li><li><strong>浅蓝色</strong>文件：链接文件，主要是使用ln命令建立的文件</li><li><strong>红色闪烁</strong>：表示链接文件有问题</li><li><strong>黄色</strong>：表示设备文件</li><li><strong>灰色</strong>：表示其他文件</li></ol><p>主要比较一下浅蓝色和蓝色区别</p><p><img src="/img/article/LinuxBasicKnowledge.assets/image-20220125212209692.png" alt="image-20220125212209692"></p><h2 id="软连接"><a href="#软连接" class="headerlink" title="软连接"></a>软连接</h2><h3 id="建立软链接"><a href="#建立软链接" class="headerlink" title="建立软链接"></a>建立软链接</h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">具体用法是：ln -s 源文件 目标文件。源：实际存放文件的位置<br></code></pre></div></td></tr></table></figure><p>当 我们需要在不同的目录，用到相同的文件时，我们不需要在每一个需要的目录下都放一个必须相同的文件，我们只要在某个固定的目录，放上该文件，然后在其它的 目录下用ln命令链接（link）它就可以，不必重复的占用磁盘空间。</p><p>-s 是代号（symbolic）的意思</p><p><strong>注意</strong></p><p>​    ln的链接又软链接 和硬链接两种</p><ul><li><p> <strong>软链接</strong><code>ln -s ** **</code>,它只会在你选定的位置上生成一个文件的镜像，不会占用磁盘空间</p></li><li><p> <strong>硬链接</strong><code>ln ** **</code>, 没有参数-s, 它会在你选定的位置上生成一个和源文件大小相同的文件</p></li></ul><p>  无论是软链接还是硬链接，文件都保持同步变化</p><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash">比如我的文件在 /opt/cs 下面，我想在 /opt/var/cs 这个路径下面也能访问到，那么应该这样来做</span><br><br>ln -s  /opt/cs   /opt/var     # /opt/var下面不用创建cs这个目录，会自动创建<br></code></pre></div></td></tr></table></figure><h3 id="查看建立的软链接"><a href="#查看建立的软链接" class="headerlink" title="查看建立的软链接"></a>查看建立的软链接</h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">ls -il<br></code></pre></div></td></tr></table></figure><h3 id="删除软链接"><a href="#删除软链接" class="headerlink" title="删除软链接"></a>删除软链接</h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">rm -rf file<br></code></pre></div></td></tr></table></figure><p>正确的删除方式（删除软链接，但不删除实际数据）</p><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">rm -rf ./test_chk_ln<br></code></pre></div></td></tr></table></figure><blockquote><p>转载</p><p><a href="https://www.cnblogs.com/lfxiao/p/9569339.html">https://www.cnblogs.com/lfxiao/p/9569339.html</a></p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html"></summary>
+      
+    
+    
+    
+    
+    <category term="linux" scheme="https://brraida.github.io/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux环境变量</title>
+    <link href="https://brraida.github.io/posts/289d0c5f/"/>
+    <id>https://brraida.github.io/posts/289d0c5f/</id>
+    <published>2022-01-25T13:09:50.000Z</published>
+    <updated>2022-01-28T13:59:05.002Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="环境变量查看"><a href="#环境变量查看" class="headerlink" title="环境变量查看"></a>环境变量查看</h2><ol><li><p>使用<code>echo</code>命令查看单个环境变量。</p><p><code>echo $PATH</code></p></li><li><p>使用<code>env</code>查看所用的环境变量。</p></li><li><p>使用<code>set</code>查看所有本地定义的环境变量。</p></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html"></summary>
+      
+    
+    
+    
+    
+    <category term="linux" scheme="https://brraida.github.io/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>InstallGitBySourceCode</title>
+    <link href="https://brraida.github.io/posts/ca44ae47/"/>
+    <id>https://brraida.github.io/posts/ca44ae47/</id>
+    <published>2022-01-25T12:30:50.000Z</published>
+    <updated>2022-01-28T13:54:03.846Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>腾讯云、centos7</p><h2 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h2><p>​    可能你为了某种需求（比如必须更好地管理文件）而要卸载git，重新安装git。</p><p><strong>一、</strong> </p><p>​    若通过yum安装git，那么只需要执行</p><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">yum remove git #卸载git<br>which git<br><span class="hljs-meta">#</span><span class="bash">或者</span><br>whereis git #查询git残留<br></code></pre></div></td></tr></table></figure><p><strong>二、</strong></p><p>​    若通过源码安装git</p><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">which git<br><span class="hljs-meta">#</span><span class="bash">或者</span><br>whereis git #查询git位置<br><span class="hljs-meta">#</span><span class="bash">去相应位置删除git相关文件</span><br>rm -rf git<br></code></pre></div></td></tr></table></figure><p>​    最好可以备份一下，那么就可以大胆一下去删除了。</p><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>​    回归正题。</p><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a><strong>下载</strong></h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">wget https://www.kernel.org/pub/software/scm/git/git-2.9.5.tar.gz<br></code></pre></div></td></tr></table></figure><p>P.S. 可以在<a href="https://mirrors.edge.kernel.org/pub/software/scm/git/">这里</a>查找最新版本的git下载，然后替换一下git的版本数字就行。</p><h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">yum -y install curl-devel expat-devel gettext-devel openssl-devel zlib-devel gcc perl-ExtUtils-MakeMaker<br></code></pre></div></td></tr></table></figure><p>​    有些依赖安装git时候不会提示，比如没有<strong>curl-devel、expat-devel</strong>将会发生<strong>git:’remote-https’ is not a git command</strong>。</p><h3 id="解压git安装包"><a href="#解压git安装包" class="headerlink" title="解压git安装包"></a>解压git安装包</h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">tar -zxvf git-2.9.5.tar.gz -C /root #将文件解压到root文件夹下<br></code></pre></div></td></tr></table></figure><h3 id="配置git"><a href="#配置git" class="headerlink" title="配置git"></a>配置git</h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">cd /root/git-2.9.5<br>.configure -prefix=/usr/local/git/ #将资源文件集中到一个位置，便于管理<br></code></pre></div></td></tr></table></figure><h3 id="编译、安装"><a href="#编译、安装" class="headerlink" title="编译、安装"></a>编译、安装</h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">make &amp;&amp; make install<br></code></pre></div></td></tr></table></figure><h3 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">vim /etc/profile.d/git.sh#不在profile中配置，在这里配置是为了便于管理（不同用户有不同的路径需求，在这里配置能够更加清晰明了）<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash">下方为git.sh文件内容</span><br>GIT_HOME=usr/local/git #这样做是为了使用echo查看单环境变量，大可将下方GIT_HOME取代<br>export PATH=$PATH:GIT_HOME/bin<br>export PATH=$PATH:/usr/local/git/libexe/git-core<br><span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment">### wq!</span></span><br><br>source /etc/profile #环境变量生效<br><br>echo $GIT_HOME #查看环境变量<br></code></pre></div></td></tr></table></figure><h3 id="查看版本"><a href="#查看版本" class="headerlink" title="查看版本"></a>查看版本</h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">git --verison<br></code></pre></div></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html"></summary>
+      
+    
+    
+    
+    
+    <category term="安装" scheme="https://brraida.github.io/tags/%E5%AE%89%E8%A3%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux_about_make</title>
+    <link href="https://brraida.github.io/posts/855ab908/"/>
+    <id>https://brraida.github.io/posts/855ab908/</id>
+    <published>2022-01-25T07:37:45.000Z</published>
+    <updated>2022-01-28T13:40:54.613Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>源码的安装</strong>一般由这三个步骤组成：</p><ol><li>配置（configure）</li><li>编译（make）</li><li>安装（make install）</li></ol><p>​    其中<strong>prefix</strong>选项就是配置安装的路径，如果不配置该选项，安装后可执行文件默认在/usr/local/bin，库文件默认放在/usr/local/lib，配置文件默认放在/usr/local/etc，其他资源放在/usr/local/share，比较分散。</p><p>​    为了便于集中管理某个软件的各种文件，可以配置-prefix。比如，配置一个Git的文件：</p><p>​    <code>./configure -prefix=/usr/local/git/</code></p><p>可以把所有资源文件放在/usr/local/git的路径中，这样将会更有层次。进行一些更新卸载操作都会比较简单。</p><blockquote><p>转载：</p><p><a href="https://blog.csdn.net/u014042372/article/details/80705408">configure –prefix 的用法_wuzhan的专栏-CSDN博客_prefix</a></p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html"></summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>linux_problem_dependency</title>
+    <link href="https://brraida.github.io/posts/3f0af65b/"/>
+    <id>https://brraida.github.io/posts/3f0af65b/</id>
+    <published>2022-01-25T06:56:39.000Z</published>
+    <updated>2022-01-28T13:47:38.720Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>One of the configured repositories failed…</strong></p><h2 id="现象"><a href="#现象" class="headerlink" title="现象"></a>现象</h2><p>安装依赖的时候出现了奇怪的问题。</p><p><img src="/img/article/linux-problem-dependency.assets/image-20220125150041905.png" alt="image-20220125150041905"></p><p><img src="/img/article/linux-problem-dependency.assets/image-20220125150000581.png" alt="image-20220125150000581"></p><h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">yum remove epel-release<br>yum update<br>yum install epel-release<br></code></pre></div></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html"></summary>
+      
+    
+    
+    
+    
+    <category term="linux" scheme="https://brraida.github.io/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>yumProblem_1</title>
+    <link href="https://brraida.github.io/posts/b177cd12/"/>
+    <id>https://brraida.github.io/posts/b177cd12/</id>
+    <published>2022-01-25T02:01:48.000Z</published>
+    <updated>2022-01-28T13:44:41.920Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="现象"><a href="#现象" class="headerlink" title="现象"></a>现象</h2><p>rpmdb:BDB0113错误</p><p><img src="/img/article/yumProblem-1.assets/image-20220125100614292.png" alt="image-20220125100614292"></p><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>rpm数据库损坏</p><h2 id="解决办法（重新构建rpm数据库）"><a href="#解决办法（重新构建rpm数据库）" class="headerlink" title="解决办法（重新构建rpm数据库）"></a>解决办法（重新构建rpm数据库）</h2><p><img src="/img/article/yumProblem-1.assets/image-20220125100813204.png" alt="image-20220125100813204"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html"></summary>
+      
+    
+    
+    
+    
+    <category term="yum" scheme="https://brraida.github.io/tags/yum/"/>
+    
+  </entry>
   
   <entry>
     <title>手机换个开源字体</title>

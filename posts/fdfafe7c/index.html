@@ -18,9 +18,25 @@
   <meta name="author" content="Brraida Hu">
   <meta name="keywords" content="">
   
-  <title>归档 - SunMonkey</title>
+  <title>LinuxBasicKnowledge - SunMonkey</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/agate.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
 
 
 
@@ -49,7 +65,7 @@
 
 
 <body>
-  <header style="height: 60vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -160,9 +176,31 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="归档">
+            <span class="h2" id="subtitle" title="LinuxBasicKnowledge">
               
             </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-01-25 21:15" pubdate>
+        2022年1月25日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+
+  
+
+  
+  
+</div>
 
             
           </div>
@@ -175,46 +213,122 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 35 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2021</p>
-    
-    <a href="/posts/4f19d5af/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">linux用socket实现文件传输遇到的问题总结</span>
-      <time style="float: right;">04-29</time>
-    </a>
-  
-    
-    <a href="/posts/5d36ff15/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Markdown基本语法</span>
-      <time style="float: right;">04-16</time>
-    </a>
-  
-</div>
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">LinuxBasicKnowledge</h1>
+            
+            <div class="markdown-body">
+              <h2 id="linux之颜色"><a href="#linux之颜色" class="headerlink" title="linux之颜色"></a>linux之颜色</h2><p>linux中文件颜色所代表的含义：</p>
+<ol>
+<li><strong>绿色</strong>文件：可执行文件、可执行程序</li>
+<li><strong>红色</strong>文件：压缩文件或者包文件</li>
+<li><strong>蓝色</strong>文件：目录</li>
+<li><strong>白色</strong>文件：一般性文件，如文本文件，配置文件，源码文件</li>
+<li><strong>浅蓝色</strong>文件：链接文件，主要是使用ln命令建立的文件</li>
+<li><strong>红色闪烁</strong>：表示链接文件有问题</li>
+<li><strong>黄色</strong>：表示设备文件</li>
+<li><strong>灰色</strong>：表示其他文件</li>
+</ol>
+<p>主要比较一下浅蓝色和蓝色区别</p>
+<p><img src="/img/article/LinuxBasicKnowledge.assets/image-20220125212209692.png" srcset="/img/loading.gif" lazyload alt="image-20220125212209692"></p>
+<h2 id="软连接"><a href="#软连接" class="headerlink" title="软连接"></a>软连接</h2><h3 id="建立软链接"><a href="#建立软链接" class="headerlink" title="建立软链接"></a>建立软链接</h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">具体用法是：ln -s 源文件 目标文件。源：实际存放文件的位置<br></code></pre></div></td></tr></table></figure>
+
+<p>当 我们需要在不同的目录，用到相同的文件时，我们不需要在每一个需要的目录下都放一个必须相同的文件，我们只要在某个固定的目录，放上该文件，然后在其它的 目录下用ln命令链接（link）它就可以，不必重复的占用磁盘空间。</p>
+<p>-s 是代号（symbolic）的意思</p>
+<p><strong>注意</strong></p>
+<p>​    ln的链接又软链接 和硬链接两种</p>
+<ul>
+<li><p> <strong>软链接</strong><code>ln -s ** **</code>,它只会在你选定的位置上生成一个文件的镜像，不会占用磁盘空间</p>
+</li>
+<li><p> <strong>硬链接</strong><code>ln ** **</code>, 没有参数-s, 它会在你选定的位置上生成一个和源文件大小相同的文件</p>
+</li>
+</ul>
+<p>  无论是软链接还是硬链接，文件都保持同步变化</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash">比如我的文件在 /opt/cs 下面，我想在 /opt/var/cs 这个路径下面也能访问到，那么应该这样来做</span><br><br>ln -s  /opt/cs   /opt/var     # /opt/var下面不用创建cs这个目录，会自动创建<br></code></pre></div></td></tr></table></figure>
+
+<h3 id="查看建立的软链接"><a href="#查看建立的软链接" class="headerlink" title="查看建立的软链接"></a>查看建立的软链接</h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">ls -il<br></code></pre></div></td></tr></table></figure>
+
+<h3 id="删除软链接"><a href="#删除软链接" class="headerlink" title="删除软链接"></a>删除软链接</h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">rm -rf file<br></code></pre></div></td></tr></table></figure>
+
+<p>正确的删除方式（删除软链接，但不删除实际数据）</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">rm -rf ./test_chk_ln<br></code></pre></div></td></tr></table></figure>
 
 
 
+<blockquote>
+<p>转载</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/lfxiao/p/9569339.html">https://www.cnblogs.com/lfxiao/p/9569339.html</a></p>
+</blockquote>
 
-
-              </div>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/linux/">linux</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/289d0c5f/">
+                        <span class="hidden-mobile">linux环境变量</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -294,9 +408,15 @@
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
 
 
 
