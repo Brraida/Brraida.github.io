@@ -440,9 +440,9 @@
     
     
     
-    <category term="rss" scheme="https://brraida.github.io/tags/rss/"/>
-    
     <category term="hexo" scheme="https://brraida.github.io/tags/hexo/"/>
+    
+    <category term="rss" scheme="https://brraida.github.io/tags/rss/"/>
     
   </entry>
   
