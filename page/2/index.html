@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+<html lang="zh-CN" data-default-color-scheme=auto>
 
 
 
@@ -9,18 +9,25 @@
   <meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="76x76" href="/img/others/favicon.png">
   <link rel="icon" href="/img/others/favicon.png">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="">
   <meta name="author" content="Brraida Hu">
   <meta name="keywords" content="">
   
+    <meta property="og:type" content="website">
+<meta property="og:title" content="SunMonkey">
+<meta property="og:url" content="https://brraida.github.io/page/2/index.html">
+<meta property="og:site_name" content="SunMonkey">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Brraida Hu">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
   <title>SunMonkey</title>
 
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
 
 
@@ -30,7 +37,7 @@
 
 
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
 <link  rel="stylesheet" href="/css/main.css" />
@@ -40,7 +47,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"brraida.github.io","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"brraida.github.io","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -52,8 +59,9 @@
   <header style="height: 80vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand"
-       href="/">&nbsp;<strong>harbour</strong>&nbsp;</a>
+    <a class="navbar-brand" href="/">
+      <strong>harbour</strong>
+    </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -127,13 +135,14 @@
         
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;</a>
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
           </li>
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self">&nbsp;<i
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
                 class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
@@ -197,21 +206,7 @@
       <p class="index-excerpt">
         <a href="/posts/99020374/" target="_self">
           
-          
-            
-          
-          ​    有时候就是想换个壁纸、换个头像来替换一下心情。而这回我想换个字体。
-​    我用的是华为手机Novo7，鸿蒙系统。不使用第三方工具，使用一套“偷梁换柱”将字体换成你想要的字体。
-
-​    看到一款开源字体，感觉不错。
-
-霞鹜文楷
-https://github.com/lxgw/LxgwWenKai
-
-​    
-
-打开华为的主题APP，选择字体，以免费为关键字搜索。
-下载任意一款免费
+          ​    有时候就是想换个壁纸、换个头像来替换一下心情。而这回我想换个字体。 ​    我用的是华为手机Novo7，鸿蒙系统。不使用第三方工具，使用一套“偷梁换柱”将字体换成你想要的字体。  ​    看到一款开源字体，感觉不错。  霞鹜文楷 https:&#x2F;&#x2F;github.com&#x2F;lxgw&#x2F;LxgwWenKai  ​      打开华为的主题APP，选择字体，以免费为关键字搜索。 下载任意一款免费
         </a>
       </p>
 
@@ -257,14 +252,7 @@ https://github.com/lxgw/LxgwWenKai
       <p class="index-excerpt">
         <a href="/posts/1f0fc3c4/" target="_self">
           
-          
-            
-          
-          
-怎样选购笔记本内存条？ - 知乎 (zhihu.com)
-
-​    以前在选购内存条时，参考了此信息。现在对里面的内存最大容量（电脑最大支持内存）感到疑惑，不知道他的影响因素是什么。
-​    经过查阅，原来是CPU和主板同时决定内存条的最大容量，并且遵循的是短板原理（然而绝大部分情况是不考虑CPU的，因为一般来说CPU支持的最大内存&gt;主板支持的最大内存）。比如CPU支持最大的内存是32
+          怎样选购笔记本内存条？ - 知乎 (zhihu.com)  ​    以前在选购内存条时，参考了此信息。现在对里面的内存最大容量（电脑最大支持内存）感到疑惑，不知道他的影响因素是什么。 ​    经过查阅，原来是CPU和主板同时决定内存条的最大容量，并且遵循的是短板原理（然而绝大部分情况是不考虑CPU的，因为一般来说CPU支持的最大内存&gt;主板支持的最大内存）。比如CPU支持最大的内存是32
         </a>
       </p>
 
@@ -310,20 +298,7 @@ https://github.com/lxgw/LxgwWenKai
       <p class="index-excerpt">
         <a href="/posts/132608bd/" target="_self">
           
-          
-            
-          
-          ​    最近在写编译原理的课设，我直接使用vim打代码，而vim的缩进让我的队友看不下去。所以修改一下vim的配置文件。
-
-创建.vimrc配置文件
-vim ~&#x2F;.vimrc
-修改配置文件
-set number
-set tabstop&#x3D;2
-set softtabstop&#x3D;2
-set shiftwidth&#x3D;2
-set noexpandtab
-set auto
+          ​    最近在写编译原理的课设，我直接使用vim打代码，而vim的缩进让我的队友看不下去。所以修改一下vim的配置文件。  创建.vimrc配置文件 vim ~&#x2F;.vimrc 修改配置文件 set number set tabstop&#x3D;2 set softtabstop&#x3D;2 set shiftwidth&#x3D;2 set noexpandtab set auto
         </a>
       </p>
 
@@ -369,14 +344,7 @@ set auto
       <p class="index-excerpt">
         <a href="/posts/aed070af/" target="_self">
           
-          
-            
-          
-          ​    首先，一个域名对应一个服务。所以我以为买来的主域名只能用一次，即只能对应一个服务。但不是，买来的是主域名，还可以创建二级域名，然后用二级域名对应其他的服务，根本就不需要另外买。
-二级域名设置
-
-二级域名就搞定了。如果要搞SSL证书，去申请，部署。我下面就是个部署例子。
-SSL 证书 Nginx 服务器 SSL 证书安装部署 - 证书安装 - 文档中心 - 腾讯云 (tencent.com
+          ​    首先，一个域名对应一个服务。所以我以为买来的主域名只能用一次，即只能对应一个服务。但不是，买来的是主域名，还可以创建二级域名，然后用二级域名对应其他的服务，根本就不需要另外买。 二级域名设置  二级域名就搞定了。如果要搞SSL证书，去申请，部署。我下面就是个部署例子。 SSL 证书 Nginx 服务器 SSL 证书安装部署 - 证书安装 - 文档中心 - 腾讯云 (tencent.com
         </a>
       </p>
 
@@ -424,18 +392,7 @@ SSL 证书 Nginx 服务器 SSL 证书安装部署 - 证书安装 - 文档中心 
       <p class="index-excerpt">
         <a href="/posts/90da9727/" target="_self">
           
-          
-            
-          
-          ​    记录一下原本几分钟的事情，被愚蠢的我硬生生搞了个把小时。
-​    我有一个网易校园邮箱，想要登录到手机自带的电子邮件客户端，然后需要填写smtp和imp一些信息。愚蠢的我按着网上的教程进行，怎么也不行，之后发现网易官网是有教程的。
-
-https://qiye.163.com/help/l-12.html
-
-
-​    我说一下大致过程（我用的是IMAP协议）
-
-在网页版登录账号，在【设
+          ​    记录一下原本几分钟的事情，被愚蠢的我硬生生搞了个把小时。 ​    我有一个网易校园邮箱，想要登录到手机自带的电子邮件客户端，然后需要填写smtp和imp一些信息。愚蠢的我按着网上的教程进行，怎么也不行，之后发现网易官网是有教程的。  https:&#x2F;&#x2F;qiye.163.com&#x2F;help&#x2F;l-12.html   ​    我说一下大致过程（我用的是IMAP协议）  在网页版登录账号，在【设
         </a>
       </p>
 
@@ -481,14 +438,7 @@ https://qiye.163.com/help/l-12.html
       <p class="index-excerpt">
         <a href="/posts/d1c9f41/" target="_self">
           
-          
-            
-          
-          ​    第一次遇到概率论的问题与编程的递归思维结合的题目，除了新奇的感觉之外，还感受到了数学与代码之间细微的美妙。
-​    
-​    解决这个题目有几个要点，一是定球的位置数量要从大到小；二是定球的位置数量最多的那种情况和次多的情况是一样的，所以不要考虑次多的情况。
-​    有空或是无聊的时候再来补充这个题目的代码。
-
+          ​    第一次遇到概率论的问题与编程的递归思维结合的题目，除了新奇的感觉之外，还感受到了数学与代码之间细微的美妙。 ​     ​    解决这个题目有几个要点，一是定球的位置数量要从大到小；二是定球的位置数量最多的那种情况和次多的情况是一样的，所以不要考虑次多的情况。 ​    有空或是无聊的时候再来补充这个题目的代码。
         </a>
       </p>
 
@@ -534,13 +484,7 @@ https://qiye.163.com/help/l-12.html
       <p class="index-excerpt">
         <a href="/posts/b891a459/" target="_self">
           
-          
-            
-          
-          ​    有时候只是当时需要获取某网站的信息，但是该网站需要登录邮箱，而选择登录自己的邮箱，一是泄漏了不必要泄漏的信息，二是可能之后会被广告炮轰。所以使用临时邮箱，就有了必要性和实用性。
-
-github项目:
-sdushantha/tmpmail: A temporary email right from your terminal written in POSIX sh (github.com)
+          ​    有时候只是当时需要获取某网站的信息，但是该网站需要登录邮箱，而选择登录自己的邮箱，一是泄漏了不必要泄漏的信息，二是可能之后会被广告炮轰。所以使用临时邮箱，就有了必要性和实用性。  github项目: sdushantha&#x2F;tmpmail: A temporary email right from your terminal written in POSIX sh (github.com)
         </a>
       </p>
 
@@ -586,16 +530,7 @@ sdushantha/tmpmail: A temporary email right from your terminal written in POSIX 
       <p class="index-excerpt">
         <a href="/posts/7d2eca9c/" target="_self">
           
-          
-            
-          
-          使url看得更顺眼，但要使用插件，这可能一定程度上使网页加载速度变慢。
-使用hexo-abbrlink插件
-
-官方的安装与配置
-rozbo/hexo-abbrlink: create one and only link for every post for hexo (github.com)
-
-
+          使url看得更顺眼，但要使用插件，这可能一定程度上使网页加载速度变慢。 使用hexo-abbrlink插件  官方的安装与配置 rozbo&#x2F;hexo-abbrlink: create one and only link for every post for hexo (github.com)
         </a>
       </p>
 
@@ -641,19 +576,7 @@ rozbo/hexo-abbrlink: create one and only link for every post for hexo (github.co
       <p class="index-excerpt">
         <a href="/posts/d56f63a7/" target="_self">
           
-          
-            
-          
-          为自己的hexo博客制作rss源。
-使用的是hexo的hexo-generator-feed插件。
-
-官方文档与相关配置信息链接:
-hexojs/hexo-generator-feed: Feed generator for Hexo. (github.com)
-
-在_config.yml文件中,在Extensions中添加配置（便于管理）。
-# Feed Atom
-feed:
-  enable:
+          为自己的hexo博客制作rss源。 使用的是hexo的hexo-generator-feed插件。  官方文档与相关配置信息链接: hexojs&#x2F;hexo-generator-feed: Feed generator for Hexo. (github.com)  在_config.yml文件中,在Extensions中添加配置（便于管理）。 # Feed Atom feed:   enable:
         </a>
       </p>
 
@@ -701,16 +624,7 @@ feed:
       <p class="index-excerpt">
         <a href="/posts/dedab3/" target="_self">
           
-          
-            
-          
-          新建一个txt文本，写入:
-Windows Registry Editor Version 5.00
-
-[HKEY_CLASSES_ROOT\.md]
-@&#x3D;&quot;Typora.md&quot;
-&quot;Content Type&quot;&#x3D;&quot;text&#x2F;markdown&quot;
-&quot;PerceivedType&quot;&#x3D;&qu
+          新建一个txt文本，写入: Windows Registry Editor Version 5.00  [HKEY_CLASSES_ROOT\.md] @&#x3D;&quot;Typora.md&quot; &quot;Content Type&quot;&#x3D;&quot;text&#x2F;markdown&quot; &quot;PerceivedType&quot;&#x3D;&amp;qu
         </a>
       </p>
 
@@ -754,7 +668,7 @@ Windows Registry Editor Version 5.00
     
 
     
-      <a id="scroll-top-button" href="#" role="button">
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
         <i class="iconfont icon-arrowup" aria-hidden="true"></i>
       </a>
     
@@ -800,8 +714,8 @@ Windows Registry Editor Version 5.00
 
   <!-- SCRIPTS -->
   
-  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
 
   <script>
     NProgress.configure({"showSpinner":false,"trickleSpeed":100})
@@ -812,12 +726,16 @@ Windows Registry Editor Version 5.00
   </script>
 
 
-<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
-<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
 <!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
 
 
   
@@ -828,10 +746,10 @@ Windows Registry Editor Version 5.00
 
   
     
-      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-core.min.js" ></script>
-      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js" ></script>
+      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js" ></script>
+      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js" ></script>
       
-        <script  src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.js" ></script>
+        <script  src="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.js" ></script>
       
     
   
@@ -843,25 +761,13 @@ Windows Registry Editor Version 5.00
 
 
 
-
-  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
-
-
-
-  <script  src="/js/local-search.js" ></script>
-
-
-
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
   <script>
     (function (window, document) {
       var typing = Fluid.plugins.typing;
       var title = document.getElementById('subtitle').title;
       
-      typing(title)
+        typing(title);
       
     })(window, document);
   </script>

@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+<html lang="zh-CN" data-default-color-scheme=auto>
 
 
 
@@ -9,18 +9,25 @@
   <meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="76x76" href="/img/others/favicon.png">
   <link rel="icon" href="/img/others/favicon.png">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="">
   <meta name="author" content="Brraida Hu">
   <meta name="keywords" content="">
   
+    <meta property="og:type" content="website">
+<meta property="og:title" content="SunMonkey">
+<meta property="og:url" content="https://brraida.github.io/index.html">
+<meta property="og:site_name" content="SunMonkey">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Brraida Hu">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
   <title>SunMonkey</title>
 
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
 
 
@@ -30,7 +37,7 @@
 
 
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
 <link  rel="stylesheet" href="/css/main.css" />
@@ -40,7 +47,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"brraida.github.io","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"brraida.github.io","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -52,8 +59,9 @@
   <header style="height: 80vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand"
-       href="/">&nbsp;<strong>harbour</strong>&nbsp;</a>
+    <a class="navbar-brand" href="/">
+      <strong>harbour</strong>
+    </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -127,13 +135,14 @@
         
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;</a>
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
           </li>
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self">&nbsp;<i
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
                 class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
@@ -197,19 +206,7 @@
       <p class="index-excerpt">
         <a href="/posts/e531a5f8/" target="_self">
           
-          
-            
-          
-          ​    发现一个好的工具，可视化的容器管理工具。
-
-官网：
-Container Management | Kubernetes GUI | Docker Swarm GUI | Portainer
-
-​    个人版是免费的，官网有教程。但是鉴于自己英语不是非常好，并且想尽可能尝试这个项目，因此装一个汉化版的。
-​    一切安装命令都是以root用户进行的。
-
-创建缓存
-docker volu
+          ​    发现一个好的工具，可视化的容器管理工具。  官网： Container Management | Kubernetes GUI | Docker Swarm GUI | Portainer  ​    个人版是免费的，官网有教程。但是鉴于自己英语不是非常好，并且想尽可能尝试这个项目，因此装一个汉化版的。 ​    一切安装命令都是以root用户进行的。  创建缓存 docker volu
         </a>
       </p>
 
@@ -259,14 +256,7 @@ docker volu
       <p class="index-excerpt">
         <a href="/posts/d6cb9e1e/" target="_self">
           
-          
-            
-          
-          背景​    某个项目推荐使用非root用户进行部署,在这个过程中谈谈对新用户的建立,使用ssh的密钥对方式进行登录,其中遇到的一些问题和一些见解。
-准备​    使用的是腾讯云服务器,系统用的是Debian10.2；
-​    两对密钥,一对是用于root,一对是用于测试普通用户；
-​    Xshell客户端进行ssh登录。
-步骤1.在腾讯云的控制台上获取密钥对,下载密钥到本地,并绑定实例。n
+          背景​    某个项目推荐使用非root用户进行部署,在这个过程中谈谈对新用户的建立,使用ssh的密钥对方式进行登录,其中遇到的一些问题和一些见解。 准备​    使用的是腾讯云服务器,系统用的是Debian10.2； ​    两对密钥,一对是用于root,一对是用于测试普通用户； ​    Xshell客户端进行ssh登录。 步骤1.在腾讯云的控制台上获取密钥对,下载密钥到本地,并绑定实例。n
         </a>
       </p>
 
@@ -314,26 +304,7 @@ docker volu
       <p class="index-excerpt">
         <a href="/posts/94ca0eb1/" target="_self">
           
-          
-            
-          
-          ​    有被华为的智能搜索“冒犯”到。
-
-转载:
-如何关闭华为的智慧搜索?就是下图的这个，好烦？ - 知乎 (zhihu.com)
-
-准备
-电脑
-数据线
-ADB工具
-
-
-ADB工具下载地址：
-https://brraida.lanzouy.com/b030ol6yj密码:8f7e
-
-note：
-​    ADB文件夹最好放置于无中文字符。
-开始1.打开手机USB调试​    1.1 打开开发者选
+          ​    有被华为的智能搜索“冒犯”到。  转载: 如何关闭华为的智慧搜索?就是下图的这个，好烦？ - 知乎 (zhihu.com)  准备 电脑 数据线 ADB工具   ADB工具下载地址： https:&#x2F;&#x2F;brraida.lanzouy.com&#x2F;b030ol6yj密码:8f7e  note： ​    ADB文件夹最好放置于无中文字符。 开始1.打开手机USB调试​    1.1 打开开发者选
         </a>
       </p>
 
@@ -379,13 +350,7 @@ note：
       <p class="index-excerpt">
         <a href="/posts/13fbfbd4/" target="_self">
           
-          
-            
-          
-          使用规则​    cfw版本用的是0.19.7。如果偶尔科学上网，不配置也没问题。日常使用，如果使用全局代理的话，就不能访问国内的一些网站。所以使用规则代理。
-
-项目地址：Loyalsoldier/clash-rules: 🦄️ 🎃 👻 Clash Premium 规则集(RULE-SET)，兼容 ClashX Pro、Clash for Windows 客户端。 (github.com)
-
+          使用规则​    cfw版本用的是0.19.7。如果偶尔科学上网，不配置也没问题。日常使用，如果使用全局代理的话，就不能访问国内的一些网站。所以使用规则代理。  项目地址：Loyalsoldier&#x2F;clash-rules: 🦄️ 🎃 👻 Clash Premium 规则集(RULE-SET)，兼容 ClashX Pro、Clash for Windows 客户端。 (github.com)
         </a>
       </p>
 
@@ -431,23 +396,7 @@ note：
       <p class="index-excerpt">
         <a href="/posts/fdfafe7c/" target="_self">
           
-          
-            
-          
-          linux之颜色linux中文件颜色所代表的含义：
-
-绿色文件：可执行文件、可执行程序
-红色文件：压缩文件或者包文件
-蓝色文件：目录
-白色文件：一般性文件，如文本文件，配置文件，源码文件
-浅蓝色文件：链接文件，主要是使用ln命令建立的文件
-红色闪烁：表示链接文件有问题
-黄色：表示设备文件
-灰色：表示其他文件
-
-主要比较一下浅蓝色和蓝色区别
-
-软连接建立软链接具体用法是：ln -s 源文件 目标文件
+          linux之颜色linux中文件颜色所代表的含义：  绿色文件：可执行文件、可执行程序 红色文件：压缩文件或者包文件 蓝色文件：目录 白色文件：一般性文件，如文本文件，配置文件，源码文件 浅蓝色文件：链接文件，主要是使用ln命令建立的文件 红色闪烁：表示链接文件有问题 黄色：表示设备文件 灰色：表示其他文件  主要比较一下浅蓝色和蓝色区别  软连接建立软链接具体用法是：ln -s 源文件 目标文件
         </a>
       </p>
 
@@ -493,19 +442,7 @@ note：
       <p class="index-excerpt">
         <a href="/posts/289d0c5f/" target="_self">
           
-          
-            
-          
-          环境变量查看
-使用echo命令查看单个环境变量。
-echo $PATH
-
-使用env查看所用的环境变量。
-
-使用set查看所有本地定义的环境变量。
-
-
-
+          环境变量查看 使用echo命令查看单个环境变量。 echo $PATH  使用env查看所用的环境变量。  使用set查看所有本地定义的环境变量。
         </a>
       </p>
 
@@ -551,25 +488,7 @@ echo $PATH
       <p class="index-excerpt">
         <a href="/posts/ca44ae47/" target="_self">
           
-          
-            
-          
-          环境腾讯云、centos7
-卸载​    可能你为了某种需求（比如必须更好地管理文件）而要卸载git，重新安装git。
-一、 
-​    若通过yum安装git，那么只需要执行
-yum remove git #卸载git
-which git
-#或者
-whereis git #查询git残留
-
-
-
-二、
-​    若通过源码安装git
-which git
-#或者
-whereis git #查询git
+          环境腾讯云、centos7 卸载​    可能你为了某种需求（比如必须更好地管理文件）而要卸载git，重新安装git。 一、  ​    若通过yum安装git，那么只需要执行 yum remove git #卸载git which git #或者 whereis git #查询git残留    二、 ​    若通过源码安装git which git #或者 whereis git #查询git
         </a>
       </p>
 
@@ -617,17 +536,7 @@ whereis git #查询git
       <p class="index-excerpt">
         <a href="/posts/855ab908/" target="_self">
           
-          
-            
-          
-          源码的安装一般由这三个步骤组成：
-
-配置（configure）
-编译（make）
-安装（make install）
-
-​    其中prefix选项就是配置安装的路径，如果不配置该选项，安装后可执行文件默认在/usr/local/bin，库文件默认放在/usr/local/lib，配置文件默认放在/usr/local/etc，其他资源放在/usr/local/share，比较分散。
-​    为了
+          源码的安装一般由这三个步骤组成：  配置（configure） 编译（make） 安装（make install）  ​    其中prefix选项就是配置安装的路径，如果不配置该选项，安装后可执行文件默认在&#x2F;usr&#x2F;local&#x2F;bin，库文件默认放在&#x2F;usr&#x2F;local&#x2F;lib，配置文件默认放在&#x2F;usr&#x2F;local&#x2F;etc，其他资源放在&#x2F;usr&#x2F;local&#x2F;share，比较分散。 ​    为了
         </a>
       </p>
 
@@ -666,18 +575,7 @@ whereis git #查询git
       <p class="index-excerpt">
         <a href="/posts/3f0af65b/" target="_self">
           
-          
-            
-          
-          One of the configured repositories failed…
-现象安装依赖的时候出现了奇怪的问题。
-
-
-解决方法yum remove epel-release
-yum update
-yum install epel-release
-
-
+          One of the configured repositories failed… 现象安装依赖的时候出现了奇怪的问题。   解决方法yum remove epel-release yum update yum install epel-release
         </a>
       </p>
 
@@ -723,14 +621,7 @@ yum install epel-release
       <p class="index-excerpt">
         <a href="/posts/b177cd12/" target="_self">
           
-          
-            
-          
-          现象rpmdb:BDB0113错误
-
-原因rpm数据库损坏
-解决办法（重新构建rpm数据库）
-
+          现象rpmdb:BDB0113错误  原因rpm数据库损坏 解决办法（重新构建rpm数据库）
         </a>
       </p>
 
@@ -776,7 +667,7 @@ yum install epel-release
     
 
     
-      <a id="scroll-top-button" href="#" role="button">
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
         <i class="iconfont icon-arrowup" aria-hidden="true"></i>
       </a>
     
@@ -822,8 +713,8 @@ yum install epel-release
 
   <!-- SCRIPTS -->
   
-  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
 
   <script>
     NProgress.configure({"showSpinner":false,"trickleSpeed":100})
@@ -834,12 +725,16 @@ yum install epel-release
   </script>
 
 
-<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
-<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
 <!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
 
 
   
@@ -850,10 +745,10 @@ yum install epel-release
 
   
     
-      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-core.min.js" ></script>
-      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js" ></script>
+      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js" ></script>
+      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js" ></script>
       
-        <script  src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.js" ></script>
+        <script  src="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.js" ></script>
       
     
   
@@ -865,25 +760,13 @@ yum install epel-release
 
 
 
-
-  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
-
-
-
-  <script  src="/js/local-search.js" ></script>
-
-
-
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
   <script>
     (function (window, document) {
       var typing = Fluid.plugins.typing;
       var title = document.getElementById('subtitle').title;
       
-      typing(title)
+        typing(title);
       
     })(window, document);
   </script>

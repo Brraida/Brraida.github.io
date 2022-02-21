@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+<html lang="zh-CN" data-default-color-scheme=auto>
 
 
 
@@ -9,18 +9,25 @@
   <meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="76x76" href="/img/others/favicon.png">
   <link rel="icon" href="/img/others/favicon.png">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="">
   <meta name="author" content="Brraida Hu">
   <meta name="keywords" content="">
   
+    <meta property="og:type" content="website">
+<meta property="og:title" content="SunMonkey">
+<meta property="og:url" content="https://brraida.github.io/page/4/index.html">
+<meta property="og:site_name" content="SunMonkey">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Brraida Hu">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
   <title>SunMonkey</title>
 
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
 
 
@@ -30,7 +37,7 @@
 
 
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
 <link  rel="stylesheet" href="/css/main.css" />
@@ -40,7 +47,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"brraida.github.io","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"brraida.github.io","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -52,8 +59,9 @@
   <header style="height: 80vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand"
-       href="/">&nbsp;<strong>harbour</strong>&nbsp;</a>
+    <a class="navbar-brand" href="/">
+      <strong>harbour</strong>
+    </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -127,13 +135,14 @@
         
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;</a>
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
           </li>
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self">&nbsp;<i
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
                 class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
@@ -197,24 +206,7 @@
       <p class="index-excerpt">
         <a href="/posts/16fe430b/" target="_self">
           
-          
-            
-          
-          
-该博文写于2021.6.1
-
-​    腾讯云，centos7.6，linux3.10.0-1160.11.1.el7.x86_64
-​    尝试了几种方法，在失败与成功之中，选出与这种配置最快最适合的方法。愿你早日顺利入坑。
-
-升级yum源
-
-yum -y update  //升级所有包的同时，也升级软件和系统内核
-
-
-
-我是将镜像重置后，上来就升级，忘记快照了。不过也无所谓啦。
-
-安装ng
+          该博文写于2021.6.1  ​    腾讯云，centos7.6，linux3.10.0-1160.11.1.el7.x86_64 ​    尝试了几种方法，在失败与成功之中，选出与这种配置最快最适合的方法。愿你早日顺利入坑。  升级yum源  yum -y update  &#x2F;&#x2F;升级所有包的同时，也升级软件和系统内核    我是将镜像重置后，上来就升级，忘记快照了。不过也无所谓啦。  安装ng
         </a>
       </p>
 
@@ -262,22 +254,7 @@ yum -y update  //升级所有包的同时，也升级软件和系统内核
       <p class="index-excerpt">
         <a href="/posts/dbc31271/" target="_self">
           
-          
-            
-          
-          
-该博文写于2021.5.31
-
-nginx安装与部署​        本来想写nginx的安装，但是发现nginx的中文文档写得不错，然后会持续更新（这个太重要了）。也可以结合nginx的官方文档看。
-​        偷个懒，放个链接好了：
-
-nginx中文文档：nginx
-
-nginx官方文档：nginx documentation
-
-
-
-nginx概念​        可能你和我一样，是用
+          该博文写于2021.5.31  nginx安装与部署​        本来想写nginx的安装，但是发现nginx的中文文档写得不错，然后会持续更新（这个太重要了）。也可以结合nginx的官方文档看。 ​        偷个懒，放个链接好了：  nginx中文文档：nginx  nginx官方文档：nginx documentation    nginx概念​        可能你和我一样，是用
         </a>
       </p>
 
@@ -325,24 +302,7 @@ nginx概念​        可能你和我一样，是用
       <p class="index-excerpt">
         <a href="/posts/430d67de/" target="_self">
           
-          
-            
-          
-          2021-5-17
-
-
-花了我100多大洋买了个服务器，搞起来！
-将项目移植到其他地方，改了半天的绝对路径。突然发现绝对路径的好处。
-
-2021-6-9
-
-
-YAML是一个可读性高，用来表达数据序列化的格式。
-
-XML是一种标记电子文件使其具有结构性的标记语言。
-
-
-
+          2021-5-17   花了我100多大洋买了个服务器，搞起来！ 将项目移植到其他地方，改了半天的绝对路径。突然发现绝对路径的好处。  2021-6-9   YAML是一个可读性高，用来表达数据序列化的格式。  XML是一种标记电子文件使其具有结构性的标记语言。
         </a>
       </p>
 
@@ -388,18 +348,7 @@ XML是一种标记电子文件使其具有结构性的标记语言。
       <p class="index-excerpt">
         <a href="/posts/cc129669/" target="_self">
           
-          
-            
-          
-          DFA与NFA的区别    
-
-这两个的主要最明显的区别就是DFA经过某一路径，到达另一个状态是确定的、唯一的。而NFA不是，而是可以到达一个或是多个状态的。也就是说，DFA是NFA的一种特例。
-
-DFA的某一路径是的值是没有空串的。（那时候不知道这一点，在NFA进行确定化的时候，经空串也进行了计算，大失败！）
-
-
-有时候吧，想对答案的地方都没有，以后将编译原理的作业整理，丢上来。
-
+          DFA与NFA的区别      这两个的主要最明显的区别就是DFA经过某一路径，到达另一个状态是确定的、唯一的。而NFA不是，而是可以到达一个或是多个状态的。也就是说，DFA是NFA的一种特例。  DFA的某一路径是的值是没有空串的。（那时候不知道这一点，在NFA进行确定化的时候，经空串也进行了计算，大失败！）   有时候吧，想对答案的地方都没有，以后将编译原理的作业整理，丢上来。
         </a>
       </p>
 
@@ -445,16 +394,7 @@ DFA的某一路径是的值是没有空串的。（那时候不知道这一点�
       <p class="index-excerpt">
         <a href="/posts/c669871/" target="_self">
           
-          
-            
-          
-          
-在cmd窗口查看python
-python --version
-查看安装模块或是库
-pip list
-
-
+          在cmd窗口查看python python --version 查看安装模块或是库 pip list
         </a>
       </p>
 
@@ -502,15 +442,7 @@ pip list
       <p class="index-excerpt">
         <a href="/posts/3cc1efd6/" target="_self">
           
-          
-            
-          
-          ​    有时候想白嫖一些资源，但是总会有些资源是压缩加密的。就因为这个，我对爆破很感兴趣。之后有学了python，所以就兴致冲冲地写了爆破脚本。记录一下遇到的问题和解决的方法。
-​    首先，学信安的小伙伴和我讲有字典就简单，代码很简单的。所以我在github在找了如下的字典库。
-
-YueYongDev/Blasting_dictionary: 爆破字典 (github.com)
-
-​    
+          ​    有时候想白嫖一些资源，但是总会有些资源是压缩加密的。就因为这个，我对爆破很感兴趣。之后有学了python，所以就兴致冲冲地写了爆破脚本。记录一下遇到的问题和解决的方法。 ​    首先，学信安的小伙伴和我讲有字典就简单，代码很简单的。所以我在github在找了如下的字典库。  YueYongDev&#x2F;Blasting_dictionary: 爆破字典 (github.com)  ​
         </a>
       </p>
 
@@ -556,12 +488,7 @@ YueYongDev/Blasting_dictionary: 爆破字典 (github.com)
       <p class="index-excerpt">
         <a href="/posts/a629f612/" target="_self">
           
-          
-            
-          
-          ​    最近和小组合作完成os课设，每个人写的项目不一样，所以最后各自文档合并的时候就不得不进行排版。下面是我为了完成某个目的的word技巧的记录。
-我用的是word版本是office 2016
-一次性选择同类内容​    大家都写了一级标题、二级标题、正文等，但是合并的时候发现一级标题、二级标题、正文字体、字号不一样。然后想要统一。若是一个个格式刷是不切实际的，效率低下。那么如何快速选择全部同
+          ​    最近和小组合作完成os课设，每个人写的项目不一样，所以最后各自文档合并的时候就不得不进行排版。下面是我为了完成某个目的的word技巧的记录。 我用的是word版本是office 2016 一次性选择同类内容​    大家都写了一级标题、二级标题、正文等，但是合并的时候发现一级标题、二级标题、正文字体、字号不一样。然后想要统一。若是一个个格式刷是不切实际的，效率低下。那么如何快速选择全部同
         </a>
       </p>
 
@@ -607,21 +534,7 @@ YueYongDev/Blasting_dictionary: 爆破字典 (github.com)
       <p class="index-excerpt">
         <a href="/posts/4f19d5af/" target="_self">
           
-          
-            
-          
-          ​    最近在写linux作业，要求是这样的：
-
-实现一个网络文件传输工具，可以使用文件和目录的传输；
-
-增加共享目录，可以增加和删除共享的目录和文件，供网络查看；
-
-可以查看对方共享目录和文件，并选择下载；
-
-可以向对方传送文件和目录，并且该文件和目录会自动被对方共享。
-
-
-​    然后使用socket完成了在本地上文件的传输，之后想使用不同主机尝试传输，发现不行。开始了查找原因之旅，解决了
+          ​    最近在写linux作业，要求是这样的：  实现一个网络文件传输工具，可以使用文件和目录的传输；  增加共享目录，可以增加和删除共享的目录和文件，供网络查看；  可以查看对方共享目录和文件，并选择下载；  可以向对方传送文件和目录，并且该文件和目录会自动被对方共享。   ​    然后使用socket完成了在本地上文件的传输，之后想使用不同主机尝试传输，发现不行。开始了查找原因之旅，解决了
         </a>
       </p>
 
@@ -669,26 +582,7 @@ YueYongDev/Blasting_dictionary: 爆破字典 (github.com)
       <p class="index-excerpt">
         <a href="/posts/5d36ff15/" target="_self">
           
-          
-            
-          
-          Markdown基本常用语法标题
-井号空格标题            一级标题
-井号井号空格标题    二级标题
-…以此类推，最多有六级标题
-
-字体
-星号星号文字星号星号空格        加粗
-星号文字星号                               斜体
-星号星号星号文字星号星号星号 斜体加粗
-
-引用​    大于号空格
-
-螃蟹在剥我的壳
-
-分割线​    三个星号空格
-
-or
+          Markdown基本常用语法标题 井号空格标题            一级标题 井号井号空格标题    二级标题 …以此类推，最多有六级标题  字体 星号星号文字星号星号空格        加粗 星号文字星号                               斜体 星号星号星号文字星号星号星号 斜体加粗  引用​    大于号空格  螃蟹在剥我的壳  分割线​    三个星号空格  or
         </a>
       </p>
 
@@ -732,7 +626,7 @@ or
     
 
     
-      <a id="scroll-top-button" href="#" role="button">
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
         <i class="iconfont icon-arrowup" aria-hidden="true"></i>
       </a>
     
@@ -778,8 +672,8 @@ or
 
   <!-- SCRIPTS -->
   
-  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
 
   <script>
     NProgress.configure({"showSpinner":false,"trickleSpeed":100})
@@ -790,12 +684,16 @@ or
   </script>
 
 
-<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
-<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
 <!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
 
 
   
@@ -806,10 +704,10 @@ or
 
   
     
-      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-core.min.js" ></script>
-      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js" ></script>
+      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js" ></script>
+      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js" ></script>
       
-        <script  src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.js" ></script>
+        <script  src="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.js" ></script>
       
     
   
@@ -821,25 +719,13 @@ or
 
 
 
-
-  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
-
-
-
-  <script  src="/js/local-search.js" ></script>
-
-
-
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
   <script>
     (function (window, document) {
       var typing = Fluid.plugins.typing;
       var title = document.getElementById('subtitle').title;
       
-      typing(title)
+        typing(title);
       
     })(window, document);
   </script>
