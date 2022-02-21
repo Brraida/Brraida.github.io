@@ -1,0 +1,586 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/others/favicon.png">
+  <link rel="icon" href="/img/others/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="Brraida Hu">
+  <meta name="keywords" content="">
+  
+  <title>cfw_SpecialTricks - SunMonkey</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      
+        
+          
+          
+          
+        
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism-solarizedlight.min.css" />
+      
+      
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.css" />
+      
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"brraida.github.io","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="SunMonkey" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>harbour</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://brraida.github.io/atom.xml">
+                <i class="iconfont icon-rss"></i>
+                rss
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="cfw_SpecialTricks">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-01-29 12:42" pubdate>
+        2022年1月29日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">cfw_SpecialTricks</h1>
+            
+            <div class="markdown-body">
+              <h2 id="使用规则"><a href="#使用规则" class="headerlink" title="使用规则"></a>使用规则</h2><p>​    cfw版本用的是0.19.7。如果偶尔科学上网，不配置也没问题。日常使用，如果使用全局代理的话，就不能访问国内的一些网站。所以使用规则代理。</p>
+<blockquote>
+<p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/Loyalsoldier/clash-rules">Loyalsoldier/clash-rules: 🦄️ 🎃 👻 Clash Premium 规则集(RULE-SET)，兼容 ClashX Pro、Clash for Windows 客户端。 (github.com)</a></p>
+</blockquote>
+<p>​    有可能是第一次需求，不知道从何下手，所以我就进行简单的、较为完整的叙述。</p>
+<ol>
+<li>点击下图中<code>Home Directory</code>栏的<code>Open Folder</code></li>
+</ol>
+<p><img src="/img/article/cfw-SpecialTricks.assets/image-20220129124944723.png" srcset="/img/loading.gif" lazyload alt="image-20220129124944723"></p>
+<ol start="2">
+<li><p>用记事本或是vscode打开<code>config.yaml</code></p>
+</li>
+<li><p>复制如下代码</p>
+<div class="code-wrapper"><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">rule-providers:
+  reject:
+    type: http
+    behavior: domain
+    url: &quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;Loyalsoldier&#x2F;clash-rules@release&#x2F;reject.txt&quot;
+    path: .&#x2F;ruleset&#x2F;reject.yaml
+    interval: 86400
+
+  icloud:
+    type: http
+    behavior: domain
+    url: &quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;Loyalsoldier&#x2F;clash-rules@release&#x2F;icloud.txt&quot;
+    path: .&#x2F;ruleset&#x2F;icloud.yaml
+    interval: 86400
+
+  apple:
+    type: http
+    behavior: domain
+    url: &quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;Loyalsoldier&#x2F;clash-rules@release&#x2F;apple.txt&quot;
+    path: .&#x2F;ruleset&#x2F;apple.yaml
+    interval: 86400
+
+  google:
+    type: http
+    behavior: domain
+    url: &quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;Loyalsoldier&#x2F;clash-rules@release&#x2F;google.txt&quot;
+    path: .&#x2F;ruleset&#x2F;google.yaml
+    interval: 86400
+
+  proxy:
+    type: http
+    behavior: domain
+    url: &quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;Loyalsoldier&#x2F;clash-rules@release&#x2F;proxy.txt&quot;
+    path: .&#x2F;ruleset&#x2F;proxy.yaml
+    interval: 86400
+
+  direct:
+    type: http
+    behavior: domain
+    url: &quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;Loyalsoldier&#x2F;clash-rules@release&#x2F;direct.txt&quot;
+    path: .&#x2F;ruleset&#x2F;direct.yaml
+    interval: 86400
+
+  private:
+    type: http
+    behavior: domain
+    url: &quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;Loyalsoldier&#x2F;clash-rules@release&#x2F;private.txt&quot;
+    path: .&#x2F;ruleset&#x2F;private.yaml
+    interval: 86400
+
+  gfw:
+    type: http
+    behavior: domain
+    url: &quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;Loyalsoldier&#x2F;clash-rules@release&#x2F;gfw.txt&quot;
+    path: .&#x2F;ruleset&#x2F;gfw.yaml
+    interval: 86400
+
+  greatfire:
+    type: http
+    behavior: domain
+    url: &quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;Loyalsoldier&#x2F;clash-rules@release&#x2F;greatfire.txt&quot;
+    path: .&#x2F;ruleset&#x2F;greatfire.yaml
+    interval: 86400
+
+  tld-not-cn:
+    type: http
+    behavior: domain
+    url: &quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;Loyalsoldier&#x2F;clash-rules@release&#x2F;tld-not-cn.txt&quot;
+    path: .&#x2F;ruleset&#x2F;tld-not-cn.yaml
+    interval: 86400
+
+  telegramcidr:
+    type: http
+    behavior: ipcidr
+    url: &quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;Loyalsoldier&#x2F;clash-rules@release&#x2F;telegramcidr.txt&quot;
+    path: .&#x2F;ruleset&#x2F;telegramcidr.yaml
+    interval: 86400
+
+  cncidr:
+    type: http
+    behavior: ipcidr
+    url: &quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;Loyalsoldier&#x2F;clash-rules@release&#x2F;cncidr.txt&quot;
+    path: .&#x2F;ruleset&#x2F;cncidr.yaml
+    interval: 86400
+
+  lancidr:
+    type: http
+    behavior: ipcidr
+    url: &quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;Loyalsoldier&#x2F;clash-rules@release&#x2F;lancidr.txt&quot;
+    path: .&#x2F;ruleset&#x2F;lancidr.yaml
+    interval: 86400
+
+  applications:
+    type: http
+    behavior: classical
+    url: &quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;Loyalsoldier&#x2F;clash-rules@release&#x2F;applications.txt&quot;
+    path: .&#x2F;ruleset&#x2F;applications.yaml
+    interval: 86400</code></pre></div>
+
+<p>添加到config.yaml文件末尾</p>
+<hr>
+<p>复制如下代码(白名单模式)</p>
+<div class="code-wrapper"><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">rules:
+  - RULE-SET,applications,DIRECT
+  - DOMAIN,clash.razord.top,DIRECT
+  - DOMAIN,yacd.haishan.me,DIRECT
+  - RULE-SET,private,DIRECT
+  - RULE-SET,reject,REJECT
+  - RULE-SET,icloud,DIRECT
+  - RULE-SET,apple,DIRECT
+  - RULE-SET,google,DIRECT
+  - RULE-SET,proxy,PROXY
+  - RULE-SET,direct,DIRECT
+  - RULE-SET,lancidr,DIRECT
+  - RULE-SET,cncidr,DIRECT
+  - RULE-SET,telegramcidr,PROXY
+  - GEOIP,,DIRECT
+  - GEOIP,CN,DIRECT
+  - MATCH,PROXY</code></pre></div>
+
+<p>将原本文件中的<code>rules</code>取代</p>
+</li>
+<li><p>重启cfw，软件将会自动配置生成一个<code>ruleset</code>的新文件夹。可能会提醒出错（忘记截图了），选<code>repair</code>，然后<code>confirm</code>即会帮你自动修复。</p>
+</li>
+</ol>
+<p>附上配置规则成功后的截图：</p>
+<p><img src="/img/article/cfw-SpecialTricks.assets/image-20220129140754975.png" srcset="/img/loading.gif" lazyload alt="image-20220129140754975"></p>
+<h2 id="allow-lan"><a href="#allow-lan" class="headerlink" title="allow lan"></a>allow lan</h2><p>​    说说cfw的这个选项是干嘛的。简单的说，就是他可以实现局域网下其他设备科学上网。</p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>​    <strong>电脑端</strong></p>
+<p>​    开启后会得到如下信息：</p>
+<p><img src="/img/article/cfw-SpecialTricks.assets/image-20220129141231761.png" srcset="/img/loading.gif" lazyload alt="image-20220129141231761"></p>
+<p>​    <strong>Ipad端</strong>(我测试的是)</p>
+<p>​        <img src="/img/article/cfw-SpecialTricks.assets/B17EDD0A35EC9BCB380B55FAE0E7AD68.png" srcset="/img/loading.gif" lazyload alt="iPad设置"></p>
+<p>然后就可以科学上网了。</p>
+<p>（完）</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://docs.cfw.lbyczf.com/contents/parser.html#%E7%89%88%E6%9C%AC%E8%A6%81%E6%B1%82">配置文件预处理 | Clash for Windows (lbyczf.com)</a></p>
+</blockquote>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/scienceNetRules/">scienceNetRules</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/94ca0eb1/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">HuaWei_disableHuaweiSearch</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/fdfafe7c/">
+                        <span class="hidden-mobile">LinuxBasicKnowledge</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+    
+      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-core.min.js" ></script>
+      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js" ></script>
+      
+        <script  src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.js" ></script>
+      
+    
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

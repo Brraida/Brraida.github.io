@@ -30,7 +30,17 @@
     
     
       
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/agate.min.css" />
+      
+        
+          
+          
+          
+        
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism-solarizedlight.min.css" />
+      
+      
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.css" />
+      
     
   
 
@@ -125,18 +135,6 @@
               <a class="nav-link" href="/tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 标签
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                关于
               </a>
             </li>
           
@@ -278,29 +276,100 @@
 <h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
 <li><p>下载[docker-compose.yml](<a target="_blank" rel="noopener" href="https://github.com/HenryQW/Awesome-TTRSS/blob/main/docker-compose.yml">Awesome-TTRSS/docker-compose.yml at main · HenryQW/Awesome-TTRSS (github.com)</a>)到一目录下。</p>
 <p>用网上教程命令不行，我也不懂git命令。然后就粗暴的在根目录下创建了ttrss文件夹，命令如下:</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">mkdir ttrss<br>cd ttrss<br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mkdir ttrss
+cd ttrss</code></pre></div>
 
 <p>然后在Windows下创建一个docker-compose.yml ,将代码复制进去，然后使用<strong>xftp 7</strong>上传文件到linux的ttrss目录下。(解释一下为什么不直接在ttrss下创建docker-compose.yml，然后复制代码到docker-compose.yml中。首先yaml文件是对空格敏感的；其次，我复制的时候，shell自动将最后后面几行自动注释了。启动配置就失败了，改空格又麻烦，所以就直接用xftp 7了。)</p>
 <p>docker-compose.yml文件配置:</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">version: &quot;3&quot;<br>services:<br>  service.rss:<br>    image: wangqiru/ttrss:latest<br>    container_name: ttrss<br>    ports:<br>      - 181:80<br>    environment:<br>      - SELF_URL_PATH=http://localhost:181/ # please change to your own domain<br>      - DB_PASS=ttrss # use the same password defined in `database.postgres`<br>      - PUID=1000<br>      - PGID=1000<br>    volumes:<br>      - feed-icons:/var/www/feed-icons/<br>    networks:<br>      - public_access<br>      - service_only<br>      - database_only<br>    stdin_open: true<br>    tty: true<br>    restart: always<br><br>  service.mercury: # set Mercury Parser API endpoint to `service.mercury:3000` on TTRSS plugin setting page<br>    image: wangqiru/mercury-parser-api:latest<br>    container_name: mercury<br>    networks:<br>      - public_access<br>      - service_only<br>    restart: always<br><br>  service.opencc: # set OpenCC API endpoint to `service.opencc:3000` on TTRSS plugin setting page<br>    image: wangqiru/opencc-api-server:latest<br>    container_name: opencc<br>    environment:<br>      - NODE_ENV=production<br>    networks:<br>      - service_only<br>    restart: always<br><br>  database.postgres:<br>    image: postgres:13-alpine<br>    container_name: postgres<br>    environment:<br>      - POSTGRES_PASSWORD=ttrss # feel free to change the password<br>    volumes:<br>      - ~/postgres/data/:/var/lib/postgresql/data # persist postgres data to ~/postgres/data/ on the host<br>    networks:<br>      - database_only<br>    restart: always<br><span class="hljs-meta"></span><br><span class="hljs-meta">  #</span><span class="bash"> utility.watchtower:</span><br><span class="hljs-meta">  #</span><span class="bash">   container_name: watchtower</span><br><span class="hljs-meta">  #</span><span class="bash">   image: containrrr/watchtower:latest</span><br><span class="hljs-meta">  #</span><span class="bash">   volumes:</span><br><span class="hljs-meta">  #</span><span class="bash">     - /var/run/docker.sock:/var/run/docker.sock</span><br><span class="hljs-meta">  #</span><span class="bash">   environment:</span><br><span class="hljs-meta">  #</span><span class="bash">     - WATCHTOWER_CLEANUP=<span class="hljs-literal">true</span></span><br><span class="hljs-meta">  #</span><span class="bash">     - WATCHTOWER_POLL_INTERVAL=86400</span><br><span class="hljs-meta">  #</span><span class="bash">   restart: always</span><br><br>volumes:<br>  feed-icons:<br><br>networks:<br>  public_access: # Provide the access for ttrss UI<br>  service_only: # Provide the communication network between services only<br>    internal: true<br>  database_only: # Provide the communication between ttrss and database only<br>    internal: true<br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">version: &quot;3&quot;
+services:
+  service.rss:
+    image: wangqiru&#x2F;ttrss:latest
+    container_name: ttrss
+    ports:
+      - 181:80
+    environment:
+      - SELF_URL_PATH&#x3D;http:&#x2F;&#x2F;localhost:181&#x2F; # please change to your own domain
+      - DB_PASS&#x3D;ttrss # use the same password defined in &#96;database.postgres&#96;
+      - PUID&#x3D;1000
+      - PGID&#x3D;1000
+    volumes:
+      - feed-icons:&#x2F;var&#x2F;www&#x2F;feed-icons&#x2F;
+    networks:
+      - public_access
+      - service_only
+      - database_only
+    stdin_open: true
+    tty: true
+    restart: always
+
+  service.mercury: # set Mercury Parser API endpoint to &#96;service.mercury:3000&#96; on TTRSS plugin setting page
+    image: wangqiru&#x2F;mercury-parser-api:latest
+    container_name: mercury
+    networks:
+      - public_access
+      - service_only
+    restart: always
+
+  service.opencc: # set OpenCC API endpoint to &#96;service.opencc:3000&#96; on TTRSS plugin setting page
+    image: wangqiru&#x2F;opencc-api-server:latest
+    container_name: opencc
+    environment:
+      - NODE_ENV&#x3D;production
+    networks:
+      - service_only
+    restart: always
+
+  database.postgres:
+    image: postgres:13-alpine
+    container_name: postgres
+    environment:
+      - POSTGRES_PASSWORD&#x3D;ttrss # feel free to change the password
+    volumes:
+      - ~&#x2F;postgres&#x2F;data&#x2F;:&#x2F;var&#x2F;lib&#x2F;postgresql&#x2F;data # persist postgres data to ~&#x2F;postgres&#x2F;data&#x2F; on the host
+    networks:
+      - database_only
+    restart: always
+
+  # utility.watchtower:
+  #   container_name: watchtower
+  #   image: containrrr&#x2F;watchtower:latest
+  #   volumes:
+  #     - &#x2F;var&#x2F;run&#x2F;docker.sock:&#x2F;var&#x2F;run&#x2F;docker.sock
+  #   environment:
+  #     - WATCHTOWER_CLEANUP&#x3D;true
+  #     - WATCHTOWER_POLL_INTERVAL&#x3D;86400
+  #   restart: always
+
+volumes:
+  feed-icons:
+
+networks:
+  public_access: # Provide the access for ttrss UI
+  service_only: # Provide the communication network between services only
+    internal: true
+  database_only: # Provide the communication between ttrss and database only
+    internal: true</code></pre></div>
 
 <p>主要修改的地方是第九行,将localhost改成ip地址，其他可以先不动。先激动的试试行不行。</p>
 </li>
 <li><p>启动</p>
 <p>在ttrss目录下执行如下命令:</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">docker-compose up -d<br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker-compose up -d</code></pre></div>
 
 <p>第一次会下载一些镜像，花费时间就一点。</p>
 </li>
 <li><p>查看</p>
 <p>查看启动的镜像</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">docker ps<br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker ps</code></pre></div>
 
 <p><img src="/img/article/ttrss/ttrss.png" srcset="/img/loading.gif" lazyload></p>
 <p>访问端口ip:181，可以就说明没什么问题了。</p>
 <p>P.S. 为了安全，改一下第10行和第44行的密码，并且密码要一致。</p>
 <p>重载docker-compose.yml，得先停、再编写、最后重启</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">docker-compse down #stop<br>vim docker-compose.yml #write<br>docker-compose up -d #start<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker-compse down #stop
+vim docker-compose.yml #write
+docker-compose up -d #start</code></pre></div></li>
 </ol>
 <hr>
 <h2 id="进一步"><a href="#进一步" class="headerlink" title="进一步"></a>进一步</h2><p>​    ok,以上就搞定了可以使用ip加端口部署ttrss。</p>
@@ -315,15 +384,45 @@
 <ol>
 <li><p>nginx.conf配置</p>
 <p>在hhtp块下加上以下代码(也可以选择替换# Settings for a TLS enabled server.这注释下面的代码。)</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">server &#123;<br>    listen 443 ssl;<br>    server_name sisilly.club;<br>    ssl_certificate 1_sisilly.club_bundle.crt;<br>    ssl_certificate_key 2_sisilly.club.key;<br>    ssl_session_timeout 5m;<br>    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;<br>    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;<br>    ssl_prefer_server_ciphers on;<br>    include /etc/nginx/default.d/*.conf;<br><span class="hljs-meta">#</span><span class="bash">    location / &#123;</span><br><span class="hljs-meta">#</span><span class="bash">        root html;</span> <br><span class="hljs-meta">#</span><span class="bash">        index  index.html index.htm;</span><br><span class="hljs-meta">#</span><span class="bash">    &#125;</span><br>&#125;<br><br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">server &#123;
+    listen 443 ssl;
+    server_name sisilly.club;
+    ssl_certificate 1_sisilly.club_bundle.crt;
+    ssl_certificate_key 2_sisilly.club.key;
+    ssl_session_timeout 5m;
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;
+    ssl_prefer_server_ciphers on;
+    include &#x2F;etc&#x2F;nginx&#x2F;default.d&#x2F;*.conf;
+#    location &#x2F; &#123;
+#        root html; 
+#        index  index.html index.htm;
+#    &#125;
+&#125;
+</code></pre></div></li>
 <li><p>location块配置</p>
 <p>在default.d目录下创建一个ttrss.conf</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">vim /etc/nginx/default.d/ttrss.conf<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> bash</span><br>location / &#123;<br>    proxy_pass http://127.0.0.1:181/;<br>    rewrite ^/(.*)$ /$1 break;<br>    proxy_redirect off;<br>    proxy_set_header Host $host;<br>    proxy_set_header X-Forwarded-Proto $scheme;<br>    proxy_set_header X-Real-IP $remote_addr;<br>    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;<br>    proxy_set_header Upgrade-Insecure-Requests 1;<br>    proxy_set_header X-Forwarded-Proto https;<br>  &#125;<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">vim &#x2F;etc&#x2F;nginx&#x2F;default.d&#x2F;ttrss.conf
+
+# bash
+location &#x2F; &#123;
+    proxy_pass http:&#x2F;&#x2F;127.0.0.1:181&#x2F;;
+    rewrite ^&#x2F;(.*)$ &#x2F;$1 break;
+    proxy_redirect off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header Upgrade-Insecure-Requests 1;
+    proxy_set_header X-Forwarded-Proto https;
+  &#125;</code></pre></div></li>
 <li><p>测试、启动</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">nginx -t<br>service nginx start<br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">nginx -t
+service nginx start</code></pre></div>
 
 <p>可能会报警告，只要在nginx.conf中的http块下加</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">proxy_headers_hash_max_size 51200;<br>proxy_headers_hash_bucket_size 6400;<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">proxy_headers_hash_max_size 51200;
+proxy_headers_hash_bucket_size 6400;</code></pre></div></li>
 </ol>
 <h3 id="ttrss的docker-compose-yml配置"><a href="#ttrss的docker-compose-yml配置" class="headerlink" title="ttrss的docker-compose.yml配置"></a>ttrss的docker-compose.yml配置</h3><p>​    将 第九行- SELF_URL_PATH=<a target="_blank" rel="noopener" href="http://localhost:181/%EF%BC%8C%E6%94%B9%E6%88%90-">http://localhost:181/，改成-</a> SELF_URL_PATH=https://域名/</p>
 <p>  至此，结束。后面就是ttrss的配置了。可以看大佬文章。<a target="_blank" rel="noopener" href="https://blog.laoda.de/archives/tinytinyrss">【服务器能干什么】二十分钟搭建一个属于自己的RSS服务 - 二十五画生 (laoda.de)</a></p>
@@ -334,7 +433,12 @@
 <hr>
 <p>2021-08-21</p>
 <p>​    实践之后进行理论填充。之前搭建的ttrss是没有开启防火墙的情况下，看了一些书籍之后，感受到了安全的重要性。所以进行防火墙的补充、遇到问题的解决办法和懒人脚本补充。</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">systemctl status firewalld <span class="hljs-comment"># 防火墙状态</span><br>systemctl stop firewalld   <span class="hljs-comment"># 防火墙关闭</span><br>systemctl start firewalld  <span class="hljs-comment"># 防火墙开启</span><br><br>firewall-cmd --zone=public --add-port=80/tcp --permanent <span class="hljs-comment"># 打开80端口</span><br>firewall-cmd --list-all    <span class="hljs-comment"># 查看防火墙开启的端口</span><br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">systemctl status firewalld # 防火墙状态
+systemctl stop firewalld   # 防火墙关闭
+systemctl start firewalld  # 防火墙开启
+
+firewall-cmd --zone&#x3D;public --add-port&#x3D;80&#x2F;tcp --permanent # 打开80端口
+firewall-cmd --list-all    # 查看防火墙开启的端口</code></pre></div>
 
 
 
@@ -355,6 +459,8 @@
                     <i class="iconfont icon-tags"></i>
                     
                       <a class="hover-with-bg" href="/tags/rss/">rss</a>
+                    
+                      <a class="hover-with-bg" href="/tags/ttrss/">ttrss</a>
                     
                   </div>
                 
@@ -487,6 +593,14 @@
 
 
 
+  
+    
+      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-core.min.js" ></script>
+      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js" ></script>
+      
+        <script  src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.js" ></script>
+      
+    
   
 
 

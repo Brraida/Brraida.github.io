@@ -30,7 +30,17 @@
     
     
       
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/agate.min.css" />
+      
+        
+          
+          
+          
+        
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism-solarizedlight.min.css" />
+      
+      
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.css" />
+      
     
   
 
@@ -134,18 +144,6 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                关于
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
               <a class="nav-link" href="https://brraida.github.io/atom.xml">
                 <i class="iconfont icon-rss"></i>
                 rss
@@ -230,7 +228,9 @@
 <h2 id="现象"><a href="#现象" class="headerlink" title="现象"></a>现象</h2><p>安装依赖的时候出现了奇怪的问题。</p>
 <p><img src="/img/article/linux-problem-dependency.assets/image-20220125150041905.png" srcset="/img/loading.gif" lazyload alt="image-20220125150041905"></p>
 <p><img src="/img/article/linux-problem-dependency.assets/image-20220125150000581.png" srcset="/img/loading.gif" lazyload alt="image-20220125150000581"></p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">yum remove epel-release<br>yum update<br>yum install epel-release<br></code></pre></div></td></tr></table></figure>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">yum remove epel-release
+yum update
+yum install epel-release</code></pre></div>
 
 
             </div>
@@ -375,6 +375,14 @@
 
 
 
+  
+    
+      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-core.min.js" ></script>
+      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js" ></script>
+      
+        <script  src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.js" ></script>
+      
+    
   
 
 

@@ -30,7 +30,17 @@
     
     
       
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/agate.min.css" />
+      
+        
+          
+          
+          
+        
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism-solarizedlight.min.css" />
+      
+      
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.css" />
+      
     
   
 
@@ -134,18 +144,6 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                关于
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
               <a class="nav-link" href="https://brraida.github.io/atom.xml">
                 <i class="iconfont icon-rss"></i>
                 rss
@@ -230,31 +228,49 @@
 <h2 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h2><p>​    可能你为了某种需求（比如必须更好地管理文件）而要卸载git，重新安装git。</p>
 <p><strong>一、</strong> </p>
 <p>​    若通过yum安装git，那么只需要执行</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">yum remove git #卸载git<br>which git<br><span class="hljs-meta">#</span><span class="bash">或者</span><br>whereis git #查询git残留<br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">yum remove git #卸载git
+which git
+#或者
+whereis git #查询git残留</code></pre></div>
 
 
 
 <p><strong>二、</strong></p>
 <p>​    若通过源码安装git</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">which git<br><span class="hljs-meta">#</span><span class="bash">或者</span><br>whereis git #查询git位置<br><span class="hljs-meta">#</span><span class="bash">去相应位置删除git相关文件</span><br>rm -rf git<br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">which git
+#或者
+whereis git #查询git位置
+#去相应位置删除git相关文件
+rm -rf git</code></pre></div>
 
 <p>​    最好可以备份一下，那么就可以大胆一下去删除了。</p>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>​    回归正题。</p>
-<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a><strong>下载</strong></h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">wget https://www.kernel.org/pub/software/scm/git/git-2.9.5.tar.gz<br></code></pre></div></td></tr></table></figure>
+<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a><strong>下载</strong></h3><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">wget https:&#x2F;&#x2F;www.kernel.org&#x2F;pub&#x2F;software&#x2F;scm&#x2F;git&#x2F;git-2.9.5.tar.gz</code></pre></div>
 
 <p>P.S. 可以在<a target="_blank" rel="noopener" href="https://mirrors.edge.kernel.org/pub/software/scm/git/">这里</a>查找最新版本的git下载，然后替换一下git的版本数字就行。</p>
-<h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">yum -y install curl-devel expat-devel gettext-devel openssl-devel zlib-devel gcc perl-ExtUtils-MakeMaker<br></code></pre></div></td></tr></table></figure>
+<h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">yum -y install curl-devel expat-devel gettext-devel openssl-devel zlib-devel gcc perl-ExtUtils-MakeMaker</code></pre></div>
 
 <p>​    有些依赖安装git时候不会提示，比如没有<strong>curl-devel、expat-devel</strong>将会发生<strong>git:’remote-https’ is not a git command</strong>。</p>
-<h3 id="解压git安装包"><a href="#解压git安装包" class="headerlink" title="解压git安装包"></a>解压git安装包</h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">tar -zxvf git-2.9.5.tar.gz -C /root #将文件解压到root文件夹下<br></code></pre></div></td></tr></table></figure>
+<h3 id="解压git安装包"><a href="#解压git安装包" class="headerlink" title="解压git安装包"></a>解压git安装包</h3><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">tar -zxvf git-2.9.5.tar.gz -C &#x2F;root #将文件解压到root文件夹下</code></pre></div>
 
-<h3 id="配置git"><a href="#配置git" class="headerlink" title="配置git"></a>配置git</h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">cd /root/git-2.9.5<br>.configure -prefix=/usr/local/git/ #将资源文件集中到一个位置，便于管理<br></code></pre></div></td></tr></table></figure>
+<h3 id="配置git"><a href="#配置git" class="headerlink" title="配置git"></a>配置git</h3><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">cd &#x2F;root&#x2F;git-2.9.5
+.configure -prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;git&#x2F; #将资源文件集中到一个位置，便于管理</code></pre></div>
 
-<h3 id="编译、安装"><a href="#编译、安装" class="headerlink" title="编译、安装"></a>编译、安装</h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">make &amp;&amp; make install<br></code></pre></div></td></tr></table></figure>
+<h3 id="编译、安装"><a href="#编译、安装" class="headerlink" title="编译、安装"></a>编译、安装</h3><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">make &amp;&amp; make install</code></pre></div>
 
-<h3 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">vim /etc/profile.d/git.sh	#不在profile中配置，在这里配置是为了便于管理（不同用户有不同的路径需求，在这里配置能够更加清晰明了）<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash">下方为git.sh文件内容</span><br>GIT_HOME=usr/local/git #这样做是为了使用echo查看单环境变量，大可将下方GIT_HOME取代<br>export PATH=$PATH:GIT_HOME/bin<br>export PATH=$PATH:/usr/local/git/libexe/git-core<br><span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment">### wq!</span></span><br><br>source /etc/profile #环境变量生效<br><br>echo $GIT_HOME #查看环境变量<br></code></pre></div></td></tr></table></figure>
+<h3 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">vim &#x2F;etc&#x2F;profile.d&#x2F;git.sh	#不在profile中配置，在这里配置是为了便于管理（不同用户有不同的路径需求，在这里配置能够更加清晰明了）
 
-<h3 id="查看版本"><a href="#查看版本" class="headerlink" title="查看版本"></a>查看版本</h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">git --verison<br></code></pre></div></td></tr></table></figure>
+#下方为git.sh文件内容
+GIT_HOME&#x3D;usr&#x2F;local&#x2F;git #这样做是为了使用echo查看单环境变量，大可将下方GIT_HOME取代
+export PATH&#x3D;$PATH:GIT_HOME&#x2F;bin
+export PATH&#x3D;$PATH:&#x2F;usr&#x2F;local&#x2F;git&#x2F;libexe&#x2F;git-core
+#### wq!
+
+source &#x2F;etc&#x2F;profile #环境变量生效
+
+echo $GIT_HOME #查看环境变量</code></pre></div>
+
+<h3 id="查看版本"><a href="#查看版本" class="headerlink" title="查看版本"></a>查看版本</h3><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">git --verison</code></pre></div>
 
 
 
@@ -268,7 +284,9 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E5%AE%89%E8%A3%85/">安装</a>
+                      <a class="hover-with-bg" href="/tags/centos/">centos</a>
+                    
+                      <a class="hover-with-bg" href="/tags/install/">install</a>
                     
                   </div>
                 
@@ -401,6 +419,14 @@
 
 
 
+  
+    
+      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-core.min.js" ></script>
+      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js" ></script>
+      
+        <script  src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.js" ></script>
+      
+    
   
 
 

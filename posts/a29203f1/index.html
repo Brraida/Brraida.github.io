@@ -30,7 +30,17 @@
     
     
       
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/agate.min.css" />
+      
+        
+          
+          
+          
+        
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism-solarizedlight.min.css" />
+      
+      
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.css" />
+      
     
   
 
@@ -125,18 +135,6 @@
               <a class="nav-link" href="/tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 标签
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                关于
               </a>
             </li>
           
@@ -340,7 +338,24 @@
 </tr>
 </tbody></table>
 <h3 id="Raise（主动）"><a href="#Raise（主动）" class="headerlink" title="Raise（主动）"></a>Raise（主动）</h3><p>​    自定义的异常描述信息会更具有操作性。</p>
-<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">divide</span>(<span class="hljs-params">x, y</span>):</span><br>    <span class="hljs-keyword">if</span> y == <span class="hljs-number">0</span>:<br>        <span class="hljs-keyword">raise</span> Exception(<span class="hljs-string">&#x27;divisor is 0&#x27;</span>)<br>    <span class="hljs-keyword">try</span>:<br>        <span class="hljs-keyword">return</span> x / y<br>    <span class="hljs-keyword">except</span> TypeError:<br>        <span class="hljs-keyword">raise</span> Exception(<span class="hljs-string">&#x27;parameters Type error&#x27;</span>)<br><br><br><span class="hljs-keyword">try</span>:<br>    divide(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>)<br><span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:<br>    <span class="hljs-built_in">print</span>(e)<br><span class="hljs-keyword">try</span>:<br>    divide(<span class="hljs-number">1</span>, <span class="hljs-string">&#x27;1&#x27;</span>)<br><span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:<br>    <span class="hljs-built_in">print</span>(e)<br><br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-python" data-language="python"><code class="language-python">def divide(x, y):
+    if y &#x3D;&#x3D; 0:
+        raise Exception(&#39;divisor is 0&#39;)
+    try:
+        return x &#x2F; y
+    except TypeError:
+        raise Exception(&#39;parameters Type error&#39;)
+
+
+try:
+    divide(1, 0)
+except Exception as e:
+    print(e)
+try:
+    divide(1, &#39;1&#39;)
+except Exception as e:
+    print(e)
+</code></pre></div>
 
 <h3 id="Finally"><a href="#Finally" class="headerlink" title="Finally"></a>Finally</h3><blockquote>
 <p>Python 垃圾回收机制，只能帮我们回收变量、类对象占用的内存，而无法自动完成类似关闭文件、数据库连接等这些的工作。</p>
@@ -349,14 +364,40 @@
 <p>​    功能：无论try块是否发生异常，最终都要进入finally语句，并执行其中的代码块。</p>
 <p>参考链接：<a target="_blank" rel="noopener" href="http://c.biancheng.net/view/2316.html">Python try except finally：资源回收 (biancheng.net)</a></p>
 <p>​    有点意思的地方</p>
-<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">funcWithFinally</span>():</span><br>    <span class="hljs-keyword">try</span>:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;in try&quot;</span>)<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;try end&quot;</span><br>    <span class="hljs-keyword">finally</span>:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;in finally&quot;</span>)<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;finally end&quot;</span><br><br><br><span class="hljs-built_in">print</span>(funcWithFinally())<br><br><br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-python" data-language="python"><code class="language-python">def funcWithFinally():
+    try:
+        print(&quot;in try&quot;)
+        return &quot;try end&quot;
+    finally:
+        print(&quot;in finally&quot;)
+        return &quot;finally end&quot;
 
-<figure class="highlight tex"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs tex">输出结果:<br>in try<br>in finally<br>finally end<br></code></pre></div></td></tr></table></figure>
+
+print(funcWithFinally())
+
+</code></pre></div>
+
+<div class="code-wrapper"><pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">输出结果:
+in try
+in finally
+finally end</code></pre></div>
 
 <p>​    说明第七行比第四行提前执行了。</p>
-<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">funcWithFinally</span>():</span><br>    <span class="hljs-keyword">try</span>:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;in try&quot;</span>)<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;try end&quot;</span><br>    <span class="hljs-keyword">finally</span>:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;in finally&quot;</span>)<br><br><br><span class="hljs-built_in">print</span>(funcWithFinally())<br><br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-python" data-language="python"><code class="language-python">def funcWithFinally():
+    try:
+        print(&quot;in try&quot;)
+        return &quot;try end&quot;
+    finally:
+        print(&quot;in finally&quot;)
 
-<figure class="highlight tex"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs tex">输出结果:<br>in try<br>in finally<br>try end<br></code></pre></div></td></tr></table></figure>
+
+print(funcWithFinally())
+</code></pre></div>
+
+<div class="code-wrapper"><pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">输出结果:
+in try
+in finally
+try end</code></pre></div>
 
 <p>​    会回到第四行执行。</p>
 <blockquote>
@@ -398,7 +439,38 @@
 <td>二进制模式，非文本模式</td>
 </tr>
 </tbody></table>
-<h3 id="复制和移动文件"><a href="#复制和移动文件" class="headerlink" title="复制和移动文件"></a>复制和移动文件</h3><figure class="highlight lua"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs lua">import <span class="hljs-built_in">os</span>, shutil<br><br><br>def moveFile(src, dest):<br>    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> <span class="hljs-built_in">os</span>.<span class="hljs-built_in">path</span>.isfile(src):<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;file not exist!&#x27;</span> + src)<br>    <span class="hljs-keyword">else</span>:<br>        fpath = <span class="hljs-built_in">os</span>.<span class="hljs-built_in">path</span>.split(dest)[<span class="hljs-number">0</span>]<br>        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> <span class="hljs-built_in">os</span>.<span class="hljs-built_in">path</span>.exists(fpath):<br>            <span class="hljs-built_in">os</span>.makedirs(fpath)<br>        shutil.move(src, dest)<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;finished moving&#x27;</span>)<br><br><br>def copyFile(src, dest):<br>    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> <span class="hljs-built_in">os</span>.<span class="hljs-built_in">path</span>.isfile(src):<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;file not exist!&#x27;</span> + src)<br>    <span class="hljs-keyword">else</span>:<br>        fpath = <span class="hljs-built_in">os</span>.<span class="hljs-built_in">path</span>.split(dest)[<span class="hljs-number">0</span>]<br>        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> <span class="hljs-built_in">os</span>.<span class="hljs-built_in">path</span>.exists(fpath):<br>            <span class="hljs-built_in">os</span>.makedirs(fpath)<br>        shutil.copyfile(src, dest)<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;finished copy&#x27;</span>)<br><br><br>srcForCopy = <span class="hljs-string">&#x27;D:\\3\\2.jpg&#x27;</span><br>destForCopy = <span class="hljs-string">&#x27;D:\\3\\22.jpg&#x27;</span><br>srcForMove = <span class="hljs-string">&#x27;D:\\3\\python1.txt&#x27;</span><br>destForMove = <span class="hljs-string">&#x27;D:\\3\\python3.txt&#x27;</span><br>copyFile(srcForCopy, destForCopy)<br># moveFile(srcForMove, destForMove)<br><br></code></pre></div></td></tr></table></figure>
+<h3 id="复制和移动文件"><a href="#复制和移动文件" class="headerlink" title="复制和移动文件"></a>复制和移动文件</h3><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">import os, shutil
+
+
+def moveFile(src, dest):
+    if not os.path.isfile(src):
+        print(&#39;file not exist!&#39; + src)
+    else:
+        fpath &#x3D; os.path.split(dest)[0]
+        if not os.path.exists(fpath):
+            os.makedirs(fpath)
+        shutil.move(src, dest)
+        print(&#39;finished moving&#39;)
+
+
+def copyFile(src, dest):
+    if not os.path.isfile(src):
+        print(&#39;file not exist!&#39; + src)
+    else:
+        fpath &#x3D; os.path.split(dest)[0]
+        if not os.path.exists(fpath):
+            os.makedirs(fpath)
+        shutil.copyfile(src, dest)
+    print(&#39;finished copy&#39;)
+
+
+srcForCopy &#x3D; &#39;D:\\3\\2.jpg&#39;
+destForCopy &#x3D; &#39;D:\\3\\22.jpg&#39;
+srcForMove &#x3D; &#39;D:\\3\\python1.txt&#39;
+destForMove &#x3D; &#39;D:\\3\\python3.txt&#39;
+copyFile(srcForCopy, destForCopy)
+# moveFile(srcForMove, destForMove)
+</code></pre></div>
 
 <p>​    <strong>GET</strong></p>
 <p>​    makedirs()    #递归创建目录</p>
@@ -416,7 +488,19 @@
 <p>urllib.request.urlopen(url,data=None,[timeout]) #POST</p>
 </blockquote>
 <p>​    直接用urllib.request模块的urlopen（）获取页面，page的数据格式为bytes类型，需要decode（）解码，转换成str类型。反过来也就是说，在使用post这种方式的时候，data就要以字节形式做参传入。</p>
-<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> urllib.request<br><br>stockCode = <span class="hljs-string">&#x27;600895&#x27;</span><br>url = <span class="hljs-string">&#x27;http://quotes.money.163.com/service/chddata.html&#x27;</span><br>param = <span class="hljs-built_in">bytes</span>(urllib.parse.urlencode(&#123;<span class="hljs-string">&#x27;code&#x27;</span>: <span class="hljs-string">&#x27;0&#x27;</span> + stockCode,<br>                                      <span class="hljs-string">&#x27;start&#x27;</span>: <span class="hljs-string">&#x27;20210602&#x27;</span>,<br>                                      <span class="hljs-string">&#x27;end&#x27;</span>: <span class="hljs-string">&#x27;20210602&#x27;</span>,<br>                                      <span class="hljs-string">&#x27;fields&#x27;</span>: <span class="hljs-string">&#x27;TCLOSE;HIGH;LOW;TOPEN;CHG;PCHG;TURNOVER;VOTURNOVER;VATURNOVER&#x27;</span>&#125;),<br>              encoding=<span class="hljs-string">&#x27;utf-8&#x27;</span>)<br>response = urllib.request.urlopen(url, data=param, timeout=<span class="hljs-number">10</span>)<br><span class="hljs-built_in">print</span>(response.read().decode(<span class="hljs-string">&#x27;gbk&#x27;</span>))<br>response.close()<br><br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-python" data-language="python"><code class="language-python">import urllib.request
+
+stockCode &#x3D; &#39;600895&#39;
+url &#x3D; &#39;http:&#x2F;&#x2F;quotes.money.163.com&#x2F;service&#x2F;chddata.html&#39;
+param &#x3D; bytes(urllib.parse.urlencode(&#123;&#39;code&#39;: &#39;0&#39; + stockCode,
+                                      &#39;start&#39;: &#39;20210602&#39;,
+                                      &#39;end&#39;: &#39;20210602&#39;,
+                                      &#39;fields&#39;: &#39;TCLOSE;HIGH;LOW;TOPEN;CHG;PCHG;TURNOVER;VOTURNOVER;VATURNOVER&#39;&#125;),
+              encoding&#x3D;&#39;utf-8&#39;)
+response &#x3D; urllib.request.urlopen(url, data&#x3D;param, timeout&#x3D;10)
+print(response.read().decode(&#39;gbk&#39;))
+response.close()
+</code></pre></div>
 
 <p>参考链接:</p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41856814/article/details/99658108">Python3中urlopen()详解</a></p>
@@ -424,7 +508,25 @@
 <p>urllib.request.urlretrieve(url,filename,data)    #取己所需，所以参考链接的更完整详细</p>
 </blockquote>
 <p>返回一个包含两个元素的元组(filename, headers)，filename表示保存到本地的路径，header表示服务器的响应头。</p>
-<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> urllib.request<br><br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getAndSaveStock</span>(<span class="hljs-params">stockCodeList, path</span>):</span><br>    <span class="hljs-keyword">for</span> stockCode <span class="hljs-keyword">in</span> stockCodeList:<br>        url = <span class="hljs-string">&#x27;http://quotes.money.163.com/service/chddata.html&#x27;</span><br>        param = <span class="hljs-built_in">bytes</span>(urllib.parse.urlencode(&#123;<span class="hljs-string">&#x27;code&#x27;</span>: <span class="hljs-string">&#x27;0&#x27;</span> + stockCode,<br>                                              <span class="hljs-string">&#x27;start&#x27;</span>: <span class="hljs-string">&#x27;20210602&#x27;</span>,<br>                                              <span class="hljs-string">&#x27;end&#x27;</span>: <span class="hljs-string">&#x27;202106012&#x27;</span>,<br>                                              <span class="hljs-string">&#x27;fields&#x27;</span>: <span class="hljs-string">&#x27;TCLOSE;HIGH;LOW;TOPEN;CHG;PCHG;TURNOVER;VOTURNOVER;VATURNOVER&#x27;</span>&#125;)<br>                      , encoding=<span class="hljs-string">&#x27;utf8&#x27;</span>)<br>        urllib.request.urlretrieve(url, path + stockCode + <span class="hljs-string">&#x27;.csv&#x27;</span>, data=param)<br><br><br>stockCodeList = []<br>stockCodeList.append(<span class="hljs-string">&#x27;600895&#x27;</span>)<br>stockCodeList.append(<span class="hljs-string">&#x27;600007&#x27;</span>)<br>getAndSaveStock(stockCodeList, <span class="hljs-string">&#x27;D:\\3\\&#x27;</span>)<br><br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-python" data-language="python"><code class="language-python">import urllib.request
+
+
+def getAndSaveStock(stockCodeList, path):
+    for stockCode in stockCodeList:
+        url &#x3D; &#39;http:&#x2F;&#x2F;quotes.money.163.com&#x2F;service&#x2F;chddata.html&#39;
+        param &#x3D; bytes(urllib.parse.urlencode(&#123;&#39;code&#39;: &#39;0&#39; + stockCode,
+                                              &#39;start&#39;: &#39;20210602&#39;,
+                                              &#39;end&#39;: &#39;202106012&#39;,
+                                              &#39;fields&#39;: &#39;TCLOSE;HIGH;LOW;TOPEN;CHG;PCHG;TURNOVER;VOTURNOVER;VATURNOVER&#39;&#125;)
+                      , encoding&#x3D;&#39;utf8&#39;)
+        urllib.request.urlretrieve(url, path + stockCode + &#39;.csv&#39;, data&#x3D;param)
+
+
+stockCodeList &#x3D; []
+stockCodeList.append(&#39;600895&#39;)
+stockCodeList.append(&#39;600007&#39;)
+getAndSaveStock(stockCodeList, &#39;D:\\3\\&#39;)
+</code></pre></div>
 
 <p>​    发现如果将第12行的’.csv’改成’.txt’也是可以的。真方便啊！记得我学csv的时候，还要用它的相关库，一行行写入。</p>
 <p>参考链接:</p>
@@ -498,12 +600,37 @@
 </tr>
 </tbody></table>
 <p><strong>匹配字符串一般用法：</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python">myStr=<span class="hljs-string">&#x27;balaba&#x27;</span><br>myPattern=<span class="hljs-string">&#x27;\w+&#x27;</span><br><span class="hljs-keyword">if</span> re.match(myPattern,myStr):<br>	<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;get&#x27;</span>)<br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-python" data-language="python"><code class="language-python">myStr&#x3D;&#39;balaba&#39;
+myPattern&#x3D;&#39;\w+&#39;
+if re.match(myPattern,myStr):
+	print(&#39;get&#39;)</code></pre></div>
 
 
 
 <h4 id="正则表达式截取字符串"><a href="#正则表达式截取字符串" class="headerlink" title="正则表达式截取字符串"></a>正则表达式截取字符串</h4><p>​    绝了，发现自己以前根本不会截取字符串而是匹配字符串…</p>
-<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> re<br><br><span class="hljs-built_in">print</span>(re.split(<span class="hljs-string">&#x27;=&#x27;</span>, <span class="hljs-string">&#x27;content=hello&#x27;</span>))<br><span class="hljs-built_in">print</span>(re.split(<span class="hljs-string">&#x27;=&#x27;</span>, <span class="hljs-string">&#x27;content=hello&#x27;</span>)[<span class="hljs-number">0</span>])<br><span class="hljs-built_in">print</span>(re.split(<span class="hljs-string">&#x27;=&#x27;</span>, <span class="hljs-string">&#x27;content=hello&#x27;</span>)[<span class="hljs-number">1</span>])<br><br><span class="hljs-built_in">str</span> = <span class="hljs-string">&#x27;content=code:(6000),price:(20)&#x27;</span><br>pattern = re.<span class="hljs-built_in">compile</span>(<span class="hljs-string">r&#x27;[(](.*?)[)]&#x27;</span><span class="hljs-comment">#这个操作可以获取全部()内容，不包括()!</span><br><span class="hljs-built_in">print</span>(re.findall(pattern, <span class="hljs-built_in">str</span>))<br><span class="hljs-built_in">print</span>(re.findall(<span class="hljs-string">r&#x27;\((.*?)\)&#x27;</span>, <span class="hljs-built_in">str</span>))	<span class="hljs-comment">#这个同理，就是用了转义字符</span><br><br>rule = <span class="hljs-string">r&#x27;&lt;(.*?)&gt;&#x27;</span><br><span class="hljs-built_in">print</span>(re.findall(rule, <span class="hljs-string">&#x27;&lt;vcontent&gt;=&lt;ok?&gt;&#x27;</span>))	<span class="hljs-comment">#获取全部&lt;&gt;之间内容，不包括&lt;&gt;!</span><br><span class="hljs-built_in">print</span>(re.findall(rule, <span class="hljs-string">&#x27;&lt;vcontent=&lt;ok?&gt;&#x27;</span>))<br><span class="hljs-built_in">print</span>(re.findall(<span class="hljs-string">r&#x27;a(.*?)a&#x27;</span>, <span class="hljs-string">&#x27;acontenta =&lt;ok?&gt;&#x27;</span>))<span class="hljs-comment">#获取aa之间内容，不包括a!</span><br><br>rule = <span class="hljs-string">r&#x27;&quot;(.*?)&quot;&#x27;</span><br><span class="hljs-built_in">print</span>(re.findall(rule, <span class="hljs-string">&#x27;&quot;vcontent&quot;=&lt;ok?&gt;&#x27;</span>))	<span class="hljs-comment">#获取“”之间内容</span><br><br><span class="hljs-built_in">str</span> = <span class="hljs-string">&#x27;60001,10,12,15&#x27;</span><br><span class="hljs-built_in">print</span>(re.split(<span class="hljs-string">&#x27;,&#x27;</span>, <span class="hljs-built_in">str</span>))	<span class="hljs-comment">#split也可以用于re,见识短浅，以前以为只可用于str</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">str</span>.split(<span class="hljs-string">&#x27;,&#x27;</span>))<br><br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-python" data-language="python"><code class="language-python">import re
+
+print(re.split(&#39;&#x3D;&#39;, &#39;content&#x3D;hello&#39;))
+print(re.split(&#39;&#x3D;&#39;, &#39;content&#x3D;hello&#39;)[0])
+print(re.split(&#39;&#x3D;&#39;, &#39;content&#x3D;hello&#39;)[1])
+
+str &#x3D; &#39;content&#x3D;code:(6000),price:(20)&#39;
+pattern &#x3D; re.compile(r&#39;[(](.*?)[)]&#39;#这个操作可以获取全部()内容，不包括()!
+print(re.findall(pattern, str))
+print(re.findall(r&#39;\((.*?)\)&#39;, str))	#这个同理，就是用了转义字符
+
+rule &#x3D; r&#39;&lt;(.*?)&gt;&#39;
+print(re.findall(rule, &#39;&lt;vcontent&gt;&#x3D;&lt;ok?&gt;&#39;))	#获取全部&lt;&gt;之间内容，不包括&lt;&gt;!
+print(re.findall(rule, &#39;&lt;vcontent&#x3D;&lt;ok?&gt;&#39;))
+print(re.findall(r&#39;a(.*?)a&#39;, &#39;acontenta &#x3D;&lt;ok?&gt;&#39;))#获取aa之间内容，不包括a!
+
+rule &#x3D; r&#39;&quot;(.*?)&quot;&#39;
+print(re.findall(rule, &#39;&quot;vcontent&quot;&#x3D;&lt;ok?&gt;&#39;))	#获取“”之间内容
+
+str &#x3D; &#39;60001,10,12,15&#39;
+print(re.split(&#39;,&#39;, str))	#split也可以用于re,见识短浅，以前以为只可用于str
+print(str.split(&#39;,&#39;))
+</code></pre></div>
 
 
             </div>
@@ -648,6 +775,14 @@
 
 
 
+  
+    
+      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-core.min.js" ></script>
+      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js" ></script>
+      
+        <script  src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.js" ></script>
+      
+    
   
 
 

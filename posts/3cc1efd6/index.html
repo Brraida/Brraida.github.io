@@ -30,7 +30,17 @@
     
     
       
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/agate.min.css" />
+      
+        
+          
+          
+          
+        
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism-solarizedlight.min.css" />
+      
+      
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.css" />
+      
     
   
 
@@ -134,18 +144,6 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                关于
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
               <a class="nav-link" href="https://brraida.github.io/atom.xml">
                 <i class="iconfont icon-rss"></i>
                 rss
@@ -238,11 +236,31 @@
 <p>​    现在加密一般都是按这个标准。</p>
 <h2 id="使用pyzipper模块"><a href="#使用pyzipper模块" class="headerlink" title="使用pyzipper模块"></a>使用pyzipper模块</h2><p>​    所以使用pyzipper模块代替zipfile模块。</p>
 <p>​    给上可执行正确的代码：</p>
-<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> pyzipper<br><br>f1 = <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;D:\\1\\pwd.txt&#x27;</span>, <span class="hljs-string">&#x27;r&#x27;</span>)<br><span class="hljs-keyword">with</span> pyzipper.AESZipFile(<span class="hljs-string">&#x27;D:\\1\\test.zip&#x27;</span>, <span class="hljs-string">&#x27;r&#x27;</span>) <span class="hljs-keyword">as</span> f:<br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> f1:<br>        i = i.rstrip(<span class="hljs-string">&#x27;\n&#x27;</span>)<br>        f.pwd = <span class="hljs-built_in">str</span>.encode(i)<br>        <span class="hljs-keyword">try</span>:<br>            f.extractall(<span class="hljs-string">&#x27;D:\\1\\2&#x27;</span>)<br>            <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;The correct password is:&quot;</span> + i)<br>            <span class="hljs-keyword">break</span><br>        <span class="hljs-keyword">except</span> Exception:<br>            <span class="hljs-keyword">pass</span><br>f1.close()<br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-python" data-language="python"><code class="language-python">import pyzipper
+
+f1 &#x3D; open(&#39;D:\\1\\pwd.txt&#39;, &#39;r&#39;)
+with pyzipper.AESZipFile(&#39;D:\\1\\test.zip&#39;, &#39;r&#39;) as f:
+    for i in f1:
+        i &#x3D; i.rstrip(&#39;\n&#39;)
+        f.pwd &#x3D; str.encode(i)
+        try:
+            f.extractall(&#39;D:\\1\\2&#39;)
+            print(&quot;The correct password is:&quot; + i)
+            break
+        except Exception:
+            pass
+f1.close()</code></pre></div>
 
 <h2 id="rarfile模块"><a href="#rarfile模块" class="headerlink" title="rarfile模块"></a>rarfile模块</h2><p>​    使用rarfile模块解压rar文件问题就多了。它解压其实借助的是电脑的解压软件的unrar.exe进行解压。(可以在pypi中查看此模块，可以得到此模块的相关信息与工作原理)</p>
 <p>​    然后我嫌下载unrar太麻烦，还要配置环境变量等等操作，并且我本地用的是WinRAR，所以将WinRAR所在的路径加入环境就解决了。</p>
-<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> rarfile <br><br>path1 = <span class="hljs-string">&#x27;D:\\1\\2.rar&#x27;</span> <br>despath = <span class="hljs-string">&#x27;D:\\1\\2&#x27;</span>  <br><br>rf = rarfile.RarFile(path1)<br>rf.extractall(path=despath)<br>rf.close()<br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-python" data-language="python"><code class="language-python">import rarfile 
+
+path1 &#x3D; &#39;D:\\1\\2.rar&#39; 
+despath &#x3D; &#39;D:\\1\\2&#39;  
+
+rf &#x3D; rarfile.RarFile(path1)
+rf.extractall(path&#x3D;despath)
+rf.close()</code></pre></div>
 
 <p>​    经过测试，解压没有密码压缩的可以；解压加密的压缩包里面没有文件的可以。但是不可以解压加密的有文件的压缩包。编译错误显示下图所示：</p>
 <p><img src="/img/article/py-%E7%88%86%E7%A0%B4/%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF%E6%98%BE%E7%A4%BA.png" srcset="/img/loading.gif" lazyload></p>
@@ -297,9 +315,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/cc129669/">
+                      <a href="/posts/c669871/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">编译原理1</span>
+                        <span class="hidden-mobile">py指令</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -307,8 +325,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/c669871/">
-                        <span class="hidden-mobile">py指令</span>
+                      <a href="/posts/a629f612/">
+                        <span class="hidden-mobile">word相关技巧</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -413,6 +431,14 @@
 
 
 
+  
+    
+      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-core.min.js" ></script>
+      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js" ></script>
+      
+        <script  src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.js" ></script>
+      
+    
   
 
 

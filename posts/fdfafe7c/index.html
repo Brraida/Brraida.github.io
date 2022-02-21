@@ -30,7 +30,17 @@
     
     
       
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/agate.min.css" />
+      
+        
+          
+          
+          
+        
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism-solarizedlight.min.css" />
+      
+      
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.css" />
+      
     
   
 
@@ -134,18 +144,6 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                关于
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
               <a class="nav-link" href="https://brraida.github.io/atom.xml">
                 <i class="iconfont icon-rss"></i>
                 rss
@@ -239,7 +237,7 @@
 </ol>
 <p>主要比较一下浅蓝色和蓝色区别</p>
 <p><img src="/img/article/LinuxBasicKnowledge.assets/image-20220125212209692.png" srcset="/img/loading.gif" lazyload alt="image-20220125212209692"></p>
-<h2 id="软连接"><a href="#软连接" class="headerlink" title="软连接"></a>软连接</h2><h3 id="建立软链接"><a href="#建立软链接" class="headerlink" title="建立软链接"></a>建立软链接</h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">具体用法是：ln -s 源文件 目标文件。源：实际存放文件的位置<br></code></pre></div></td></tr></table></figure>
+<h2 id="软连接"><a href="#软连接" class="headerlink" title="软连接"></a>软连接</h2><h3 id="建立软链接"><a href="#建立软链接" class="headerlink" title="建立软链接"></a>建立软链接</h3><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">具体用法是：ln -s 源文件 目标文件。源：实际存放文件的位置</code></pre></div>
 
 <p>当 我们需要在不同的目录，用到相同的文件时，我们不需要在每一个需要的目录下都放一个必须相同的文件，我们只要在某个固定的目录，放上该文件，然后在其它的 目录下用ln命令链接（link）它就可以，不必重复的占用磁盘空间。</p>
 <p>-s 是代号（symbolic）的意思</p>
@@ -252,14 +250,16 @@
 </li>
 </ul>
 <p>  无论是软链接还是硬链接，文件都保持同步变化</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash">比如我的文件在 /opt/cs 下面，我想在 /opt/var/cs 这个路径下面也能访问到，那么应该这样来做</span><br><br>ln -s  /opt/cs   /opt/var     # /opt/var下面不用创建cs这个目录，会自动创建<br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">#比如我的文件在 &#x2F;opt&#x2F;cs 下面，我想在 &#x2F;opt&#x2F;var&#x2F;cs 这个路径下面也能访问到，那么应该这样来做
 
-<h3 id="查看建立的软链接"><a href="#查看建立的软链接" class="headerlink" title="查看建立的软链接"></a>查看建立的软链接</h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">ls -il<br></code></pre></div></td></tr></table></figure>
+ln -s  &#x2F;opt&#x2F;cs   &#x2F;opt&#x2F;var     # &#x2F;opt&#x2F;var下面不用创建cs这个目录，会自动创建</code></pre></div>
 
-<h3 id="删除软链接"><a href="#删除软链接" class="headerlink" title="删除软链接"></a>删除软链接</h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">rm -rf file<br></code></pre></div></td></tr></table></figure>
+<h3 id="查看建立的软链接"><a href="#查看建立的软链接" class="headerlink" title="查看建立的软链接"></a>查看建立的软链接</h3><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">ls -il</code></pre></div>
+
+<h3 id="删除软链接"><a href="#删除软链接" class="headerlink" title="删除软链接"></a>删除软链接</h3><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">rm -rf file</code></pre></div>
 
 <p>正确的删除方式（删除软链接，但不删除实际数据）</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">rm -rf ./test_chk_ln<br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">rm -rf .&#x2F;test_chk_ln</code></pre></div>
 
 
 
@@ -293,6 +293,12 @@
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/posts/13fbfbd4/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">cfw_SpecialTricks</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
@@ -404,6 +410,14 @@
 
 
 
+  
+    
+      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-core.min.js" ></script>
+      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js" ></script>
+      
+        <script  src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.js" ></script>
+      
+    
   
 
 

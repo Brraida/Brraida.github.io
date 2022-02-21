@@ -30,7 +30,17 @@
     
     
       
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/agate.min.css" />
+      
+        
+          
+          
+          
+        
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism-solarizedlight.min.css" />
+      
+      
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.css" />
+      
     
   
 
@@ -134,18 +144,6 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                关于
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
               <a class="nav-link" href="https://brraida.github.io/atom.xml">
                 <i class="iconfont icon-rss"></i>
                 rss
@@ -234,7 +232,17 @@
 <p>lambda[arg1[,arg2,arg3…argn]]:expression</p>
 <p>返回的是一个方法</p>
 </blockquote>
-<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getResult</span>(<span class="hljs-params">a, b, n</span>):</span><br>    fx = <span class="hljs-keyword">lambda</span> x: x**<span class="hljs-number">2</span><br>    gap = (b - a) / n<br>    res = <span class="hljs-number">0</span><br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n):<br>        res += fx(a + i * gap + gap / <span class="hljs-number">2</span>) * gap<br>    <span class="hljs-keyword">return</span> res<br><br><br><span class="hljs-built_in">print</span>(getResult(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1000</span>))<br><br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-python" data-language="python"><code class="language-python">def getResult(a, b, n):
+    fx &#x3D; lambda x: x**2
+    gap &#x3D; (b - a) &#x2F; n
+    res &#x3D; 0
+    for i in range(n):
+        res +&#x3D; fx(a + i * gap + gap &#x2F; 2) * gap
+    return res
+
+
+print(getResult(1, 2, 1000))
+</code></pre></div>
 
 
 
@@ -381,6 +389,14 @@
 
 
 
+  
+    
+      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-core.min.js" ></script>
+      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js" ></script>
+      
+        <script  src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.js" ></script>
+      
+    
   
 
 
