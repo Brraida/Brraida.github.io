@@ -6,7 +6,7 @@
   <link href="https://brraida.github.io/atom.xml" rel="self"/>
   
   <link href="https://brraida.github.io/"/>
-  <updated>2022-03-07T04:08:30.912Z</updated>
+  <updated>2022-03-14T02:46:02.381Z</updated>
   <id>https://brraida.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>chocoUsage</title>
+    <link href="https://brraida.github.io/posts/a3de2b30/"/>
+    <id>https://brraida.github.io/posts/a3de2b30/</id>
+    <published>2022-03-14T02:23:35.000Z</published>
+    <updated>2022-03-14T02:46:02.381Z</updated>
+    
+    <content type="html"><![CDATA[<p>chocolatey是windows下的一个包管理器，久闻大名。</p><span id="more"></span><blockquote><p>官网：<a href="https://chocolatey.org/">Chocolatey Software | Chocolatey - The package manager for Windows</a></p></blockquote><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ol><li><p>打开powershell</p><p>在桌面按<strong>shift+鼠标右键</strong>，然后点击<strong>在此处打开powershell窗口</strong>。</p></li><li><p>提权，以管理员运行</p><p><code>start-process PowerShell -verb runas</code></p></li><li><p>安装chocolatey</p><p><code>Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://community.chocolatey.org/install.ps1&#39;))</code></p></li></ol><blockquote><p><a href="https://chocolatey.org/install">Chocolatey Software | Installing Chocolatey</a></p></blockquote><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="修改安装默认目录"><a href="#修改安装默认目录" class="headerlink" title="修改安装默认目录"></a>修改安装默认目录</h3><p>​    按自己需求是否要修改安装的默认目录（choco的安装默认目录是C:\Program Files）。</p><p>​    默认的安装路径在注册表里进行修改。</p><ol><li><p><code>win</code>+<code>r</code>，输入<code>regedit</code></p></li><li><p>展开注册表到下面的分支[HKEY＿LOCAL＿MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion]，在右侧窗口中找到名为“ProgramFilesDir”的字符串，双击把数值“C:\Program Files”修改为<code>你想要的路径</code>，确定退出后即可。</p></li></ol><blockquote><p><a href="https://www.jianshu.com/p/abaa0e8c261f">Windows下的包管理器 Chocolatey 的使用 - 简书 (jianshu.com)</a></p></blockquote><h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><div class="code-wrapper"><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">choco search &lt;keyword&gt;    搜索软件choco install &lt;package1 package2 package3...&gt;  安装软件choco install &lt;packagename&gt;  -version *** 安装指定版本choco  uninstall &lt;packagename&gt; 卸载软件choco version &lt;packagename&gt;  查看安装包的版本情况choco  upgrade &lt;packagename&gt;   更新某个软件 choco list -lo       查看本地安装包</code></pre></div><p>更多命令可以使用choco help查看。</p><p><strong>note</strong>:要在administrator下运行命令，不然会提示权限不够。</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;chocolatey是windows下的一个包管理器，久闻大名。&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="tools" scheme="https://brraida.github.io/tags/tools/"/>
+    
+    <category term="chocolatey" scheme="https://brraida.github.io/tags/chocolatey/"/>
+    
+    <category term="windows" scheme="https://brraida.github.io/tags/windows/"/>
+    
+  </entry>
   
   <entry>
     <title>ssh_github</title>
@@ -355,15 +378,12 @@
     <link href="https://brraida.github.io/posts/132608bd/"/>
     <id>https://brraida.github.io/posts/132608bd/</id>
     <published>2021-10-05T09:12:01.000Z</published>
-    <updated>2021-10-05T09:18:34.957Z</updated>
+    <updated>2022-03-11T01:32:08.548Z</updated>
     
-    <content type="html"><![CDATA[<p>​    最近在写编译原理的课设，我直接使用vim打代码，而vim的缩进让我的队友看不下去。所以修改一下vim的配置文件。</p><ol><li><p>创建.vimrc配置文件</p><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">vim ~&#x2F;.vimrc</code></pre></div></li><li><p>修改配置文件</p><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">set numberset tabstop&#x3D;2set softtabstop&#x3D;2set shiftwidth&#x3D;2set noexpandtabset autoindent</code></pre></div><p>配置说明如下：</p><p>set number：表示打开文件自动显示行号</p><p>set tabstop=2：表示一个Tab键显示出来多少个空格的长度，默认是8，这里设置为2</p><p>set softtabstop=2：表示在编辑模式下按退格键时候退回缩进的长度，设置为2</p><p>set shiftwidth=2：表示每一级缩进的长度，一般设置成和softtabstop长度一样</p><p>set noexpandtab：当设置成expantab时表示缩进用空格来表示，noexpandtab则用制表符表示一个缩进</p><p>set autoindent：表示自动缩进</p></li><li><p>保存退出</p><p>下一次使用vim的时候即是配置文件的状态。</p></li></ol><p>参考链接：</p><blockquote><p><a href="https://www.cnblogs.com/Cqlismy/p/11358259.html">vim设定Tab缩进长度 - Cqlismy - 博客园 (cnblogs.com)</a></p></blockquote>]]></content>
+    <content type="html"><![CDATA[<p>​    与vim的一些相关配置。</p><span id="more"></span><h2 id="vim缩进修改"><a href="#vim缩进修改" class="headerlink" title="vim缩进修改"></a>vim缩进修改</h2><p>​    最近在写编译原理的课设，我直接使用vim打代码，而vim的缩进让我的队友看不下去。所以修改一下vim的配置文件。</p><ol><li><p>创建.vimrc配置文件</p><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">vim ~&#x2F;.vimrc</code></pre></div></li><li><p>修改配置文件</p><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">set numberset tabstop&#x3D;2set softtabstop&#x3D;2set shiftwidth&#x3D;2set noexpandtabset autoindent</code></pre></div><p>配置说明如下：</p><p>set number：表示打开文件自动显示行号</p><p>set tabstop=2：表示一个Tab键显示出来多少个空格的长度，默认是8，这里设置为2</p><p>set softtabstop=2：表示在编辑模式下按退格键时候退回缩进的长度，设置为2</p><p>set shiftwidth=2：表示每一级缩进的长度，一般设置成和softtabstop长度一样</p><p>set noexpandtab：当设置成expantab时表示缩进用空格来表示，noexpandtab则用制表符表示一个缩进</p><p>set autoindent：表示自动缩进</p></li><li><p>保存退出</p><p>下一次使用vim的时候即是配置文件的状态。</p></li></ol><p>参考链接：</p><blockquote><p><a href="https://www.cnblogs.com/Cqlismy/p/11358259.html">vim设定Tab缩进长度 - Cqlismy - 博客园 (cnblogs.com)</a></p></blockquote><hr><h2 id="配置vim复制"><a href="#配置vim复制" class="headerlink" title="配置vim复制"></a>配置vim复制</h2><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sudo vim &#x2F;usr&#x2F;share&#x2F;vim&#x2F;vim81&#x2F;defaults.vim# 找到第79行左右# 将set mouse&#x3D;改成set mouse&#x3D;v</code></pre></div><p><strong>note：</strong> vim81会可能因为更新改变数字，所以找不到defaults.vim文件时，看看上一级目录带数字的vim文件夹(vim8X)。</p>]]></content>
     
     
-      
-      
-    <summary type="html"></summary>
-      
+    <summary type="html">&lt;p&gt;​    与vim的一些相关配置。&lt;/p&gt;</summary>
     
     
     
@@ -463,19 +483,16 @@
   </entry>
   
   <entry>
-    <title>优化url</title>
+    <title>优化hexo</title>
     <link href="https://brraida.github.io/posts/7d2eca9c/"/>
     <id>https://brraida.github.io/posts/7d2eca9c/</id>
     <published>2021-09-02T05:54:37.000Z</published>
-    <updated>2022-02-21T06:48:19.843Z</updated>
+    <updated>2022-03-07T05:11:27.758Z</updated>
     
-    <content type="html"><![CDATA[<p>使url看得更顺眼，但要使用插件，这可能一定程度上使网页加载速度变慢。</p><p>使用<code>hexo-abbrlink</code>插件</p><blockquote><p>官方的安装与配置</p><p><a href="https://github.com/rozbo/hexo-abbrlink">rozbo/hexo-abbrlink: create one and only link for every post for hexo (github.com)</a></p></blockquote>]]></content>
+    <content type="html"><![CDATA[<p>​    关于hexo博客的一些细小优化。</p><span id="more"></span><h2 id="优化url"><a href="#优化url" class="headerlink" title="优化url"></a>优化url</h2><p>使url看得更顺眼，但要使用插件，这可能一定程度上使网页加载速度变慢。</p><p>使用<code>hexo-abbrlink</code>插件</p><blockquote><p>官方的安装与配置</p><p><a href="https://github.com/rozbo/hexo-abbrlink">rozbo/hexo-abbrlink: create one and only link for every post for hexo (github.com)</a></p></blockquote><h2 id="去除LF与CRLF警告"><a href="#去除LF与CRLF警告" class="headerlink" title="去除LF与CRLF警告"></a>去除LF与CRLF警告</h2><p>在gitbash中输入即可<code>git config --global core.autocrlf false</code>。</p><blockquote><p><a href="https://xfdj.github.io/2019/02/09/%E4%BC%98%E5%8C%96%E5%8D%9A%E5%AE%A2%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89%EF%BC%9Awarning-LF-will-be-replaced-by-CRLF%E7%9A%84%E5%8E%BB%E9%99%A4%E6%96%B9%E6%B3%95/">优化博客（十一）：warning: LF will be replaced by CRLF 的去除方法 | 兴趣使然的博客 (xfdj.github.io)</a></p></blockquote>]]></content>
     
     
-      
-      
-    <summary type="html"></summary>
-      
+    <summary type="html">&lt;p&gt;​    关于hexo博客的一些细小优化。&lt;/p&gt;</summary>
     
     
     
@@ -847,28 +864,6 @@
   </entry>
   
   <entry>
-    <title>py爆破</title>
-    <link href="https://brraida.github.io/posts/3cc1efd6/"/>
-    <id>https://brraida.github.io/posts/3cc1efd6/</id>
-    <published>2021-05-18T09:27:08.000Z</published>
-    <updated>2021-09-02T05:47:42.203Z</updated>
-    
-    <content type="html"><![CDATA[<p>​    有时候想白嫖一些资源，但是总会有些资源是压缩加密的。就因为这个，我对爆破很感兴趣。之后有学了python，所以就兴致冲冲地写了爆破脚本。记录一下遇到的问题和解决的方法。</p><p>​    首先，学信安的小伙伴和我讲有字典就简单，代码很简单的。所以我在github在找了如下的字典库。</p><blockquote><p><a href="https://github.com/YueYongDev/Blasting_dictionary">YueYongDev/Blasting_dictionary: 爆破字典 (github.com)</a></p></blockquote><p>​    之后cv网上代码，他用的是zipfile模块（python内置的模块）、rarfile模块(github大佬写的，接口和zipfile差不多)。然后出现问题。</p><h2 id="使用zipfile模块"><a href="#使用zipfile模块" class="headerlink" title="使用zipfile模块"></a>使用zipfile模块</h2><p>​    用zipfile不能解压不是用传统加密的文件。经过科学上网查询得到这样的解答与解决。</p><p><img src="/img/article/py-%E7%88%86%E7%A0%B4/zipfile%E4%B8%8D%E5%8F%AF%E7%94%A8%E8%A7%A3%E7%AD%94.jpg"></p><p>​    <strong>AES</strong>：密码学中的高级加密标准（Advanced Encryption Standard，AES），又称Rijndael加密法，是美国联邦政府采用的一种区块加密标准。</p><p>​    现在加密一般都是按这个标准。</p><h2 id="使用pyzipper模块"><a href="#使用pyzipper模块" class="headerlink" title="使用pyzipper模块"></a>使用pyzipper模块</h2><p>​    所以使用pyzipper模块代替zipfile模块。</p><p>​    给上可执行正确的代码：</p><div class="code-wrapper"><pre class="line-numbers language-python" data-language="python"><code class="language-python">import pyzipperf1 &#x3D; open(&#39;D:\\1\\pwd.txt&#39;, &#39;r&#39;)with pyzipper.AESZipFile(&#39;D:\\1\\test.zip&#39;, &#39;r&#39;) as f:    for i in f1:        i &#x3D; i.rstrip(&#39;\n&#39;)        f.pwd &#x3D; str.encode(i)        try:            f.extractall(&#39;D:\\1\\2&#39;)            print(&quot;The correct password is:&quot; + i)            break        except Exception:            passf1.close()</code></pre></div><h2 id="rarfile模块"><a href="#rarfile模块" class="headerlink" title="rarfile模块"></a>rarfile模块</h2><p>​    使用rarfile模块解压rar文件问题就多了。它解压其实借助的是电脑的解压软件的unrar.exe进行解压。(可以在pypi中查看此模块，可以得到此模块的相关信息与工作原理)</p><p>​    然后我嫌下载unrar太麻烦，还要配置环境变量等等操作，并且我本地用的是WinRAR，所以将WinRAR所在的路径加入环境就解决了。</p><div class="code-wrapper"><pre class="line-numbers language-python" data-language="python"><code class="language-python">import rarfile path1 &#x3D; &#39;D:\\1\\2.rar&#39; despath &#x3D; &#39;D:\\1\\2&#39;  rf &#x3D; rarfile.RarFile(path1)rf.extractall(path&#x3D;despath)rf.close()</code></pre></div><p>​    经过测试，解压没有密码压缩的可以；解压加密的压缩包里面没有文件的可以。但是不可以解压加密的有文件的压缩包。编译错误显示下图所示：</p><p><img src="/img/article/py-%E7%88%86%E7%A0%B4/%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF%E6%98%BE%E7%A4%BA.png"></p><p>​    所以上rarfile这个项目查了一下，其他的使用者也遇到类似这样的问题。然后有人是这么解决的，如下图所示：</p><p><img src="/img/article/py-%E7%88%86%E7%A0%B4/%E6%8F%90%E9%97%AE%E8%80%85%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.png"></p><p>​    不过，这个14年提出来并解决的。我一个21年的，只能是借鉴参考了。看到后面，果然有个20年的朋友也有这样的问题。</p><p><img src="/img/article/py-%E7%88%86%E7%A0%B4/20%E5%B9%B4%E5%90%8C%E6%8F%90%E9%97%AE%E8%80%85.png"></p><p>​    所以大胆猜测，rarfile这个模块里面确实有些问题。</p><hr><p>​    同样的代码，我室友使用rarfile在他的电脑上跑出来了。</p><p>​    我是Windows10，python3.8.3，Pycharm，压缩软件WinRAR</p><p>​    室友用的是manjaro，python3.9.4，idle，压缩软件是系统自带的</p><hr><h2 id="展望"><a href="#展望" class="headerlink" title="展望"></a>展望</h2><p>​    瞅我这暴脾气，最近考试月。考试月过了，我在搞一下。</p><ol><li>Windows下，下那个unrar，搞配置尝试</li><li>1不行就去CenOs7.4服务器搭个环境尝试</li><li>2不行我也开manjaro尝试</li><li>以上都失败，就可以砸电脑了</li></ol><p>搞成功地进一步设想。</p><ol><li>zip可以了，rar可以了，怎么可以不把它们整合在一起的道理呢。</li><li>爆破怎么可以不搞多线程呢。</li><li>python怎么可以不搞封装呢。</li><li>整个界面。</li></ol>]]></content>
-    
-    
-      
-      
-    <summary type="html"></summary>
-      
-    
-    
-    
-    
-    <category term="python" scheme="https://brraida.github.io/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
     <title>py指令</title>
     <link href="https://brraida.github.io/posts/c669871/"/>
     <id>https://brraida.github.io/posts/c669871/</id>
@@ -889,6 +884,28 @@
     <category term="python" scheme="https://brraida.github.io/tags/python/"/>
     
     <category term="instruct" scheme="https://brraida.github.io/tags/instruct/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>py爆破</title>
+    <link href="https://brraida.github.io/posts/3cc1efd6/"/>
+    <id>https://brraida.github.io/posts/3cc1efd6/</id>
+    <published>2021-05-18T09:27:08.000Z</published>
+    <updated>2021-09-02T05:47:42.203Z</updated>
+    
+    <content type="html"><![CDATA[<p>​    有时候想白嫖一些资源，但是总会有些资源是压缩加密的。就因为这个，我对爆破很感兴趣。之后有学了python，所以就兴致冲冲地写了爆破脚本。记录一下遇到的问题和解决的方法。</p><p>​    首先，学信安的小伙伴和我讲有字典就简单，代码很简单的。所以我在github在找了如下的字典库。</p><blockquote><p><a href="https://github.com/YueYongDev/Blasting_dictionary">YueYongDev/Blasting_dictionary: 爆破字典 (github.com)</a></p></blockquote><p>​    之后cv网上代码，他用的是zipfile模块（python内置的模块）、rarfile模块(github大佬写的，接口和zipfile差不多)。然后出现问题。</p><h2 id="使用zipfile模块"><a href="#使用zipfile模块" class="headerlink" title="使用zipfile模块"></a>使用zipfile模块</h2><p>​    用zipfile不能解压不是用传统加密的文件。经过科学上网查询得到这样的解答与解决。</p><p><img src="/img/article/py-%E7%88%86%E7%A0%B4/zipfile%E4%B8%8D%E5%8F%AF%E7%94%A8%E8%A7%A3%E7%AD%94.jpg"></p><p>​    <strong>AES</strong>：密码学中的高级加密标准（Advanced Encryption Standard，AES），又称Rijndael加密法，是美国联邦政府采用的一种区块加密标准。</p><p>​    现在加密一般都是按这个标准。</p><h2 id="使用pyzipper模块"><a href="#使用pyzipper模块" class="headerlink" title="使用pyzipper模块"></a>使用pyzipper模块</h2><p>​    所以使用pyzipper模块代替zipfile模块。</p><p>​    给上可执行正确的代码：</p><div class="code-wrapper"><pre class="line-numbers language-python" data-language="python"><code class="language-python">import pyzipperf1 &#x3D; open(&#39;D:\\1\\pwd.txt&#39;, &#39;r&#39;)with pyzipper.AESZipFile(&#39;D:\\1\\test.zip&#39;, &#39;r&#39;) as f:    for i in f1:        i &#x3D; i.rstrip(&#39;\n&#39;)        f.pwd &#x3D; str.encode(i)        try:            f.extractall(&#39;D:\\1\\2&#39;)            print(&quot;The correct password is:&quot; + i)            break        except Exception:            passf1.close()</code></pre></div><h2 id="rarfile模块"><a href="#rarfile模块" class="headerlink" title="rarfile模块"></a>rarfile模块</h2><p>​    使用rarfile模块解压rar文件问题就多了。它解压其实借助的是电脑的解压软件的unrar.exe进行解压。(可以在pypi中查看此模块，可以得到此模块的相关信息与工作原理)</p><p>​    然后我嫌下载unrar太麻烦，还要配置环境变量等等操作，并且我本地用的是WinRAR，所以将WinRAR所在的路径加入环境就解决了。</p><div class="code-wrapper"><pre class="line-numbers language-python" data-language="python"><code class="language-python">import rarfile path1 &#x3D; &#39;D:\\1\\2.rar&#39; despath &#x3D; &#39;D:\\1\\2&#39;  rf &#x3D; rarfile.RarFile(path1)rf.extractall(path&#x3D;despath)rf.close()</code></pre></div><p>​    经过测试，解压没有密码压缩的可以；解压加密的压缩包里面没有文件的可以。但是不可以解压加密的有文件的压缩包。编译错误显示下图所示：</p><p><img src="/img/article/py-%E7%88%86%E7%A0%B4/%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF%E6%98%BE%E7%A4%BA.png"></p><p>​    所以上rarfile这个项目查了一下，其他的使用者也遇到类似这样的问题。然后有人是这么解决的，如下图所示：</p><p><img src="/img/article/py-%E7%88%86%E7%A0%B4/%E6%8F%90%E9%97%AE%E8%80%85%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.png"></p><p>​    不过，这个14年提出来并解决的。我一个21年的，只能是借鉴参考了。看到后面，果然有个20年的朋友也有这样的问题。</p><p><img src="/img/article/py-%E7%88%86%E7%A0%B4/20%E5%B9%B4%E5%90%8C%E6%8F%90%E9%97%AE%E8%80%85.png"></p><p>​    所以大胆猜测，rarfile这个模块里面确实有些问题。</p><hr><p>​    同样的代码，我室友使用rarfile在他的电脑上跑出来了。</p><p>​    我是Windows10，python3.8.3，Pycharm，压缩软件WinRAR</p><p>​    室友用的是manjaro，python3.9.4，idle，压缩软件是系统自带的</p><hr><h2 id="展望"><a href="#展望" class="headerlink" title="展望"></a>展望</h2><p>​    瞅我这暴脾气，最近考试月。考试月过了，我在搞一下。</p><ol><li>Windows下，下那个unrar，搞配置尝试</li><li>1不行就去CenOs7.4服务器搭个环境尝试</li><li>2不行我也开manjaro尝试</li><li>以上都失败，就可以砸电脑了</li></ol><p>搞成功地进一步设想。</p><ol><li>zip可以了，rar可以了，怎么可以不把它们整合在一起的道理呢。</li><li>爆破怎么可以不搞多线程呢。</li><li>python怎么可以不搞封装呢。</li><li>整个界面。</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html"></summary>
+      
+    
+    
+    
+    
+    <category term="python" scheme="https://brraida.github.io/tags/python/"/>
     
   </entry>
   

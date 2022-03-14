@@ -16,19 +16,51 @@
   <meta name="author" content="Brraida Hu">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="website">
-<meta property="og:title" content="标签 - tools">
-<meta property="og:url" content="https://brraida.github.io/tags/tools/index.html">
+    <meta name="description" content="chocolatey是windows下的一个包管理器，久闻大名。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="chocoUsage">
+<meta property="og:url" content="https://brraida.github.io/posts/a3de2b30/index.html">
 <meta property="og:site_name" content="SunMonkey">
+<meta property="og:description" content="chocolatey是windows下的一个包管理器，久闻大名。">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-03-14T02:23:35.000Z">
+<meta property="article:modified_time" content="2022-03-14T02:46:02.381Z">
 <meta property="article:author" content="Brraida Hu">
+<meta property="article:tag" content="tools">
+<meta property="article:tag" content="chocolatey">
+<meta property="article:tag" content="windows">
 <meta name="twitter:card" content="summary_large_image">
   
   
-  <title>标签 - tools - SunMonkey</title>
+  <title>chocoUsage - SunMonkey</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      
+        
+          
+          
+          
+        
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism-solarizedlight.min.css" />
+      
+      
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.css" />
+      
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -56,7 +88,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -157,17 +189,42 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="标签 - tools">
+            <span class="h2" id="subtitle" title="chocoUsage">
               
             </span>
 
             
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-03-14 10:23" pubdate>
+        2022年3月14日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      10 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
           </div>
 
-          
-            <div class="scroll-down-bar">
-              <i class="iconfont icon-arrowdown"></i>
-            </div>
           
         </div>
       </div>
@@ -176,55 +233,126 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 3 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2022</p>
-    
-    <a href="/posts/a3de2b30/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">chocoUsage</span>
-      <time style="float: right;">03-14</time>
-    </a>
-  
-    
-    <a href="/posts/e531a5f8/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">createPersonalPortainer</span>
-      <time style="float: right;">02-21</time>
-    </a>
-  
-    
-      
-      <p class="h5">2021</p>
-    
-    <a href="/posts/b891a459/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">tmpmail</span>
-      <time style="float: right;">09-07</time>
-    </a>
-  
-</div>
 
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">chocoUsage</h1>
+            
+            <div class="markdown-body">
+              <p>chocolatey是windows下的一个包管理器，久闻大名。</p>
+<span id="more"></span>
 
+<blockquote>
+<p>官网：<a target="_blank" rel="noopener" href="https://chocolatey.org/">Chocolatey Software | Chocolatey - The package manager for Windows</a></p>
+</blockquote>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ol>
+<li><p>打开powershell</p>
+<p>在桌面按<strong>shift+鼠标右键</strong>，然后点击<strong>在此处打开powershell窗口</strong>。</p>
+</li>
+<li><p>提权，以管理员运行</p>
+<p><code>start-process PowerShell -verb runas</code></p>
+</li>
+<li><p>安装chocolatey</p>
+<p><code>Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://community.chocolatey.org/install.ps1&#39;))</code></p>
+</li>
+</ol>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://chocolatey.org/install">Chocolatey Software | Installing Chocolatey</a></p>
+</blockquote>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="修改安装默认目录"><a href="#修改安装默认目录" class="headerlink" title="修改安装默认目录"></a>修改安装默认目录</h3><p>​    按自己需求是否要修改安装的默认目录（choco的安装默认目录是C:\Program Files）。</p>
+<p>​    默认的安装路径在注册表里进行修改。</p>
+<ol>
+<li><p><code>win</code>+<code>r</code>，输入<code>regedit</code></p>
+</li>
+<li><p>展开注册表到下面的分支[HKEY＿LOCAL＿MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion]，在右侧窗口中找到名为“ProgramFilesDir”的字符串，双击把数值“C:\Program Files”修改为<code>你想要的路径</code>，确定退出后即可。</p>
+</li>
+</ol>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/abaa0e8c261f">Windows下的包管理器 Chocolatey 的使用 - 简书 (jianshu.com)</a></p>
+</blockquote>
+<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><div class="code-wrapper"><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">choco search &lt;keyword&gt;    搜索软件
+choco install &lt;package1 package2 package3...&gt;  安装软件
+choco install &lt;packagename&gt;  -version *** 安装指定版本
+choco  uninstall &lt;packagename&gt; 卸载软件
+choco version &lt;packagename&gt;  查看安装包的版本情况
+choco  upgrade &lt;packagename&gt;   更新某个软件 
+choco list -lo       查看本地安装包</code></pre></div>
 
+<p>更多命令可以使用choco help查看。</p>
+<p><strong>note</strong>:要在administrator下运行命令，不然会提示权限不够。</p>
 
-
-              </div>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/tools/">tools</a>
+                    
+                      <a class="hover-with-bg" href="/tags/chocolatey/">chocolatey</a>
+                    
+                      <a class="hover-with-bg" href="/tags/windows/">windows</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/33f781e7/">
+                        <span class="hidden-mobile">ssh_github</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -315,6 +443,19 @@
   
 
 
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
 
 
 
