@@ -6,7 +6,7 @@
   <link href="https://brraida.github.io/atom.xml" rel="self"/>
   
   <link href="https://brraida.github.io/"/>
-  <updated>2022-03-14T02:46:02.381Z</updated>
+  <updated>2022-03-27T13:51:30.044Z</updated>
   <id>https://brraida.github.io/</id>
   
   <author>
@@ -17,11 +17,35 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>vscodePlugins</title>
+    <link href="https://brraida.github.io/posts/88bb77ff/"/>
+    <id>https://brraida.github.io/posts/88bb77ff/</id>
+    <published>2022-03-27T13:27:03.000Z</published>
+    <updated>2022-03-27T13:51:30.044Z</updated>
+    
+    <content type="html"><![CDATA[<p>    记录一些好使的vscode插件。</p><h2 id="Git相关的插件"><a href="#Git相关的插件" class="headerlink" title="Git相关的插件"></a>Git相关的插件</h2><p>    <strong>GitLens</strong>：除了它本身现在所讲的之外，还可以将rebase命令进行可视化。</p><blockquote><p>使用rebase的参考链接：<a href="https://youtu.be/FQP2Af63NAA">[ 前端新手技能樹] #4-3 Learn Git Branching - 調整提交順序 - YouTube</a></p></blockquote><p>    若要将rebase命令进行可视化，则需要进行一下配置：</p><ol><li><p>在vscode里面输入 ctrl+` ,打开终端</p></li><li><p>在终端键入<code>code --help</code>，确认是否安装了code</p></li><li><p>如果是则键入<code>git config --global core.editor &quot;code --wait&quot;</code></p></li></ol><blockquote><p><a href="https://stackoverflow.com/questions/30024353/how-to-use-visual-studio-code-as-default-editor-for-git">How to use Visual Studio Code as default editor for git? - Stack Overflow</a></p></blockquote><p><strong>Git Graph</strong>:查看git的流程线，可以配合Gitlens做一些可视化操作。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html"></summary>
+      
+    
+    
+    
+    
+    <category term="vscode" scheme="https://brraida.github.io/tags/vscode/"/>
+    
+    <category term="plugins" scheme="https://brraida.github.io/tags/plugins/"/>
+    
+  </entry>
+  
+  <entry>
     <title>chocoUsage</title>
     <link href="https://brraida.github.io/posts/a3de2b30/"/>
     <id>https://brraida.github.io/posts/a3de2b30/</id>
     <published>2022-03-14T02:23:35.000Z</published>
-    <updated>2022-03-14T02:46:02.381Z</updated>
+    <updated>2022-03-14T02:46:52.692Z</updated>
     
     <content type="html"><![CDATA[<p>chocolatey是windows下的一个包管理器，久闻大名。</p><span id="more"></span><blockquote><p>官网：<a href="https://chocolatey.org/">Chocolatey Software | Chocolatey - The package manager for Windows</a></p></blockquote><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ol><li><p>打开powershell</p><p>在桌面按<strong>shift+鼠标右键</strong>，然后点击<strong>在此处打开powershell窗口</strong>。</p></li><li><p>提权，以管理员运行</p><p><code>start-process PowerShell -verb runas</code></p></li><li><p>安装chocolatey</p><p><code>Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://community.chocolatey.org/install.ps1&#39;))</code></p></li></ol><blockquote><p><a href="https://chocolatey.org/install">Chocolatey Software | Installing Chocolatey</a></p></blockquote><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="修改安装默认目录"><a href="#修改安装默认目录" class="headerlink" title="修改安装默认目录"></a>修改安装默认目录</h3><p>​    按自己需求是否要修改安装的默认目录（choco的安装默认目录是C:\Program Files）。</p><p>​    默认的安装路径在注册表里进行修改。</p><ol><li><p><code>win</code>+<code>r</code>，输入<code>regedit</code></p></li><li><p>展开注册表到下面的分支[HKEY＿LOCAL＿MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion]，在右侧窗口中找到名为“ProgramFilesDir”的字符串，双击把数值“C:\Program Files”修改为<code>你想要的路径</code>，确定退出后即可。</p></li></ol><blockquote><p><a href="https://www.jianshu.com/p/abaa0e8c261f">Windows下的包管理器 Chocolatey 的使用 - 简书 (jianshu.com)</a></p></blockquote><h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><div class="code-wrapper"><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">choco search &lt;keyword&gt;    搜索软件choco install &lt;package1 package2 package3...&gt;  安装软件choco install &lt;packagename&gt;  -version *** 安装指定版本choco  uninstall &lt;packagename&gt; 卸载软件choco version &lt;packagename&gt;  查看安装包的版本情况choco  upgrade &lt;packagename&gt;   更新某个软件 choco list -lo       查看本地安装包</code></pre></div><p>更多命令可以使用choco help查看。</p><p><strong>note</strong>:要在administrator下运行命令，不然会提示权限不够。</p>]]></content>
     
@@ -31,11 +55,11 @@
     
     
     
-    <category term="tools" scheme="https://brraida.github.io/tags/tools/"/>
-    
     <category term="chocolatey" scheme="https://brraida.github.io/tags/chocolatey/"/>
     
     <category term="windows" scheme="https://brraida.github.io/tags/windows/"/>
+    
+    <category term="tools" scheme="https://brraida.github.io/tags/tools/"/>
     
   </entry>
   
@@ -125,9 +149,9 @@
     
     <category term="linux" scheme="https://brraida.github.io/tags/linux/"/>
     
-    <category term="portainer" scheme="https://brraida.github.io/tags/portainer/"/>
-    
     <category term="tools" scheme="https://brraida.github.io/tags/tools/"/>
+    
+    <category term="portainer" scheme="https://brraida.github.io/tags/portainer/"/>
     
   </entry>
   
