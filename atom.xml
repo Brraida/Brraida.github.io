@@ -6,7 +6,7 @@
   <link href="https://brraida.github.io/atom.xml" rel="self"/>
   
   <link href="https://brraida.github.io/"/>
-  <updated>2022-03-27T13:51:30.044Z</updated>
+  <updated>2022-03-29T04:46:33.303Z</updated>
   <id>https://brraida.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>change-editor-font</title>
+    <link href="https://brraida.github.io/posts/69558f85/"/>
+    <id>https://brraida.github.io/posts/69558f85/</id>
+    <published>2022-03-29T03:33:07.000Z</published>
+    <updated>2022-03-29T04:46:33.303Z</updated>
+    
+    <content type="html"><![CDATA[<p>      修改vscode的字体。</p><span id="more"></span><p>    ‘0’、‘ o’、‘ O’；‘l’、‘|’、‘1’有时候总是分不清楚（虽然编译器会提示）。</p><p>    最近看到一个感觉不错的字体，所以修改一下vscode的字体。</p><blockquote><p><a href="https://github.com/JetBrains/JetBrainsMono">JetBrains/JetBrainsMono: JetBrains Mono – the free and open-source typeface for developers (github.com)</a></p><p><a href="https://www.jetbrains.com/lp/mono/">JetBrains Mono: A free and open source typeface for developers | JetBrains: Developer Tools for Professionals and Teams</a></p></blockquote><p>    上面链接有详细的修改方法。我就讲一下自己电脑上设备的修改。</p><p>   环境：windows10且装了chocolatey</p><p>    步骤：</p><ol><li><p>在桌面打开Powersell:<code>shift + 鼠标右键</code></p></li><li><p>提权:<code>start-process PowerShell -verb runas</code></p></li><li><p>下载字体:<code>choco install -y jetbrainsmono</code></p></li><li><p>在vscode上配置font:</p><ul><li><p><code>ctrl+,</code>或者在左下角齿轮处打开设置</p></li><li><p>在搜索配置栏中输入:<code>font family</code></p></li><li><p>将有<strong>Font Family</strong>出现过那些栏都填入<code>jetBrains Mono</code>(怕出事先把原先的配置先记录下来，我这样操作是没有出现问题过)</p></li></ul></li><li><p>如果需要连体的话，需要配置以下配置：（连体的效果图在<a href="https://www.jetbrains.com/lp/mono/">JetBrains Mono</a>这个链接可以看到）</p><ul><li><p>在搜索栏输入<code>font ligatures</code></p></li><li><p>点击<strong>在settings.json中编辑</strong></p></li><li><p>在第二行键入<code>&quot;editor.fontLigatures&quot;: true,</code>（其实只要在花括号里随意位置都可以，不要忘记逗号，虽然编译器会提醒)</p></li></ul></li><li><p>重启：</p><ul><li><p><code>ctrl+shift+p</code></p></li><li><p>输入<code>reload Window</code>，回车即可</p><p>关闭重启也可以达到重启的效果。</p></li></ul></li></ol>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;      修改vscode的字体。&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="font" scheme="https://brraida.github.io/tags/font/"/>
+    
+    <category term="vscode" scheme="https://brraida.github.io/tags/vscode/"/>
+    
+  </entry>
   
   <entry>
     <title>vscodePlugins</title>
