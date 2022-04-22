@@ -27,9 +27,8 @@
 <meta property="og:image" content="https://brraida.github.io/img/article/ssh-tencentCloud.assets/image-20220204212156456.png">
 <meta property="og:image" content="https://brraida.github.io/img/article/ssh-tencentCloud.assets/image-20220204212541938.png">
 <meta property="article:published_time" content="2022-02-03T12:47:14.000Z">
-<meta property="article:modified_time" content="2022-02-21T06:42:59.780Z">
+<meta property="article:modified_time" content="2022-04-22T14:30:55.820Z">
 <meta property="article:author" content="Brraida Hu">
-<meta property="article:tag" content="linux">
 <meta property="article:tag" content="ssh">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://brraida.github.io/img/article/ssh-tencentCloud.assets/image-20220204212038017.png">
@@ -271,10 +270,10 @@
 <ul>
 <li><p>我修改的默认配置（鉴于以后可能会创建多个用户，省力）</p>
 <div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">SHELL&#x3D;&#x2F;bin&#x2F;bash # 默认的shell
-GROUP&#x3D;100	# 默认的用户组
-HOME&#x3D;&#x2F;home	# 默认的家目录所在的目录
+GROUP&#x3D;100    # 默认的用户组
+HOME&#x3D;&#x2F;home    # 默认的家目录所在的目录
 INACTIVE&#x3D;-1 # 密码失效日期
-EXPIRE&#x3D;		# 账号失效日期
+EXPIRE&#x3D;        # 账号失效日期
 SKEL&#x3D;&#x2F;etc&#x2F;skel # 使用者家目录的内容数据参考目录
 CREATE_MAIL_SPOOL&#x3D;yes # 是否主动帮助使用者建立邮箱</code></pre></div>
 
@@ -320,11 +319,16 @@ alias ll&#x3D;&#39;ls $LS_OPTIONS -l&#39; # 使ll有效</code></pre></div></li>
             <div>
               <div class="post-metas mb-3">
                 
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/linux/">linux</a>
+                    
+                  </div>
+                
                 
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/linux/">linux</a>
                     
                       <a class="hover-with-bg" href="/tags/ssh/">ssh</a>
                     

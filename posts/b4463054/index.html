@@ -18,14 +18,14 @@
   
     <meta name="description" content="​    第一次部署ttrss可能没有那么简单，需要耐点心。 ​    我不用宝塔面板，环境都是自己搭的，所以会需要很多时间。用宝塔面板会比较简单(本来之后想搞宝塔面板的，但是我搭好了一些环境，而宝塔面板的官方文档说要“干净”的操作系统，由此作罢。)  宝塔Linux面板安装教程 - 2021年6月4日更新 - 7.6.0正式版 - Linux面板 - 宝塔面板论坛 (bt.cn)  这位大佬就是">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ttrss">
+<meta property="og:title" content="使用docker建立ttrss">
 <meta property="og:url" content="https://brraida.github.io/posts/b4463054/index.html">
 <meta property="og:site_name" content="SunMonkey">
 <meta property="og:description" content="​    第一次部署ttrss可能没有那么简单，需要耐点心。 ​    我不用宝塔面板，环境都是自己搭的，所以会需要很多时间。用宝塔面板会比较简单(本来之后想搞宝塔面板的，但是我搭好了一些环境，而宝塔面板的官方文档说要“干净”的操作系统，由此作罢。)  宝塔Linux面板安装教程 - 2021年6月4日更新 - 7.6.0正式版 - Linux面板 - 宝塔面板论坛 (bt.cn)  这位大佬就是">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://brraida.github.io/img/cover/13.jpg">
 <meta property="article:published_time" content="2021-08-02T01:05:54.000Z">
-<meta property="article:modified_time" content="2022-02-21T06:47:28.893Z">
+<meta property="article:modified_time" content="2022-04-22T14:29:09.354Z">
 <meta property="article:author" content="Brraida Hu">
 <meta property="article:tag" content="rss">
 <meta property="article:tag" content="ttrss">
@@ -33,7 +33,7 @@
 <meta name="twitter:image" content="https://brraida.github.io/img/cover/13.jpg">
   
   
-  <title>ttrss - SunMonkey</title>
+  <title>使用docker建立ttrss - SunMonkey</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -190,7 +190,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="ttrss">
+            <span class="h2" id="subtitle" title="使用docker建立ttrss">
               
             </span>
 
@@ -244,7 +244,7 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">ttrss</h1>
+            <h1 style="display: none">使用docker建立ttrss</h1>
             
             <div class="markdown-body">
               <p>​    第一次部署ttrss可能没有那么简单，需要耐点心。</p>
@@ -421,8 +421,7 @@ docker-compose up -d #start</code></pre></div></li>
 #        root html; 
 #        index  index.html index.htm;
 #    &#125;
-&#125;
-</code></pre></div></li>
+&#125;</code></pre></div></li>
 <li><p>location块配置</p>
 <p>在default.d目录下创建一个ttrss.conf</p>
 <div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">vim &#x2F;etc&#x2F;nginx&#x2F;default.d&#x2F;ttrss.conf
@@ -463,8 +462,6 @@ systemctl start firewalld  # 防火墙开启
 firewall-cmd --zone&#x3D;public --add-port&#x3D;80&#x2F;tcp --permanent # 打开80端口
 firewall-cmd --list-all    # 查看防火墙开启的端口</code></pre></div>
 
-
-
 <p>问题：PostgreSQL: Could not connect to server: TCP/IP connections on port 5432</p>
 <p>​    ttrss用的是PostgreSQL，所以别忘记开5432端口。开启后，运行<code>docker-compose down</code>，将容器停下来，然后运行<code>service docker restart</code>，不然可能遇到<strong>ERROR: Failed to Setup IP tables: Unable to enable SKIP DNAT rule</strong>，然后就可以运行<code>docker-compose up -d</code>了。</p>
 <p>​    大佬做好的一键安装脚本，容我膜拜一下。</p>
@@ -500,9 +497,9 @@ firewall-cmd --list-all    # 查看防火墙开启的端口</code></pre></div>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/4a17b156/">
+                      <a href="/posts/dedab3/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Hello World</span>
+                        <span class="hidden-mobile">右键新建Markdown文件</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
