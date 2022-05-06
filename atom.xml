@@ -6,7 +6,7 @@
   <link href="https://brraida.github.io/atom.xml" rel="self"/>
   
   <link href="https://brraida.github.io/"/>
-  <updated>2022-04-22T02:41:36.189Z</updated>
+  <updated>2022-05-06T11:35:43.346Z</updated>
   <id>https://brraida.github.io/</id>
   
   <author>
@@ -15,6 +15,48 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>自动登录校园网</title>
+    <link href="https://brraida.github.io/posts/bb01f2a2/"/>
+    <id>https://brraida.github.io/posts/bb01f2a2/</id>
+    <published>2022-05-06T03:40:34.000Z</published>
+    <updated>2022-05-06T11:35:43.346Z</updated>
+    
+    <content type="html"><![CDATA[<p>    优化自动登录校园网的代码。</p><span id="more"></span><h2 id="需求："><a href="#需求：" class="headerlink" title="需求："></a>需求：</h2><p>    学校不是通宵供电，会断电，这导致每天早上都需要进行路由器的账号登录。为解决这个问题，写一个shell脚本。</p><p>    完成自动登录这个目标，可以看出是两块，一块是自动，一块是登录。路由器刷的是老毛子固件，该固件有自己的后台管理界面，在管理界面加自动化就行（更一般的方法，可以考虑linux中的crontab）；登录这边将使用<strong>curl</strong>。</p><h2 id="步骤："><a href="#步骤：" class="headerlink" title="步骤："></a>步骤：</h2><p>首先是用edge直接获取curl（bash）的代码。   </p><ol><li>按f12，在<strong>Network</strong>中勾选Preserve log，然后按下记录按钮。</li></ol><p><img src="/img/article/autoLoginCampusNetwork/2022-05-06-14-27-16-image.png"></p><ol start="2"><li><p>输入账号密码，获得Get请求。</p><p><img src="/img/article/autoLoginCampusNetwork/2022-05-06-14-29-21-image.png"></p><p><img src="/img/article/autoLoginCampusNetwork/2022-05-06-14-34-23-image.png"></p></li><li><p>在上图红线处右键，选<strong>copy</strong>，在选择**copy as cURL(bash)**。</p></li></ol><p>其次编写shell script，如下：</p><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">#!&#x2F;bin&#x2F;bash# Program:#            auto login school nerwork by writing shell scripts in router# History:# 2022&#x2F;05&#x2F;06        brraida        First release#PATH&#x3D;&#x2F;bin:&#x2F;sbin:&#x2F;usr&#x2F;bin:&#x2F;usr&#x2F;sbin:&#x2F;usr&#x2F;local&#x2F;bin:&#x2F;usr&#x2F;local&#x2F;sbin#export PATHmaxTry&#x3D;3        # 尝试最大次数currentTry&#x3D;0    # 目前正在尝试的次数httpUrl&#x3D;&#39;&#39;      # get请求的urlresponse&#x3D;404    # 初始化最开始的响应为404# 获取url的状态码function getStatus()&#123;    response&#x3D;$(curl -o &#x2F;dev&#x2F;null -s -w &quot;%&#123;http_code&#125;\n&quot; $httpUrl)&#125;# 当目前的尝试次数为最大次数时，则停止尝试，并且在日志中打印失败信息while [ $currentTry -ne $maxTry ]do    getStatus;    # 200状态码为请求成功状态码，若为此，则成功跳出    if [ $response -eq 200 ]; then        logger &quot;connection success&quot;        break    else        currentTry&#x3D;$(($currentTry+1))        logger &quot;retry $currentTry&quot;    fidoneif [ $currentTry -eq $maxTry ]; then    logger &quot;try max, fail&quot;fi</code></pre></div><p>    其中<strong>httpUrl</strong>填写的内容为在第一步中获取的get请求的url，可以将其他curl参数抛弃（如-H）。</p><p>    日志文件在<code>/tmp/syslog.log</code></p><p>    将该文件保存在<code>/etc/storage/</code>目录下</p><hr><p>最后在后端界面加上该文件地址即可。</p><p>【自定义设置】–&gt;【脚本】–&gt;【在路由器启动后运行】在最后添加：</p><p><code>/etc/storage/autoLoginCompusNetwork</code></p><p>    其实以上shell脚本也可以直接写在这里，就是不是更适用的选择。</p><p>参考链接：</p><blockquote><p><a href="https://www.ruanyifeng.com/blog/2019/09/curl-reference.html">curl 的用法指南 - 阮一峰的网络日志 (ruanyifeng.com)</a></p><p><a href="https://www.right.com.cn/forum/thread-256244-1-1.html">老毛子固件的完整日志文件在什么位置？因为只能看到最近的日志文件 、-恩山无线论坛 (right.com.cn)</a></p><p><a href="https://stackoverflow.com/questions/38906626/curl-to-return-http-status-code-along-with-the-response">shell - Curl to return http status code along with the response - Stack Overflow</a></p></blockquote>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;    优化自动登录校园网的代码。&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="campusNetwork" scheme="https://brraida.github.io/tags/campusNetwork/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>学习与记录bash</title>
+    <link href="https://brraida.github.io/posts/bbd13e89/"/>
+    <id>https://brraida.github.io/posts/bbd13e89/</id>
+    <published>2022-05-04T02:22:20.000Z</published>
+    <updated>2022-05-06T11:14:56.041Z</updated>
+    
+    <content type="html"><![CDATA[<p>    shell翻译为壳程序，只要能操作应用程序的软件都能够成为壳程序。壳程序的功能只是提供用户操作系统的一个界面。bash（Bourne Again Shell）就是一个壳程序。</p><p>    shell有很多，比如C shell、bash、sh。</p><p>    在/etc/shells可查看。</p><span id="more"></span><p>在bash命令行中操作时，有时需要快速删除命令。以下为终端下的快捷键。</p><table><thead><tr><th align="center">组合键</th><th align="center">功能</th></tr></thead><tbody><tr><td align="center">ctrl+u</td><td align="center">从光标处向前删除命令行串</td></tr><tr><td align="center">ctrl+k</td><td align="center">从光标处向后删除命令行串</td></tr><tr><td align="center">ctrl+a</td><td align="center">将光标移动到最前面</td></tr><tr><td align="center">ctrl+e</td><td align="center">将光标移动到最后面</td></tr></tbody></table><h2 id="变量用法"><a href="#变量用法" class="headerlink" title="变量用法"></a>变量用法</h2><p>设置工作目录，比如我经常要进某个目录（如/home/pi/appdaemon/conf/apps/)写东西。</p><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">work&#x3D;&quot;&#x2F;home&#x2F;pi&#x2F;appdeamon&#x2F;conf&#x2F;apps&#x2F;&quot;#进入工作目录指令为cd $work#取消该变量unset work</code></pre></div><hr><p>查看环境变量：<code>env</code>、<code>export</code></p><p>查看所有变量：<code>set</code></p><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># $为这个shell的进程号，即PID# ?表示关于上一个执行命令的返回值，最命令无误，返回值为0# 查看返回值，并且可以根据返回值来查找原因echo $?</code></pre></div><p><a href="https://lvii.github.io/soft/2019-01-16-curl-get-error-return-code-with-slient-mode/">使用 curl -sS 请求失败时返回失败的返回值 | 小马过河 (lvii.github.io)</a></p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;    shell翻译为壳程序，只要能操作应用程序的软件都能够成为壳程序。壳程序的功能只是提供用户操作系统的一个界面。bash（Bourne Again Shell）就是一个壳程序。&lt;/p&gt;
+&lt;p&gt;    shell有很多，比如C shell、bash、sh。&lt;/p&gt;
+&lt;p&gt;    在/etc/shells可查看。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="linux" scheme="https://brraida.github.io/categories/linux/"/>
+    
+    
+    <category term="bash" scheme="https://brraida.github.io/tags/bash/"/>
+    
+  </entry>
   
   <entry>
     <title>rpiCamera</title>
