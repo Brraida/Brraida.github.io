@@ -30,9 +30,10 @@
 <meta property="og:image" content="https://brraida.github.io/img/article/freshrss/image-20220228210313366.png">
 <meta property="og:image" content="https://brraida.github.io/img/article/freshrss/image-20220228210359316.png">
 <meta property="article:published_time" content="2022-02-28T11:59:23.000Z">
-<meta property="article:modified_time" content="2022-04-22T03:35:06.154Z">
+<meta property="article:modified_time" content="2022-05-19T02:13:12.799Z">
 <meta property="article:author" content="Brraida Hu">
 <meta property="article:tag" content="freshrss">
+<meta property="article:tag" content="rss">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://brraida.github.io/img/article/freshrss/image-20220228204503597.png">
   
@@ -353,6 +354,8 @@ sudo docker inspect &lt;container id&gt;</code></pre></div>
 <p><img src="/img/article/freshrss/image-20220228204503597.png" srcset="/img/loading.gif" lazyload alt="运行docker ps获得id"></p>
 <p><img src="/img/article/freshrss/image-20220228204939760.png" srcset="/img/loading.gif" lazyload alt="运行docker inspect id获ip的地址"></p>
 <p>以上即为主机地址。</p>
+<hr>
+<p>    服务器重启后，数据库的ip可能会发生变化，这时候只需要去修改<code>.data/config.php</code>文件中数据库的ip地址即可。</p>
 <h1 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h1><h2 id="http配置"><a href="#http配置" class="headerlink" title="http配置"></a>http配置</h2><p>​    如果有自己的域名，可以使用反向代理。我用的是<strong>nginx proxy manager</strong>（开源项目，感兴趣的可以在github上搜索一下）进行代理。</p>
 <p><img src="/img/article/freshrss/image-20220228205442096.png" srcset="/img/loading.gif" lazyload alt="image-20220228205442096"></p>
 <p><img src="/img/article/freshrss/image-20220228205951154.png" srcset="/img/loading.gif" lazyload alt="image-20220228205951154"></p>
@@ -396,6 +399,8 @@ sudo docker inspect &lt;container id&gt;</code></pre></div>
                     <i class="iconfont icon-tags"></i>
                     
                       <a class="hover-with-bg" href="/tags/freshrss/">freshrss</a>
+                    
+                      <a class="hover-with-bg" href="/tags/rss/">rss</a>
                     
                   </div>
                 
