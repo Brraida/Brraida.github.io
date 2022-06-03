@@ -16,15 +16,15 @@
   <meta name="author" content="Brraida Hu">
   <meta name="keywords" content="">
   
-    <meta name="description" content="看到大佬发的一个云盘，看起来很nice，心动就行动。  分享一个漂亮的云盘程序 vue-file-manager - 思有云 - IOIOX">
+    <meta name="description" content="看到大佬发的一个云盘，看起来很nice，心动就行动。其实搭建云盘还有一个目的就是为了收集材料方便。以前尝试在校园网在windows上搭建ftp服务器，在收集材料方面上确实方便了不少。但是因为中文字符，有些材料收集不上来。其实这个搭建得还是比较麻烦的，完全可以去找一些步骤更简单的云盘来搭建。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="搭建云盘">
 <meta property="og:url" content="https://brraida.github.io/posts/34664f8b/index.html">
 <meta property="og:site_name" content="SunMonkey">
-<meta property="og:description" content="看到大佬发的一个云盘，看起来很nice，心动就行动。  分享一个漂亮的云盘程序 vue-file-manager - 思有云 - IOIOX">
+<meta property="og:description" content="看到大佬发的一个云盘，看起来很nice，心动就行动。其实搭建云盘还有一个目的就是为了收集材料方便。以前尝试在校园网在windows上搭建ftp服务器，在收集材料方面上确实方便了不少。但是因为中文字符，有些材料收集不上来。其实这个搭建得还是比较麻烦的，完全可以去找一些步骤更简单的云盘来搭建。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-05-27T08:17:56.000Z">
-<meta property="article:modified_time" content="2022-06-03T11:39:54.650Z">
+<meta property="article:modified_time" content="2022-06-03T12:15:57.932Z">
 <meta property="article:author" content="Brraida Hu">
 <meta property="article:tag" content="pan">
 <meta name="twitter:card" content="summary_large_image">
@@ -212,7 +212,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      37 分钟
+      38 分钟
     </span>
   
 
@@ -244,12 +244,12 @@
             <h1 style="display: none">搭建云盘</h1>
             
             <div class="markdown-body">
-              <p>    看到大佬发的一个云盘，看起来很nice，心动就行动。</p>
+              <p>    看到大佬发的一个云盘，看起来很nice，心动就行动。其实搭建云盘还有一个目的就是为了收集材料方便。以前尝试在校园网在windows上搭建ftp服务器，在收集材料方面上确实方便了不少。但是因为中文字符，有些材料收集不上来。其实这个搭建得还是比较麻烦的，完全可以去找一些步骤更简单的云盘来搭建。</p>
+<span id="more"></span>
+
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://www.ioiox.com/archives/155.html/comment-page-1#comments">分享一个漂亮的云盘程序 vue-file-manager - 思有云 - IOIOX</a></p>
 </blockquote>
-<span id="more"></span>
-
 <p>    说个前提，大佬发的是版本是1.8.3.13的。若是按官网教程安装，会出一堆php的deprecated。其原因是php版本太高了，安装php7.4即可。</p>
 <hr>
 <p>    以下是我经过测试搭建的教程，有些有些仍有问题，但是总体功能用起来没有问题。主要的是他能很好的在服务器上跑起来了：）</p>
@@ -415,6 +415,10 @@ select user, host from mysql.user;</code></pre></div>
 
 <p>查看php7.4-fpm的状态:</p>
 <div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">systemctl status php7.5-fpm</code></pre></div>
+
+<p>查看larval版本:</p>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 该命令进入程序文件件中
+php artisan --version</code></pre></div>
 
 
 
