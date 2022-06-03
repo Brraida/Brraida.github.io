@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://brraida.github.io/img/article/LinuxBasicKnowledge.assets/image-20220125212209692.png">
 <meta property="article:published_time" content="2022-01-25T13:15:28.000Z">
-<meta property="article:modified_time" content="2022-04-22T03:30:21.003Z">
+<meta property="article:modified_time" content="2022-06-03T12:01:59.857Z">
 <meta property="article:author" content="Brraida Hu">
 <meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary_large_image">
@@ -214,7 +214,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      6 分钟
+      10 分钟
     </span>
   
 
@@ -261,7 +261,7 @@
 <p><img src="/img/article/LinuxBasicKnowledge.assets/image-20220125212209692.png" srcset="/img/loading.gif" lazyload alt="image-20220125212209692"></p>
 <h2 id="软连接"><a href="#软连接" class="headerlink" title="软连接"></a>软连接</h2><h3 id="建立软链接"><a href="#建立软链接" class="headerlink" title="建立软链接"></a>建立软链接</h3><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">具体用法是：ln -s 源文件 目标文件。源：实际存放文件的位置</code></pre></div>
 
-<p>当 我们需要在不同的目录，用到相同的文件时，我们不需要在每一个需要的目录下都放一个必须相同的文件，我们只要在某个固定的目录，放上该文件，然后在其它的 目录下用ln命令链接（link）它就可以，不必重复的占用磁盘空间。</p>
+<p>​    当我们需要在不同的目录，用到相同的文件时，我们不需要在每一个需要的目录下都放一个必须相同的文件，我们只要在某个固定的目录，放上该文件，然后在其它的 目录下用ln命令链接（link）它就可以，不必重复的占用磁盘空间。</p>
 <p>-s 是代号（symbolic）的意思</p>
 <p><strong>注意</strong></p>
 <p>​    ln的链接又软链接 和硬链接两种</p>
@@ -287,6 +287,36 @@ ln -s  &#x2F;opt&#x2F;cs   &#x2F;opt&#x2F;var     # &#x2F;opt&#x2F;var下面不�
 <p>转载</p>
 <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/lfxiao/p/9569339.html">https://www.cnblogs.com/lfxiao/p/9569339.html</a></p>
 </blockquote>
+<hr>
+<h1 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h1><ul>
+<li>修改文件名或目录名</li>
+</ul>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mv oldFileName(oldDirectoryName) newFileName(newDirectoryName)</code></pre></div>
+
+<ul>
+<li>查看端口</li>
+</ul>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41675254/article/details/85208057">Linux查看端口使用状态、关闭端口及配置端口方法 详细_会发抖的秒表的博客-CSDN博客_linux 端口</a></p>
+</blockquote>
+<p>​    lsof -i:端口号</p>
+<p>​    losf -i        #查看全部</p>
+<ul>
+<li><p>vim查找</p>
+<p><strong>:/关键词</strong> 回车开始查找，按n查找下一个</p>
+<p><strong>:数字</strong> 回车到某行</p>
+</li>
+<li><p>查看已开放端口</p>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">firewall-cmd --list-all</code></pre></div></li>
+<li><p>防火墙开放端口（开放端口后需要重载防火墙）</p>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">firewall-cmd --zone&#x3D;public --add-port&#x3D;80&#x2F;tcp --permanent
+firewall-cmd --reload</code></pre></div></li>
+<li><p>修改密码</p>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">passwd &lt;usrname&gt;</code></pre></div></li>
+<li><p>修改主机名</p>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">hostnamectl set-hostname &lt;newhostname&gt;</code></pre></div></li>
+</ul>
+<hr>
 
             </div>
             <hr>

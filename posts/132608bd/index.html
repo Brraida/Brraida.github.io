@@ -24,7 +24,7 @@
 <meta property="og:description" content="​    与vim的一些相关配置。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-10-05T09:12:01.000Z">
-<meta property="article:modified_time" content="2022-04-22T14:27:33.141Z">
+<meta property="article:modified_time" content="2022-06-02T02:10:44.640Z">
 <meta property="article:author" content="Brraida Hu">
 <meta property="article:tag" content="vim">
 <meta name="twitter:card" content="summary_large_image">
@@ -212,7 +212,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      6 分钟
+      11 分钟
     </span>
   
 
@@ -282,6 +282,39 @@ set autoindent</code></pre></div>
 # 将set mouse&#x3D;改成set mouse&#x3D;v</code></pre></div>
 
 <p><strong>note：</strong> vim81会可能因为更新改变数字，所以找不到defaults.vim文件时，看看上一级目录带数字的vim文件夹(vim8X)。</p>
+<hr>
+<h2 id="vim一般的基础配置"><a href="#vim一般的基础配置" class="headerlink" title="vim一般的基础配置"></a>vim一般的基础配置</h2><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">vim ~&#x2F;.vimrc</code></pre></div>
+
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">set nocompatible
+set number
+set guioptions-&#x3D;r 
+set guioptions-&#x3D;L
+set guioptions-&#x3D;b
+set showtabline&#x3D;0
+set guifont&#x3D;Monaco:h13         
+syntax on
+set background&#x3D;dark    
+set nowrap  
+set fileformat&#x3D;unix 
+set cindent     
+set tabstop&#x3D;4   
+set shiftwidth&#x3D;4        
+set showmatch  
+set scrolloff&#x3D;5     
+set laststatus&#x3D;2   
+set fenc&#x3D;utf-8      
+set backspace&#x3D;2   
+set selection&#x3D;exclusive
+set selectmode&#x3D;mouse,key
+set matchtime&#x3D;5
+set ignorecase     
+set incsearch
+set hlsearch        
+set noexpandtab     
+set whichwrap+&#x3D;&lt;,&gt;,h,l
+set autoread
+set cursorline     
+set cursorcolumn        </code></pre></div>
 
             </div>
             <hr>
