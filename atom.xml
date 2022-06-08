@@ -6,7 +6,7 @@
   <link href="https://brraida.github.io/atom.xml" rel="self"/>
   
   <link href="https://brraida.github.io/"/>
-  <updated>2022-06-04T13:51:41.511Z</updated>
+  <updated>2022-06-08T14:56:19.285Z</updated>
   <id>https://brraida.github.io/</id>
   
   <author>
@@ -17,11 +17,53 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>以root用户进行登录</title>
+    <link href="https://brraida.github.io/posts/71312d38/"/>
+    <id>https://brraida.github.io/posts/71312d38/</id>
+    <published>2022-06-08T14:37:22.000Z</published>
+    <updated>2022-06-08T14:56:19.285Z</updated>
+    
+    <content type="html"><![CDATA[<p>​    ssh以root用户远程登录。</p><span id="more"></span><ol><li>以普通用户登录</li><li>修改root密码（激活root用户）<code>sudo passwd root</code>；<code>sudo passwd --unlock root</code></li><li><code>sudo nano /etc/ssh/sshd_config</code></li><li>添加<code>PermitRootLogin yes</code>到最后一行</li><li>保存</li><li>重启<code>sudo reboot</code></li></ol><p>之后就可以使用root用户进行登录linux系统了。</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;​    ssh以root用户远程登录。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="linux" scheme="https://brraida.github.io/categories/linux/"/>
+    
+    
+    <category term="ssh" scheme="https://brraida.github.io/tags/ssh/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>smaba树莓派服务器</title>
+    <link href="https://brraida.github.io/posts/6dc20ad6/"/>
+    <id>https://brraida.github.io/posts/6dc20ad6/</id>
+    <published>2022-06-07T07:07:31.000Z</published>
+    <updated>2022-06-08T14:18:32.259Z</updated>
+    
+    <content type="html"><![CDATA[<p>​    寻求方便和尝试smaba协议，所以建立一个smaba树莓派服务器。</p><span id="more"></span><h2 id="安装与配置"><a href="#安装与配置" class="headerlink" title="安装与配置"></a>安装与配置</h2><ol><li><p>更新包和升级包</p><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">sudo apt update &amp;&amp; sudo apt upgrade -y</code></pre></div></li><li><p>下载samba</p><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">sudo apt install samba samba-common-bin</code></pre></div></li><li><p>创建一个文件夹用于共享文件</p><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mkdir &#x2F;home&#x2F;pi&#x2F;shared</code></pre></div></li><li><p>配置samba</p><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">sudo vim &#x2F;etc&#x2F;samba&#x2F;smb.conf# 在文件最后添加以下内容[sharefile]path &#x3D; &#x2F;home&#x2F;pi&#x2F;sharedwriteable &#x3D; Yescreate mask&#x3D;0777directory mask&#x3D;0777public&#x3D;no</code></pre></div></li></ol><p>​    其中’[sharefile]’为之后访问地址的一部分，在树莓派中为<code>\\raspberrypi\sharefile</code>，raspberrypi是hostname，可以使用<code>hostname</code>命令查看。</p><p>​    path就是自己定义的共享文件夹的路径地址了。</p><p>​    writeable表示是否可写的意思。</p><p>​    create mask和directory mask是给该路径下所有用户对文件、文件夹的操作，0777就是都拥有可写、可读、可执行的权限。</p><p>​    public，若是设置no，那么就需要设置用户进行登录。</p><ol start="5"><li><p>创建用户</p><p>因为前面设置的public为no，所以创建一个用户。</p><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">sudo smbpasswd -a pi</code></pre></div></li><li><p>启动配置文件</p><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">sudo systemctl restart smbd</code></pre></div></li></ol><h2 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h2><p>windows下的连接：</p><ol><li>打开文件管理器。</li><li>点击顶部栏的’计算机’。如下图所示:</li></ol><p><img src="/img/article/sambaServer.assets/image-20220607154026280.png" alt="image-20220607154026280"></p><ol start="3"><li><p>点击映射网络驱动器，选择’映射网络驱动器’。</p></li><li><p>填入地址，如果和我配置一样就是填入<code>\\raspberrypi\sharefile</code>。如果失败了，那就先<code>hostname -I</code>得到树莓派的ip地址，然后将<code>raspberrypi</code>换成ip地址即可。</p></li><li><p>之后就是弹出窗口填用户名和密码。若是将public设置成yes，那么将能直接进入共享文件夹。</p></li></ol><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>​    在使用过程中，windows这边只用读和执行权限，但是之前配置有写的权限。若是你不考虑安全问题和深层次的原因，可以像我一样，直接给共享文件夹提权即可。</p><p><code>sudo chomo ugo+w shared</code></p><p>参考链接:</p><blockquote><p><a href="https://pimylifeup.com/raspberry-pi-samba/">How to Setup a Raspberry Pi Samba Server - Pi My Life Up</a></p></blockquote>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;​    寻求方便和尝试smaba协议，所以建立一个smaba树莓派服务器。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="linux" scheme="https://brraida.github.io/categories/linux/"/>
+    
+    
+    <category term="raspberry pi" scheme="https://brraida.github.io/tags/raspberry-pi/"/>
+    
+  </entry>
+  
+  <entry>
     <title>利用nginx部署网站</title>
     <link href="https://brraida.github.io/posts/29a4812c/"/>
     <id>https://brraida.github.io/posts/29a4812c/</id>
     <published>2022-06-04T12:51:30.000Z</published>
-    <updated>2022-06-04T13:51:41.511Z</updated>
+    <updated>2022-06-08T13:48:46.572Z</updated>
     
     <content type="html"><![CDATA[<p>​    利用nginx部署网站。</p><span id="more"></span><p>​    防止nginx的默认配置干扰，我们可以先将默认配置去掉链接。</p><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">cd &#x2F;etc&#x2F;nginx&#x2F;sites-enabled# 检查链接情况ls -ltr# 去掉默认配置unlink default</code></pre></div><h2 id="一个页面"><a href="#一个页面" class="headerlink" title="一个页面"></a>一个页面</h2><p>​    自定义页面的配置可以在<code>/nginx/conf.d/</code>目录下进行自定义。</p><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">sudo vim &#x2F;nginx&#x2F;conf.d&#x2F;mysite.conf# 配置内容server &#123;# 监听80端口listen 80 default_server;# 如果在var&#x2F;www&#x2F;mysite中存在以下形式的文件，则显示出来index index.html index.htm index.php;# 域名。在不使用域名的情况下，可以随便取，不影响server_name example.com;# 网站文件的根目录，mysite即为自己写的前端文件root &#x2F;var&#x2F;www&#x2F;mysite;&#125;# 测试配置文件sudo nginx -t# 测试成功后，热重载nginxsudo systemctl reload nginx#####以上配置完后，直接访问主机ip即可访问到对应的网站#####</code></pre></div><h2 id="两个页面"><a href="#两个页面" class="headerlink" title="两个页面"></a>两个页面</h2><p>​    倘若<code>mysite</code>文件夹下面有<code>index.html</code>和<code>subIndex.html</code>两个文件，并且两种为嵌套关系，即在index中按对应按钮，可以到达subIndex页面。</p><p>​    一是可以在index页面中直接使用a标签，那么点击跳转后的网站的链接地址为<code>ip/subIndex.html</code>。</p><p>​    而我学习到的视频的链接地址是<code>ip/sunIndex</code>，这种就需要进行nginx配置。</p><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">server &#123;# 监听80端口listen 80 default_server;# 如果在var&#x2F;www&#x2F;mysite中存在以下形式的文件，则显示出来index index.html index.htm index.php;# 域名。在不使用域名的情况下，可以随便取，不影响server_name example.com;# 网站文件的根目录，mysite即为自己写的前端文件root &#x2F;var&#x2F;www&#x2F;mysite;# 默认配置### 当任意请求过来时，可以查询根目录，下一级目录和各类html文件### 并且能返回400错误location &#x2F; &#123;try_files $uri $uri&#x2F; $uri.html &#x3D; 400;&#125;# 配置subIndex.htmllocation &#x2F;subIndex &#123;try_files $usi &#x2F;subIndex.html;&#125;&#125;</code></pre></div><p>​        其他正常页面都类似，比如关于我、标签、归档等。</p><h2 id="错误页面"><a href="#错误页面" class="headerlink" title="错误页面"></a>错误页面</h2><p>​    错误页面也可以自定义，有些许区别。</p><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">server &#123;# 监听80端口listen 80 default_server;# 如果在var&#x2F;www&#x2F;mysite中存在以下形式的文件，则显示出来index index.html index.htm index.php;# 域名。在不使用域名的情况下，可以随便取，不影响server_name example.com;# 网站文件的根目录，mysite即为自己写的前端文件root &#x2F;var&#x2F;www&#x2F;mysite;# 默认配置### 当任意请求过来时，可以查询根目录，下一级目录和各类html文件### 并且能返回400错误location &#x2F; &#123;try_files $uri $uri&#x2F; $uri.html &#x3D; 400;&#125;# 配置subIndex.htmllocation &#x2F;subIndex &#123;try_files $usi &#x2F;subIndex.html;&#125;error_page 400 404 &#x2F;400.html;location &#x3D; &#x2F;400.html &#123;internal;&#125;&#125;</code></pre></div><p>参考：</p><blockquote><p><a href="https://www.youtube.com/watch?v=RzrIqzC9bQc&t=707s&ab_channel=Techbeast.org">(31) Part 1 - NGINX Web Server ( Installation &amp; Configuration ) - YouTube</a></p></blockquote>]]></content>
     
@@ -38,11 +80,11 @@
   </entry>
   
   <entry>
-    <title>raspberryPiOS</title>
+    <title>树莓派镜像安装</title>
     <link href="https://brraida.github.io/posts/dd6b5a42/"/>
     <id>https://brraida.github.io/posts/dd6b5a42/</id>
     <published>2022-06-04T02:42:21.000Z</published>
-    <updated>2022-06-04T13:50:20.101Z</updated>
+    <updated>2022-06-08T15:01:13.290Z</updated>
     
     <content type="html"><![CDATA[<p>​    现如今树莓派系统因为安全的原因，将pi这个默认用户删除了。需要在烧录时进行用户的创建与配置。在烧录过程中，还可以配置无线连接和ssh。这么一看，感觉确实省事了不少。</p><span id="more"></span><h2 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h2><p>​    sd卡的格式化工具可以使用<code>SD Card Formatter</code>。</p><p><img src="/img/article/raspberryPiOS.assets/image-20220604104837957.png" alt="image-20220604104837957"></p><p>整体样式如上图所示，选择需要格式化的sd卡，选择快速格式化，然后按格式化按钮即可。</p><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>​    烧录工具使用<a href="https://www.raspberrypi.com/software/">raspberry pi imager</a>。</p><p>该工具提供在线下载镜像的功能，你也可以先将镜像下载到本地进行安装。</p><p><img src="/img/article/raspberryPiOS.assets/image-20220604105454906.png" alt="image-20220604105454906"></p><p>在齿轮处可以进行高级配置。</p>]]></content>
     
@@ -50,6 +92,8 @@
     <summary type="html">&lt;p&gt;​    现如今树莓派系统因为安全的原因，将pi这个默认用户删除了。需要在烧录时进行用户的创建与配置。在烧录过程中，还可以配置无线连接和ssh。这么一看，感觉确实省事了不少。&lt;/p&gt;</summary>
     
     
+    
+    <category term="linux" scheme="https://brraida.github.io/categories/linux/"/>
     
     
     <category term="raspberry pi" scheme="https://brraida.github.io/tags/raspberry-pi/"/>
@@ -61,7 +105,7 @@
     <link href="https://brraida.github.io/posts/98c18f4f/"/>
     <id>https://brraida.github.io/posts/98c18f4f/</id>
     <published>2022-06-03T12:43:58.000Z</published>
-    <updated>2022-06-04T13:50:20.101Z</updated>
+    <updated>2022-06-08T15:11:24.489Z</updated>
     
     <content type="html"><![CDATA[<p>​    给某一用户sudo权限。</p><span id="more"></span><p>在root下，给USER sudo的权限。</p><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">vim &#x2F;etc&#x2F;sudoers.d&#x2F;USER# 填以下内容# 给用户不需要输入密码的sudo权限USER ALL&#x3D;(ALL) NOPASSWD:ALL# 给用户组不需要输入密码的sudo权限,只要加入该组的用户都拥有sudo的权限# %后面跟的是用户组%USER ALL&#x3D;(ALL) NOPASSWD:ALL</code></pre></div>]]></content>
     
@@ -82,7 +126,7 @@
     <link href="https://brraida.github.io/posts/6dd739dd/"/>
     <id>https://brraida.github.io/posts/6dd739dd/</id>
     <published>2022-06-03T11:49:47.000Z</published>
-    <updated>2022-06-03T12:05:53.403Z</updated>
+    <updated>2022-06-08T15:16:09.070Z</updated>
     
     <content type="html"><![CDATA[<p>​    用习惯了typora和vue主题，但是一个学生党也没有闲钱去支持作者。所以选择crack。</p><span id="more"></span><blockquote><p><a href="https://www.nite07.com/typora/#%E6%88%AA%E5%9B%BE">Typora 1.2.5 学习版 | Nite07的小窝</a></p></blockquote>]]></content>
     
@@ -483,9 +527,9 @@
     <link href="https://brraida.github.io/posts/fdfafe7c/"/>
     <id>https://brraida.github.io/posts/fdfafe7c/</id>
     <published>2022-01-25T13:15:28.000Z</published>
-    <updated>2022-06-03T12:01:59.857Z</updated>
+    <updated>2022-06-07T15:07:41.563Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="linux之颜色"><a href="#linux之颜色" class="headerlink" title="linux之颜色"></a>linux之颜色</h2><p>linux中文件颜色所代表的含义：</p><ol><li><strong>绿色</strong>文件：可执行文件、可执行程序</li><li><strong>红色</strong>文件：压缩文件或者包文件</li><li><strong>蓝色</strong>文件：目录</li><li><strong>白色</strong>文件：一般性文件，如文本文件，配置文件，源码文件</li><li><strong>浅蓝色</strong>文件：链接文件，主要是使用ln命令建立的文件</li><li><strong>红色闪烁</strong>：表示链接文件有问题</li><li><strong>黄色</strong>：表示设备文件</li><li><strong>灰色</strong>：表示其他文件</li></ol><p>主要比较一下浅蓝色和蓝色区别</p><p><img src="/img/article/LinuxBasicKnowledge.assets/image-20220125212209692.png" alt="image-20220125212209692"></p><h2 id="软连接"><a href="#软连接" class="headerlink" title="软连接"></a>软连接</h2><h3 id="建立软链接"><a href="#建立软链接" class="headerlink" title="建立软链接"></a>建立软链接</h3><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">具体用法是：ln -s 源文件 目标文件。源：实际存放文件的位置</code></pre></div><p>​    当我们需要在不同的目录，用到相同的文件时，我们不需要在每一个需要的目录下都放一个必须相同的文件，我们只要在某个固定的目录，放上该文件，然后在其它的 目录下用ln命令链接（link）它就可以，不必重复的占用磁盘空间。</p><p>-s 是代号（symbolic）的意思</p><p><strong>注意</strong></p><p>​    ln的链接又软链接 和硬链接两种</p><ul><li><p><strong>软链接</strong><code>ln -s ** **</code>,它只会在你选定的位置上生成一个文件的镜像，不会占用磁盘空间</p></li><li><p><strong>硬链接</strong><code>ln ** **</code>, 没有参数-s, 它会在你选定的位置上生成一个和源文件大小相同的文件</p><p>无论是软链接还是硬链接，文件都保持同步变化</p></li></ul><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">#比如我的文件在 &#x2F;opt&#x2F;cs 下面，我想在 &#x2F;opt&#x2F;var&#x2F;cs 这个路径下面也能访问到，那么应该这样来做ln -s  &#x2F;opt&#x2F;cs   &#x2F;opt&#x2F;var     # &#x2F;opt&#x2F;var下面不用创建cs这个目录，会自动创建</code></pre></div><h3 id="查看建立的软链接"><a href="#查看建立的软链接" class="headerlink" title="查看建立的软链接"></a>查看建立的软链接</h3><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">ls -il</code></pre></div><h3 id="删除软链接"><a href="#删除软链接" class="headerlink" title="删除软链接"></a>删除软链接</h3><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">rm -rf file</code></pre></div><p>正确的删除方式（删除软链接，但不删除实际数据）</p><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">rm -rf .&#x2F;test_chk_ln</code></pre></div><blockquote><p>转载</p><p><a href="https://www.cnblogs.com/lfxiao/p/9569339.html">https://www.cnblogs.com/lfxiao/p/9569339.html</a></p></blockquote><hr><h1 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h1><ul><li>修改文件名或目录名</li></ul><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mv oldFileName(oldDirectoryName) newFileName(newDirectoryName)</code></pre></div><ul><li>查看端口</li></ul><blockquote><p><a href="https://blog.csdn.net/qq_41675254/article/details/85208057">Linux查看端口使用状态、关闭端口及配置端口方法 详细_会发抖的秒表的博客-CSDN博客_linux 端口</a></p></blockquote><p>​    lsof -i:端口号</p><p>​    losf -i        #查看全部</p><ul><li><p>vim查找</p><p><strong>:/关键词</strong> 回车开始查找，按n查找下一个</p><p><strong>:数字</strong> 回车到某行</p></li><li><p>查看已开放端口</p><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">firewall-cmd --list-all</code></pre></div></li><li><p>防火墙开放端口（开放端口后需要重载防火墙）</p><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">firewall-cmd --zone&#x3D;public --add-port&#x3D;80&#x2F;tcp --permanentfirewall-cmd --reload</code></pre></div></li><li><p>修改密码</p><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">passwd &lt;usrname&gt;</code></pre></div></li><li><p>修改主机名</p><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">hostnamectl set-hostname &lt;newhostname&gt;</code></pre></div></li></ul><hr>]]></content>
+    <content type="html"><![CDATA[<h2 id="linux之颜色"><a href="#linux之颜色" class="headerlink" title="linux之颜色"></a>linux之颜色</h2><p>linux中文件颜色所代表的含义：</p><ol><li><strong>绿色</strong>文件：可执行文件、可执行程序</li><li><strong>红色</strong>文件：压缩文件或者包文件</li><li><strong>蓝色</strong>文件：目录</li><li><strong>白色</strong>文件：一般性文件，如文本文件，配置文件，源码文件</li><li><strong>浅蓝色</strong>文件：链接文件，主要是使用ln命令建立的文件</li><li><strong>红色闪烁</strong>：表示链接文件有问题</li><li><strong>黄色</strong>：表示设备文件</li><li><strong>灰色</strong>：表示其他文件</li></ol><p>主要比较一下浅蓝色和蓝色区别</p><p><img src="/img/article/LinuxBasicKnowledge.assets/image-20220125212209692.png" alt="image-20220125212209692"></p><h2 id="软连接"><a href="#软连接" class="headerlink" title="软连接"></a>软连接</h2><h3 id="建立软链接"><a href="#建立软链接" class="headerlink" title="建立软链接"></a>建立软链接</h3><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">具体用法是：ln -s 源文件 目标文件。源：实际存放文件的位置</code></pre></div><p>​    当我们需要在不同的目录，用到相同的文件时，我们不需要在每一个需要的目录下都放一个必须相同的文件，我们只要在某个固定的目录，放上该文件，然后在其它的 目录下用ln命令链接（link）它就可以，不必重复的占用磁盘空间。</p><p>-s 是代号（symbolic）的意思</p><p><strong>注意</strong></p><p>​    ln的链接又软链接 和硬链接两种</p><ul><li><p><strong>软链接</strong><code>ln -s ** **</code>,它只会在你选定的位置上生成一个文件的镜像，不会占用磁盘空间</p></li><li><p><strong>硬链接</strong><code>ln ** **</code>, 没有参数-s, 它会在你选定的位置上生成一个和源文件大小相同的文件</p><p>无论是软链接还是硬链接，文件都保持同步变化</p></li></ul><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">#比如我的文件在 &#x2F;opt&#x2F;cs 下面，我想在 &#x2F;opt&#x2F;var&#x2F;cs 这个路径下面也能访问到，那么应该这样来做ln -s  &#x2F;opt&#x2F;cs   &#x2F;opt&#x2F;var     # &#x2F;opt&#x2F;var下面不用创建cs这个目录，会自动创建</code></pre></div><h3 id="查看建立的软链接"><a href="#查看建立的软链接" class="headerlink" title="查看建立的软链接"></a>查看建立的软链接</h3><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">ls -il</code></pre></div><h3 id="删除软链接"><a href="#删除软链接" class="headerlink" title="删除软链接"></a>删除软链接</h3><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">rm -rf file</code></pre></div><p>正确的删除方式（删除软链接，但不删除实际数据）</p><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">rm -rf .&#x2F;test_chk_ln</code></pre></div><blockquote><p>转载</p><p><a href="https://www.cnblogs.com/lfxiao/p/9569339.html">https://www.cnblogs.com/lfxiao/p/9569339.html</a></p></blockquote><hr><h1 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h1><ul><li>修改文件名或目录名</li></ul><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mv oldFileName(oldDirectoryName) newFileName(newDirectoryName)</code></pre></div><ul><li>查看端口</li></ul><blockquote><p><a href="https://blog.csdn.net/qq_41675254/article/details/85208057">Linux查看端口使用状态、关闭端口及配置端口方法 详细_会发抖的秒表的博客-CSDN博客_linux 端口</a></p></blockquote><p>​    lsof -i:端口号</p><p>​    losf -i        #查看全部</p><ul><li><p>vim查找</p><p><strong>:/关键词</strong> 回车开始查找，按n查找下一个</p><p><strong>:数字</strong> 回车到某行</p></li><li><p>查看已开放端口</p><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">firewall-cmd --list-all</code></pre></div></li><li><p>防火墙开放端口（开放端口后需要重载防火墙）</p><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">firewall-cmd --zone&#x3D;public --add-port&#x3D;80&#x2F;tcp --permanentfirewall-cmd --reload</code></pre></div></li><li><p>修改密码</p><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">passwd &lt;usrname&gt;</code></pre></div></li><li><p>修改主机名</p><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">hostnamectl set-hostname &lt;newhostname&gt;</code></pre></div></li></ul><hr><h2 id="挂载"><a href="#挂载" class="headerlink" title="挂载"></a>挂载</h2><p>​    挂载是指有操作系统使一个存储设备（诸如硬盘、CD-ROM或共享资源）上的电脑文件和目录可供用户通过电脑的文件系统访问的一个过程。</p><blockquote><p><a href="https://zh.m.wikipedia.org/zh-sg/%E6%8C%82%E8%BD%BD">挂载 - 维基百科，自由的百科全书 (wikipedia.org)</a></p></blockquote><h2 id="loop设备"><a href="#loop设备" class="headerlink" title="loop设备"></a>loop设备</h2>]]></content>
     
     
       
@@ -507,7 +551,7 @@
     <link href="https://brraida.github.io/posts/289d0c5f/"/>
     <id>https://brraida.github.io/posts/289d0c5f/</id>
     <published>2022-01-25T13:09:50.000Z</published>
-    <updated>2022-04-22T14:28:01.470Z</updated>
+    <updated>2022-06-08T13:47:36.895Z</updated>
     
     <content type="html"><![CDATA[<h2 id="环境变量查看"><a href="#环境变量查看" class="headerlink" title="环境变量查看"></a>环境变量查看</h2><ol><li><p>使用<code>echo</code>命令查看单个环境变量。</p><p><code>echo $PATH</code></p></li><li><p>使用<code>env</code>查看所用的环境变量。</p></li><li><p>使用<code>set</code>查看所有本地定义的环境变量。</p></li></ol>]]></content>
     
