@@ -25,15 +25,19 @@
 <meta name="twitter:card" content="summary_large_image">
   
   
+  
   <title>SunMonkey</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
 
 
-<!-- 主题依赖的图标库，不要自行修改 -->
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
 
 
 
@@ -42,22 +46,41 @@
 
 <link  rel="stylesheet" href="/css/main.css" />
 
-<!-- 自定义样式保持在最底部 -->
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
 
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"brraida.github.io","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"brraida.github.io","root":"/","version":"1.9.1","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<!-- hexo injector head_end start --><script async defer data-website-id="4fe01508-0ef6-4111-9b3f-45ba202c37ad" src="https://huumami.herokuapp.com/umami.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="SunMonkey" type="application/atom+xml">
+
+  
+<!-- hexo injector head_end start --><script async defer data-website-id="4fe01508-0ef6-4111-9b3f-45ba202c37ad" src="https://huumami.herokuapp.com/umami.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="SunMonkey" type="application/atom+xml">
 </head>
 
 
 <body>
-  <header style="height: 80vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 80vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
       <strong>harbour</strong>
@@ -139,6 +162,7 @@
               &nbsp;<i class="iconfont icon-search"></i>&nbsp;
             </a>
           </li>
+          
         
         
           <li class="nav-item" id="color-toggle-btn">
@@ -151,33 +175,39 @@
   </div>
 </nav>
 
-    <div class="banner" id="banner" parallax=true
-         style="background: url('/img/bg/fate.jpg') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="螃蟹🦀在剥我的壳">
-              
-            </span>
+  
 
-            
-          </div>
-
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/fate.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
           
-            <div class="scroll-down-bar">
-              <i class="iconfont icon-arrowdown"></i>
-            </div>
+            <span id="subtitle" data-typed-text="螃蟹🦀在剥我的壳"></span>
           
         </div>
+
+        
       </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
     </div>
+  </div>
+</div>
+
+</div>
+
   </header>
 
   <main>
     
       <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
+        <div id="board"
           >
           
           <div class="container">
@@ -203,12 +233,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/posts/bb01f2a2/" target="_self">
-          
+      
+      <a class="index-excerpt " href="/posts/bb01f2a2/" target="_self">
+        <div>
           优化自动登录校园网的代码。
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -224,7 +254,7 @@
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/campusNetwork/">campusNetwork</a>
+              <a href="/tags/campusNetwork/">#campusNetwork</a>
             
           </div>
         
@@ -249,12 +279,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/posts/bbd13e89/" target="_self">
-          
+      
+      <a class="index-excerpt " href="/posts/bbd13e89/" target="_self">
+        <div>
           shell翻译为壳程序，只要能操作应用程序的软件都能够成为壳程序。壳程序的功能只是提供用户操作系统的一个界面。bash（Bourne Again Shell）就是一个壳程序。     shell有很多，比如C shell、bash、sh。     在&#x2F;etc&#x2F;shells可查看。
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -266,18 +296,32 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/linux/">linux</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/linux/" class="category-chain-item">linux</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/bash/">bash</a>
+              <a href="/tags/bash/">#bash</a>
             
           </div>
         
@@ -302,12 +346,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/posts/7502dcb/" target="_self">
-          
+      
+      <a class="index-excerpt " href="/posts/7502dcb/" target="_self">
+        <div>
           使用树莓派的CSI针脚进行对树莓派摄像头的控制。
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -319,18 +363,32 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/raspberry-pi/">raspberry pi</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/raspberry-pi/" class="category-chain-item">raspberry pi</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/raspberry-pi-camera/">raspberry pi camera</a>
+              <a href="/tags/raspberry-pi-camera/">#raspberry pi camera</a>
             
           </div>
         
@@ -355,12 +413,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/posts/69558f85/" target="_self">
-          
+      
+      <a class="index-excerpt " href="/posts/69558f85/" target="_self">
+        <div>
           ‘0’、‘ o’、‘ O’；‘l’、‘|’、‘1’有时候总是分不清楚（虽然编译器会提示）。最近看到一个感觉不错的字体，乘机修改一下vscode的字体。
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -372,20 +430,39 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/windows/">windows</a>
-            
-              <a href="/categories/windows/vscode/">vscode</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/windows/" class="category-chain-item">windows</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/windows/vscode/" class="category-chain-item">vscode</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/font/">font</a>
+              <a href="/tags/font/">#font</a>
             
           </div>
         
@@ -410,12 +487,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/posts/88bb77ff/" target="_self">
-          
+      
+      <a class="index-excerpt " href="/posts/88bb77ff/" target="_self">
+        <div>
           记录一些好使的vscode插件。
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -427,20 +504,39 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/windows/">windows</a>
-            
-              <a href="/categories/windows/vscode/">vscode</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/windows/" class="category-chain-item">windows</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/windows/vscode/" class="category-chain-item">vscode</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/plugins/">plugins</a>
+              <a href="/tags/plugins/">#plugins</a>
             
           </div>
         
@@ -465,12 +561,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/posts/a3de2b30/" target="_self">
-          
-          ​    chocolatey是windows下的一个包管理器，久闻大名。这玩意主要是方便，安装好东西后，不用再进一步的配置环境变量。
-        </a>
-      </p>
+      
+      <a class="index-excerpt " href="/posts/a3de2b30/" target="_self">
+        <div>
+          ​	chocolatey是windows下的一个包管理器，久闻大名。这玩意主要是方便，安装好东西后，不用再进一步的配置环境变量。
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -482,20 +578,39 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/windows/">windows</a>
-            
-              <a href="/categories/windows/tools/">tools</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/windows/" class="category-chain-item">windows</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/windows/tools/" class="category-chain-item">tools</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/chocolatey/">chocolatey</a>
+              <a href="/tags/chocolatey/">#chocolatey</a>
             
           </div>
         
@@ -520,12 +635,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/posts/33f781e7/" target="_self">
-          
+      
+      <a class="index-excerpt " href="/posts/33f781e7/" target="_self">
+        <div>
           ​    使用hexo部署到github时，发生了time out。网上有方法使用的是代理。但是代理时行时不行，所以我尝试使用ssh的方式解决这个问题。
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -537,20 +652,34 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/hexo/">hexo</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/hexo/" class="category-chain-item">hexo</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/ssh/">ssh</a>
+              <a href="/tags/ssh/">#ssh</a>
             
-              <a href="/tags/github/">github</a>
+              <a href="/tags/github/">#github</a>
             
           </div>
         
@@ -575,12 +704,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/posts/ce00252e/" target="_self">
-          
+      
+      <a class="index-excerpt " href="/posts/ce00252e/" target="_self">
+        <div>
           ​     ​    因为freshrss的颜值更高，所以选择了freshrss作为rss的阅读器。 ​
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -592,20 +721,34 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/linux/">linux</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/linux/" class="category-chain-item">linux</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/freshrss/">freshrss</a>
+              <a href="/tags/freshrss/">#freshrss</a>
             
-              <a href="/tags/rss/">rss</a>
+              <a href="/tags/rss/">#rss</a>
             
           </div>
         
@@ -630,12 +773,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/posts/58a2658f/" target="_self">
-          
+      
+      <a class="index-excerpt " href="/posts/58a2658f/" target="_self">
+        <div>
           ​    在heroku上建立umami用于网站的信息收集。
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -647,22 +790,36 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/hexo/">hexo</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/hexo/" class="category-chain-item">hexo</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/heroku/">heroku</a>
+              <a href="/tags/heroku/">#heroku</a>
             
-              <a href="/tags/umami/">umami</a>
+              <a href="/tags/umami/">#umami</a>
             
-              <a href="/tags/hexo-injector/">hexo_injector</a>
+              <a href="/tags/hexo-injector/">#hexo_injector</a>
             
           </div>
         
@@ -687,12 +844,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/posts/e531a5f8/" target="_self">
-          
+      
+      <a class="index-excerpt " href="/posts/e531a5f8/" target="_self">
+        <div>
           ​    发现一个好的工具，可视化的容器管理工具。操作容器不是简单了一点半点。
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -704,20 +861,39 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/linux/">linux</a>
-            
-              <a href="/categories/linux/tools/">tools</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/linux/" class="category-chain-item">linux</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/linux/tools/" class="category-chain-item">tools</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/portainer/">portainer</a>
+              <a href="/tags/portainer/">#portainer</a>
             
           </div>
         
@@ -762,32 +938,34 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
     </div>
   </div>
 </div>
+
     
 
     
   </main>
 
-  <footer class="text-center mt-5 py-3">
-  <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
-  </div>
+  <footer>
+    <div class="footer-inner">
   
-
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
   
-
   
-</footer>
+  
+  
+</div>
 
+  </footer>
 
-  <!-- SCRIPTS -->
+  <!-- Scripts -->
   
   <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
@@ -806,43 +984,18 @@
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
-<!-- Plugins -->
-
-
-  <script  src="/js/local-search.js" ></script>
-
-
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
-
-
-
-  
-    
-      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js" ></script>
-      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js" ></script>
-      
-        <script  src="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.js" ></script>
-      
-    
-  
-
-
-
-
-
-
-
 
   <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
   <script>
     (function (window, document) {
       var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
       
-        typing(title);
+        typing(text);
       
     })(window, document);
   </script>
@@ -852,18 +1005,28 @@
 
 
 
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
 
 
 
 
 
-
-
-
-
-<!-- 主题的启动项 保持在最底部 -->
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
 <script  src="/js/boot.js" ></script>
 
 
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 </body>
 </html>

@@ -25,15 +25,19 @@
 <meta name="twitter:card" content="summary_large_image">
   
   
+  
   <title>SunMonkey</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
 
 
-<!-- 主题依赖的图标库，不要自行修改 -->
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
 
 
 
@@ -42,22 +46,41 @@
 
 <link  rel="stylesheet" href="/css/main.css" />
 
-<!-- 自定义样式保持在最底部 -->
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
 
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"brraida.github.io","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"brraida.github.io","root":"/","version":"1.9.1","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<!-- hexo injector head_end start --><script async defer data-website-id="4fe01508-0ef6-4111-9b3f-45ba202c37ad" src="https://huumami.herokuapp.com/umami.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="SunMonkey" type="application/atom+xml">
+
+  
+<!-- hexo injector head_end start --><script async defer data-website-id="4fe01508-0ef6-4111-9b3f-45ba202c37ad" src="https://huumami.herokuapp.com/umami.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="SunMonkey" type="application/atom+xml">
 </head>
 
 
 <body>
-  <header style="height: 80vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 80vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
       <strong>harbour</strong>
@@ -139,6 +162,7 @@
               &nbsp;<i class="iconfont icon-search"></i>&nbsp;
             </a>
           </li>
+          
         
         
           <li class="nav-item" id="color-toggle-btn">
@@ -151,33 +175,39 @@
   </div>
 </nav>
 
-    <div class="banner" id="banner" parallax=true
-         style="background: url('/img/bg/fate.jpg') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="螃蟹🦀在剥我的壳">
-              
-            </span>
+  
 
-            
-          </div>
-
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/fate.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
           
-            <div class="scroll-down-bar">
-              <i class="iconfont icon-arrowdown"></i>
-            </div>
+            <span id="subtitle" data-typed-text="螃蟹🦀在剥我的壳"></span>
           
         </div>
+
+        
       </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
     </div>
+  </div>
+</div>
+
+</div>
+
   </header>
 
   <main>
     
       <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
+        <div id="board"
           >
           
           <div class="container">
@@ -203,12 +233,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/posts/c4a439f8/" target="_self">
-          
+      
+      <a class="index-excerpt " href="/posts/c4a439f8/" target="_self">
+        <div>
           ​    今天我想一个进程挂起，cpu要监督，所以简单的就想这个进程肯定有一部分是要占用内存的。其实，不然，cpu和内存是不能等价的。 ​    进程挂起的结果是从内存转移到外存，所以挂起不占内存的。
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -224,7 +254,7 @@
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/os/">os</a>
+              <a href="/tags/os/">#os</a>
             
           </div>
         
@@ -249,12 +279,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/posts/1426aaf4/" target="_self">
-          
+      
+      <a class="index-excerpt " href="/posts/1426aaf4/" target="_self">
+        <div>
           该博文写于2021-6-21             环境：腾讯云，centos7.6，linux3.10.0-1160.11.1.el7.x86_64 1.jdk下载与安装1.1选择jdk                          由Hadoop官方文档可知，最好下载java8。 下载：  wget https:&#x2F;&#x2F;repo.huaweicl
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -266,20 +296,39 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/linux/">linux</a>
-            
-              <a href="/categories/linux/centos/">centos</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/linux/" class="category-chain-item">linux</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/linux/centos/" class="category-chain-item">centos</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/hadoop/">hadoop</a>
+              <a href="/tags/hadoop/">#hadoop</a>
             
           </div>
         
@@ -304,12 +353,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/posts/69805bbd/" target="_self">
-          
-          ​    今天复习到了定积分，重新学了定积分的概念。迫不及待的使用python的lambda来实验实验。
-        </a>
-      </p>
+      
+      <a class="index-excerpt " href="/posts/69805bbd/" target="_self">
+        <div>
+          ​	今天复习到了定积分，重新学了定积分的概念。迫不及待的使用python的lambda来实验实验。
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -325,7 +374,7 @@
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/python/">python</a>
+              <a href="/tags/python/">#python</a>
             
           </div>
         
@@ -350,12 +399,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/posts/459f9e41/" target="_self">
-          
+      
+      <a class="index-excerpt " href="/posts/459f9e41/" target="_self">
+        <div>
           Windows打开管理员命令行 windows+r  输入cmd  按ctrl+shift+enter   切换alt+tab 快速切换窗口，松开就切换 windows+tab 切换窗口 alt+ctrl+tab 切换窗口，可以停留 ctrl+shift 切换键盘
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -367,18 +416,32 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/windows/">windows</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/windows/" class="category-chain-item">windows</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/instruct/">instruct</a>
+              <a href="/tags/instruct/">#instruct</a>
             
           </div>
         
@@ -403,12 +466,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/posts/a29203f1/" target="_self">
-          
-          ​    关于python的学习笔记。
-        </a>
-      </p>
+      
+      <a class="index-excerpt " href="/posts/a29203f1/" target="_self">
+        <div>
+          ​	关于python的学习笔记。
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -424,7 +487,7 @@
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/python/">python</a>
+              <a href="/tags/python/">#python</a>
             
           </div>
         
@@ -449,12 +512,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/posts/63a2d85/" target="_self">
-          
+      
+      <a class="index-excerpt " href="/posts/63a2d85/" target="_self">
+        <div>
           ​    我终于知道为什么要下载安装包，而不是直接用yum源了。因为yum源里的版本可能会比较旧，去官网下载就不一样了，可以获取最新的、更好的版本。
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -466,22 +529,41 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/linux/">linux</a>
-            
-              <a href="/categories/linux/centos/">centos</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/linux/" class="category-chain-item">linux</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/linux/centos/" class="category-chain-item">centos</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/centos/">centos</a>
+              <a href="/tags/centos/">#centos</a>
             
-              <a href="/tags/node-js/">node.js</a>
+              <a href="/tags/node-js/">#node.js</a>
             
           </div>
         
@@ -506,12 +588,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/posts/16fe430b/" target="_self">
-          
+      
+      <a class="index-excerpt " href="/posts/16fe430b/" target="_self">
+        <div>
           该博文写于2021.6.1
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -523,22 +605,41 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/linux/">linux</a>
-            
-              <a href="/categories/linux/centos/">centos</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/linux/" class="category-chain-item">linux</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/linux/centos/" class="category-chain-item">centos</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/nginx/">nginx</a>
+              <a href="/tags/nginx/">#nginx</a>
             
-              <a href="/tags/centos/">centos</a>
+              <a href="/tags/centos/">#centos</a>
             
           </div>
         
@@ -563,12 +664,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/posts/dbc31271/" target="_self">
-          
+      
+      <a class="index-excerpt " href="/posts/dbc31271/" target="_self">
+        <div>
           该博文写于2021.5.31             nginx安装与部署​        本来想写nginx的安装，但是发现nginx的中文文档写得不错，然后会持续更新（这个太重要了）。也可以结合nginx的官方文档看。 ​        偷个懒，放个链接好了：  nginx中文文档：nginx  nginx官方文档：nginx documentation    ngi
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -584,9 +685,9 @@
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/linux/">linux</a>
+              <a href="/tags/linux/">#linux</a>
             
-              <a href="/tags/nginx/">nginx</a>
+              <a href="/tags/nginx/">#nginx</a>
             
           </div>
         
@@ -611,12 +712,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/posts/430d67de/" target="_self">
-          
-          ​    看心情随便记上两笔。
-        </a>
-      </p>
+      
+      <a class="index-excerpt " href="/posts/430d67de/" target="_self">
+        <div>
+          ​	看心情随便记上两笔。
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -628,18 +729,32 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/log/">log</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/log/" class="category-chain-item">log</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/%E5%8E%9F%E6%9C%A8/">原木</a>
+              <a href="/tags/%E5%8E%9F%E6%9C%A8/">#原木</a>
             
           </div>
         
@@ -664,12 +779,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/posts/cc129669/" target="_self">
-          
+      
+      <a class="index-excerpt " href="/posts/cc129669/" target="_self">
+        <div>
           DFA与NFA的区别      这两个的主要最明显的区别就是DFA经过某一路径，到达另一个状态是确定的、唯一的。而NFA不是，而是可以到达一个或是多个状态的。也就是说，DFA是NFA的一种特例。  DFA的某一路径是的值是没有空串的。（那时候不知道这一点，在NFA进行确定化的时候，经空串也进行了计算，大失败！）   有时候吧，想对答案的地方都没有，以后将编译原理的作业整理，丢上来。
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -681,18 +796,32 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/homework/">homework</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/homework/" class="category-chain-item">homework</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/Fundamentals-of-Compiling/">Fundamentals of Compiling</a>
+              <a href="/tags/Fundamentals-of-Compiling/">#Fundamentals of Compiling</a>
             
           </div>
         
@@ -737,32 +866,34 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
     </div>
   </div>
 </div>
+
     
 
     
   </main>
 
-  <footer class="text-center mt-5 py-3">
-  <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
-  </div>
+  <footer>
+    <div class="footer-inner">
   
-
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
   
-
   
-</footer>
+  
+  
+</div>
 
+  </footer>
 
-  <!-- SCRIPTS -->
+  <!-- Scripts -->
   
   <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
@@ -781,43 +912,18 @@
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
-<!-- Plugins -->
-
-
-  <script  src="/js/local-search.js" ></script>
-
-
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
-
-
-
-  
-    
-      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js" ></script>
-      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js" ></script>
-      
-        <script  src="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.js" ></script>
-      
-    
-  
-
-
-
-
-
-
-
 
   <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
   <script>
     (function (window, document) {
       var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
       
-        typing(title);
+        typing(text);
       
     })(window, document);
   </script>
@@ -827,18 +933,28 @@
 
 
 
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
 
 
 
 
 
-
-
-
-
-<!-- 主题的启动项 保持在最底部 -->
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
 <script  src="/js/boot.js" ></script>
 
 
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 </body>
 </html>

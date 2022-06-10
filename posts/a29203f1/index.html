@@ -16,12 +16,12 @@
   <meta name="author" content="Brraida Hu">
   <meta name="keywords" content="">
   
-    <meta name="description" content="​    关于python的学习笔记。">
+    <meta name="description" content="​	关于python的学习笔记。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python学习笔记">
 <meta property="og:url" content="https://brraida.github.io/posts/a29203f1/index.html">
 <meta property="og:site_name" content="SunMonkey">
-<meta property="og:description" content="​    关于python的学习笔记。">
+<meta property="og:description" content="​	关于python的学习笔记。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://brraida.github.io/img/cover/python.png">
 <meta property="article:published_time" content="2021-06-06T16:00:00.000Z">
@@ -32,40 +32,27 @@
 <meta name="twitter:image" content="https://brraida.github.io/img/cover/python.png">
   
   
+  
   <title>python学习笔记 - SunMonkey</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
 
+
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
 
-  
-    
-    
-      
-      
-        
-          
-          
-          
-        
-        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism-solarizedlight.min.css" />
-      
-      
-        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.css" />
-      
-    
-  
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.css" />
 
-  
-    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
-  
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
 
 
 
@@ -74,22 +61,41 @@
 
 <link  rel="stylesheet" href="/css/main.css" />
 
-<!-- 自定义样式保持在最底部 -->
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
 
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"brraida.github.io","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"brraida.github.io","root":"/","version":"1.9.1","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<!-- hexo injector head_end start --><script async defer data-website-id="4fe01508-0ef6-4111-9b3f-45ba202c37ad" src="https://huumami.herokuapp.com/umami.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="SunMonkey" type="application/atom+xml">
+
+  
+<!-- hexo injector head_end start --><script async defer data-website-id="4fe01508-0ef6-4111-9b3f-45ba202c37ad" src="https://huumami.herokuapp.com/umami.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="SunMonkey" type="application/atom+xml">
 </head>
 
 
 <body>
-  <header style="height: 70vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
       <strong>harbour</strong>
@@ -171,6 +177,7 @@
               &nbsp;<i class="iconfont icon-search"></i>&nbsp;
             </a>
           </li>
+          
         
         
           <li class="nav-item" id="color-toggle-btn">
@@ -183,52 +190,63 @@
   </div>
 </nav>
 
-    <div class="banner" id="banner" parallax=true
-         style="background: url('/img/default.png') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="python学习笔记">
-              
-            </span>
-
-            
-              <div class="mt-3">
-  
-  
-    <span class="post-meta">
-      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-06-07 00:00" pubdate>
-        2021年6月7日 凌晨
-      </time>
-    </span>
-  
-</div>
-
-<div class="mt-1">
   
 
-  
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-clock-fill"></i>
-      
-      
-      51 分钟
-    </span>
-  
-
-  
-  
-</div>
-
-            
-          </div>
-
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="python学习笔记"></span>
           
         </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2021-06-07 00:00" pubdate>
+          2021年6月7日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          51 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
       </div>
+
+      
     </div>
+  </div>
+</div>
+
+</div>
+
   </header>
 
   <main>
@@ -237,57 +255,62 @@
 
 <div class="container-fluid nopadding-x">
   <div class="row nomargin-x">
-    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
     <div class="col-lg-8 nopadding-x-md">
       <div class="container nopadding-x-md" id="board-ctn">
-        <div class="py-5" id="board">
+        <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
             <h1 style="display: none">python学习笔记</h1>
             
             <div class="markdown-body">
-              <p>​    关于python的学习笔记。</p>
+              
+              <p>​	关于python的学习笔记。</p>
 <span id="more"></span>
 
 <div class="note note-primary">
-            <p>6月7号    :sunny:</p>
+            <p>6月7号	:sunny:</p>
           </div>
 
-<h2 id="继承-inheritance"><a href="#继承-inheritance" class="headerlink" title="继承(inheritance)"></a>继承(inheritance)</h2><h4 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h4><p>​    @staticmethod</p>
-<h4 id="类方法"><a href="#类方法" class="headerlink" title="类方法"></a>类方法</h4><p>​    @classmethod</p>
-<h4 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h4><p>​    类方法的第一个参数必须是指向本身的引用，而静态方法可以没有任何参数。</p>
+<h2 id="继承-inheritance"><a href="#继承-inheritance" class="headerlink" title="继承(inheritance)"></a>继承(inheritance)</h2><h4 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h4><p>​	@staticmethod</p>
+<h4 id="类方法"><a href="#类方法" class="headerlink" title="类方法"></a>类方法</h4><p>​	@classmethod</p>
+<h4 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h4><p>​	类方法的第一个参数必须是指向本身的引用，而静态方法可以没有任何参数。</p>
 <hr>
-<h4 id="受保护变量和方法-protected"><a href="#受保护变量和方法-protected" class="headerlink" title="受保护变量和方法(protected)"></a>受保护变量和方法(protected)</h4><p>​    单下划线</p>
+<h4 id="受保护变量和方法-protected"><a href="#受保护变量和方法-protected" class="headerlink" title="受保护变量和方法(protected)"></a>受保护变量和方法(protected)</h4><p>​	单下划线</p>
 <ol>
 <li>受保护的变量能在本类和子类里被使用</li>
 <li>受保护的方法不能在非子类中调用</li>
 </ol>
-<p>​    </p>
-<h4 id="私有变量和方法-private"><a href="#私有变量和方法-private" class="headerlink" title="私有变量和方法(private)"></a>私有变量和方法(private)</h4><p>​    双下划线</p>
+<p>​	</p>
+<h4 id="私有变量和方法-private"><a href="#私有变量和方法-private" class="headerlink" title="私有变量和方法(private)"></a>私有变量和方法(private)</h4><p>​	双下划线</p>
 <hr>
-<h2 id="多态-polymorphism"><a href="#多态-polymorphism" class="headerlink" title="多态(polymorphism)"></a>多态(polymorphism)</h2><p>​    定义：实现同一个功能的方法可以有不同的表现形态。</p>
-<p>​    note：</p>
+<h2 id="多态-polymorphism"><a href="#多态-polymorphism" class="headerlink" title="多态(polymorphism)"></a>多态(polymorphism)</h2><p>​	定义：实现同一个功能的方法可以有不同的表现形态。</p>
+<p>​	note：</p>
 <ol>
 <li>方法同名但参数类型不同，或者同一个方法能适应于不同类型的调式场景。</li>
 <li>不允许两个方法同名但参数个数不同。（java是允许的）</li>
 </ol>
 <hr>
-<h2 id="import-amp-amp-module"><a href="#import-amp-amp-module" class="headerlink" title="import &amp;&amp; module"></a>import &amp;&amp; module</h2><p>​    <strong>modules</strong>: </p>
+<h2 id="import-amp-amp-module"><a href="#import-amp-amp-module" class="headerlink" title="import &amp;&amp; module"></a>import &amp;&amp; module</h2><p>​	<strong>modules</strong>: </p>
 <ol>
 <li>自定义模块</li>
 <li>内置标准模块</li>
 <li>开源模块      <a target="_blank" rel="noopener" href="https://pypi.org/">PyPI · The Python Package Index</a></li>
 </ol>
-<h3 id="导入现有模块"><a href="#导入现有模块" class="headerlink" title="导入现有模块"></a>导入现有模块</h3><p>​    <strong>使用方式</strong></p>
+<h3 id="导入现有模块"><a href="#导入现有模块" class="headerlink" title="导入现有模块"></a>导入现有模块</h3><p>​	<strong>使用方式</strong></p>
 <ol>
 <li><p>import moduleName as elseName</p>
 <p>e.g import numpy as np</p>
 </li>
-<li><p>from moduleName import className(methodName/propertyName)</p>
+<li><p>from moduleName import className(methodName&#x2F;propertyName)</p>
 <p>e.g from numpy import sin</p>
 </li>
 </ol>
-<h3 id="导入包中模块"><a href="#导入包中模块" class="headerlink" title="导入包中模块"></a>导入包中模块</h3><p>​    如果<strong>以模块的形式复用代码</strong>出现了模块冲突的情况，则无法导入<strong>实现功能不同但是名字相同</strong>的模块，为了解决这个问题，可以用<strong>包的形式</strong>来复用现有功能。</p>
+<h3 id="导入包中模块"><a href="#导入包中模块" class="headerlink" title="导入包中模块"></a>导入包中模块</h3><p>​	如果<strong>以模块的形式复用代码</strong>出现了模块冲突的情况，则无法导入<strong>实现功能不同但是名字相同</strong>的模块，为了解决这个问题，可以用<strong>包的形式</strong>来复用现有功能。</p>
 <p>可以导入整个模块也可以精确导入某个模块的某个方法，速度和范围的差别。</p>
 <hr>
 <h2 id="isinstance-amp-amp-type"><a href="#isinstance-amp-amp-type" class="headerlink" title="isinstance() &amp;&amp; type()"></a>isinstance() &amp;&amp; type()</h2><blockquote>
@@ -310,10 +333,10 @@
 </blockquote>
 <hr>
 <blockquote>
-<p>6月8号    :sunny:</p>
+<p>6月8号	:sunny:</p>
 </blockquote>
-<h2 id="异常-exception"><a href="#异常-exception" class="headerlink" title="异常(exception)"></a>异常(exception)</h2><p>​    处理原则:出现异常不要紧，但要把异常影响范围限制到最小。</p>
-<p>​    实现要点：</p>
+<h2 id="异常-exception"><a href="#异常-exception" class="headerlink" title="异常(exception)"></a>异常(exception)</h2><p>​	处理原则:出现异常不要紧，但要把异常影响范围限制到最小。</p>
+<p>​	实现要点：</p>
 <ol>
 <li>正确的提示异常信息。</li>
 <li>合理监控和设置监控范围和异常处理的措施。</li>
@@ -363,8 +386,8 @@
 <td align="left">Unicode转换时出错</td>
 </tr>
 </tbody></table>
-<h3 id="Raise（主动）"><a href="#Raise（主动）" class="headerlink" title="Raise（主动）"></a>Raise（主动）</h3><p>​    自定义的异常描述信息会更具有操作性。</p>
-<div class="code-wrapper"><pre class="line-numbers language-python" data-language="python"><code class="language-python">def divide(x, y):
+<h3 id="Raise（主动）"><a href="#Raise（主动）" class="headerlink" title="Raise（主动）"></a>Raise（主动）</h3><p>​	自定义的异常描述信息会更具有操作性。</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-python" data-language="python"><code class="language-python">def divide(x, y):
     if y &#x3D;&#x3D; 0:
         raise Exception(&#39;divisor is 0&#39;)
     try:
@@ -381,16 +404,16 @@ try:
     divide(1, &#39;1&#39;)
 except Exception as e:
     print(e)
-</code></pre></div>
+</code></pre></div></figure>
 
 <h3 id="Finally"><a href="#Finally" class="headerlink" title="Finally"></a>Finally</h3><blockquote>
 <p>Python 垃圾回收机制，只能帮我们回收变量、类对象占用的内存，而无法自动完成类似关闭文件、数据库连接等这些的工作。</p>
 </blockquote>
-<p>​    作用：资源回收(比如关闭文件、数据库连接等这些的工作)</p>
-<p>​    功能：无论try块是否发生异常，最终都要进入finally语句，并执行其中的代码块。</p>
+<p>​	作用：资源回收(比如关闭文件、数据库连接等这些的工作)</p>
+<p>​	功能：无论try块是否发生异常，最终都要进入finally语句，并执行其中的代码块。</p>
 <p>参考链接：<a target="_blank" rel="noopener" href="http://c.biancheng.net/view/2316.html">Python try except finally：资源回收 (biancheng.net)</a></p>
-<p>​    有点意思的地方</p>
-<div class="code-wrapper"><pre class="line-numbers language-python" data-language="python"><code class="language-python">def funcWithFinally():
+<p>​	有点意思的地方</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-python" data-language="python"><code class="language-python">def funcWithFinally():
     try:
         print(&quot;in try&quot;)
         return &quot;try end&quot;
@@ -401,15 +424,15 @@ except Exception as e:
 
 print(funcWithFinally())
 
-</code></pre></div>
+</code></pre></div></figure>
 
-<div class="code-wrapper"><pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">输出结果:
+<figure><div class="code-wrapper"><pre class="line-numbers language-latex" data-language="latex"><code class="language-latex">输出结果:
 in try
 in finally
-finally end</code></pre></div>
+finally end</code></pre></div></figure>
 
-<p>​    说明第七行比第四行提前执行了。</p>
-<div class="code-wrapper"><pre class="line-numbers language-python" data-language="python"><code class="language-python">def funcWithFinally():
+<p>​	说明第七行比第四行提前执行了。</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-python" data-language="python"><code class="language-python">def funcWithFinally():
     try:
         print(&quot;in try&quot;)
         return &quot;try end&quot;
@@ -418,18 +441,18 @@ finally end</code></pre></div>
 
 
 print(funcWithFinally())
-</code></pre></div>
+</code></pre></div></figure>
 
-<div class="code-wrapper"><pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">输出结果:
+<figure><div class="code-wrapper"><pre class="line-numbers language-latex" data-language="latex"><code class="language-latex">输出结果:
 in try
 in finally
-try end</code></pre></div>
+try end</code></pre></div></figure>
 
-<p>​    会回到第四行执行。</p>
+<p>​	会回到第四行执行。</p>
 <blockquote>
-<p>6月9号    :sun_behind_large_cloud:</p>
+<p>6月9号	:sun_behind_large_cloud:</p>
 </blockquote>
-<h2 id="I-O"><a href="#I-O" class="headerlink" title="I/O"></a>I/O</h2><h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><table>
+<h2 id="I-x2F-O"><a href="#I-x2F-O" class="headerlink" title="I&#x2F;O"></a>I&#x2F;O</h2><h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><table>
 <thead>
 <tr>
 <th>参数值</th>
@@ -465,7 +488,7 @@ try end</code></pre></div>
 <td>二进制模式，非文本模式</td>
 </tr>
 </tbody></table>
-<h3 id="复制和移动文件"><a href="#复制和移动文件" class="headerlink" title="复制和移动文件"></a>复制和移动文件</h3><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">import os, shutil
+<h3 id="复制和移动文件"><a href="#复制和移动文件" class="headerlink" title="复制和移动文件"></a>复制和移动文件</h3><figure><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">import os, shutil
 
 
 def moveFile(src, dest):
@@ -496,25 +519,25 @@ srcForMove &#x3D; &#39;D:\\3\\python1.txt&#39;
 destForMove &#x3D; &#39;D:\\3\\python3.txt&#39;
 copyFile(srcForCopy, destForCopy)
 # moveFile(srcForMove, destForMove)
-</code></pre></div>
+</code></pre></div></figure>
 
-<p>​    <strong>GET</strong></p>
-<p>​    makedirs()    #递归创建目录</p>
-<p>​    mkdir()    #创建一级目录</p>
-<p>​    path.os.split(path) #返回一个数组，第一个元素是路径，第二个是文件名。</p>
+<p>​	<strong>GET</strong></p>
+<p>​	makedirs()	#递归创建目录</p>
+<p>​	mkdir()	#创建一级目录</p>
+<p>​	path.os.split(path) #返回一个数组，第一个元素是路径，第二个是文件名。</p>
 <p>参考链接:</p>
-<p>​    <a target="_blank" rel="noopener" href="https://www.runoob.com/python/python-os-path.html">Python os.path() 模块 | 菜鸟教程 (runoob.com)</a></p>
-<p>​    <a target="_blank" rel="noopener" href="https://www.runoob.com/python/os-makedirs.html">Python os.makedirs() 方法 | 菜鸟教程 (runoob.com)</a></p>
+<p>​	<a target="_blank" rel="noopener" href="https://www.runoob.com/python/python-os-path.html">Python os.path() 模块 | 菜鸟教程 (runoob.com)</a></p>
+<p>​	<a target="_blank" rel="noopener" href="https://www.runoob.com/python/os-makedirs.html">Python os.makedirs() 方法 | 菜鸟教程 (runoob.com)</a></p>
 <hr>
 <blockquote>
 <p>2021-6-13 </p>
 </blockquote>
 <h2 id="urllib库"><a href="#urllib库" class="headerlink" title="urllib库"></a>urllib库</h2><h3 id="urlopen方法"><a href="#urlopen方法" class="headerlink" title="urlopen方法"></a>urlopen方法</h3><blockquote>
-<p>urllib.request.urlopen(url)    #GET</p>
-<p>urllib.request.urlopen(url,data=None,[timeout]) #POST</p>
+<p>urllib.request.urlopen(url)	#GET</p>
+<p>urllib.request.urlopen(url,data&#x3D;None,[timeout]) #POST</p>
 </blockquote>
-<p>​    直接用urllib.request模块的urlopen（）获取页面，page的数据格式为bytes类型，需要decode（）解码，转换成str类型。反过来也就是说，在使用post这种方式的时候，data就要以字节形式做参传入。</p>
-<div class="code-wrapper"><pre class="line-numbers language-python" data-language="python"><code class="language-python">import urllib.request
+<p>​	直接用urllib.request模块的urlopen（）获取页面，page的数据格式为bytes类型，需要decode（）解码，转换成str类型。反过来也就是说，在使用post这种方式的时候，data就要以字节形式做参传入。</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-python" data-language="python"><code class="language-python">import urllib.request
 
 stockCode &#x3D; &#39;600895&#39;
 url &#x3D; &#39;http:&#x2F;&#x2F;quotes.money.163.com&#x2F;service&#x2F;chddata.html&#39;
@@ -526,15 +549,15 @@ param &#x3D; bytes(urllib.parse.urlencode(&#123;&#39;code&#39;: &#39;0&#39; + st
 response &#x3D; urllib.request.urlopen(url, data&#x3D;param, timeout&#x3D;10)
 print(response.read().decode(&#39;gbk&#39;))
 response.close()
-</code></pre></div>
+</code></pre></div></figure>
 
 <p>参考链接:</p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41856814/article/details/99658108">Python3中urlopen()详解</a></p>
 <h3 id="urlretrieve方法"><a href="#urlretrieve方法" class="headerlink" title="urlretrieve方法"></a>urlretrieve方法</h3><blockquote>
-<p>urllib.request.urlretrieve(url,filename,data)    #取己所需，所以参考链接的更完整详细</p>
+<p>urllib.request.urlretrieve(url,filename,data)	#取己所需，所以参考链接的更完整详细</p>
 </blockquote>
 <p>返回一个包含两个元素的元组(filename, headers)，filename表示保存到本地的路径，header表示服务器的响应头。</p>
-<div class="code-wrapper"><pre class="line-numbers language-python" data-language="python"><code class="language-python">import urllib.request
+<figure><div class="code-wrapper"><pre class="line-numbers language-python" data-language="python"><code class="language-python">import urllib.request
 
 
 def getAndSaveStock(stockCodeList, path):
@@ -552,12 +575,12 @@ stockCodeList &#x3D; []
 stockCodeList.append(&#39;600895&#39;)
 stockCodeList.append(&#39;600007&#39;)
 getAndSaveStock(stockCodeList, &#39;D:\\3\\&#39;)
-</code></pre></div>
+</code></pre></div></figure>
 
-<p>​    发现如果将第12行的’.csv’改成’.txt’也是可以的。真方便啊！记得我学csv的时候，还要用它的相关库，一行行写入。</p>
+<p>​	发现如果将第12行的’.csv’改成’.txt’也是可以的。真方便啊！记得我学csv的时候，还要用它的相关库，一行行写入。</p>
 <p>参考链接:</p>
 <p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1406358">urllib.request.urlretrieve()函数</a></p>
-<h2 id="RE"><a href="#RE" class="headerlink" title="RE"></a>RE</h2><p>​    作用：一般用来搜索和替换符合特定规则的文本。</p>
+<h2 id="RE"><a href="#RE" class="headerlink" title="RE"></a>RE</h2><p>​	作用：一般用来搜索和替换符合特定规则的文本。</p>
 <blockquote>
 <p>2021-6-14 :sunny:</p>
 </blockquote>
@@ -626,15 +649,15 @@ getAndSaveStock(stockCodeList, &#39;D:\\3\\&#39;)
 </tr>
 </tbody></table>
 <p><strong>匹配字符串一般用法：</strong></p>
-<div class="code-wrapper"><pre class="line-numbers language-python" data-language="python"><code class="language-python">myStr&#x3D;&#39;balaba&#39;
+<figure><div class="code-wrapper"><pre class="line-numbers language-python" data-language="python"><code class="language-python">myStr&#x3D;&#39;balaba&#39;
 myPattern&#x3D;&#39;\w+&#39;
 if re.match(myPattern,myStr):
-	print(&#39;get&#39;)</code></pre></div>
+	print(&#39;get&#39;)</code></pre></div></figure>
 
 
 
-<h4 id="正则表达式截取字符串"><a href="#正则表达式截取字符串" class="headerlink" title="正则表达式截取字符串"></a>正则表达式截取字符串</h4><p>​    绝了，发现自己以前根本不会截取字符串而是匹配字符串…</p>
-<div class="code-wrapper"><pre class="line-numbers language-python" data-language="python"><code class="language-python">import re
+<h4 id="正则表达式截取字符串"><a href="#正则表达式截取字符串" class="headerlink" title="正则表达式截取字符串"></a>正则表达式截取字符串</h4><p>​	绝了，发现自己以前根本不会截取字符串而是匹配字符串…</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-python" data-language="python"><code class="language-python">import re
 
 print(re.split(&#39;&#x3D;&#39;, &#39;content&#x3D;hello&#39;))
 print(re.split(&#39;&#x3D;&#39;, &#39;content&#x3D;hello&#39;)[0])
@@ -656,36 +679,75 @@ print(re.findall(rule, &#39;&quot;vcontent&quot;&#x3D;&lt;ok?&gt;&#39;))	#获取
 str &#x3D; &#39;60001,10,12,15&#39;
 print(re.split(&#39;,&#39;, str))	#split也可以用于re,见识短浅，以前以为只可用于str
 print(str.split(&#39;,&#39;))
-</code></pre></div>
+</code></pre></div></figure>
 
 
+              
             </div>
-            <hr>
+            <hr/>
             <div>
-              <div class="post-metas mb-3">
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/python/">python</a>
-                    
-                  </div>
-                
-              </div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/python/">#python</a>
+      
+    </div>
+  
+</div>
+
+
               
-                <p class="note note-warning">
-                  
-                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
-                  
-                </p>
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>python学习笔记</div>
+      <div>https://brraida.github.io/posts/a29203f1/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Brraida Hu</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2021年6月7日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
               
-              
-                <div class="post-prevnext">
+                <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/459f9e41/">
+                      <a href="/posts/459f9e41/" title="Windows快捷键">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">Windows快捷键</span>
                         <span class="visible-mobile">上一篇</span>
@@ -695,7 +757,7 @@ print(str.split(&#39;,&#39;))
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/63a2d85/">
+                      <a href="/posts/63a2d85/" title="node.js安装">
                         <span class="hidden-mobile">node.js安装</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -711,19 +773,49 @@ print(str.split(&#39;,&#39;))
         </div>
       </div>
     </div>
-    
-      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
-        <div id="toc">
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
   <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
   <div class="toc-body" id="toc-body"></div>
 </div>
 
-      </div>
-    
+
+
+  </aside>
+
+
+    </div>
   </div>
 </div>
 
-<!-- Custom -->
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
 
 
     
@@ -748,32 +840,34 @@ print(str.split(&#39;,&#39;))
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
     </div>
   </div>
 </div>
+
     
 
     
   </main>
 
-  <footer class="text-center mt-5 py-3">
-  <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
-  </div>
+  <footer>
+    <div class="footer-inner">
   
-
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
   
-
   
-</footer>
+  
+  
+</div>
 
+  </footer>
 
-  <!-- SCRIPTS -->
+  <!-- Scripts -->
   
   <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
@@ -792,56 +886,18 @@ print(str.split(&#39;,&#39;))
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
-<!-- Plugins -->
-
-
-  <script  src="/js/local-search.js" ></script>
-
-
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
-
-
-
-  
-    
-      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js" ></script>
-      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js" ></script>
-      
-        <script  src="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.js" ></script>
-      
-    
-  
-
-
-
-  
-    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
-  
-  
-    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
-  
-  
-    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
-  
-  
-    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
-  
-
-
-
-
-
 
   <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
   <script>
     (function (window, document) {
       var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
       
-        typing(title);
+        typing(text);
       
     })(window, document);
   </script>
@@ -851,18 +907,165 @@ print(str.split(&#39;,&#39;))
 
 
 
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js" ></script>
+
+  <script  src="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js" ></script>
+
+  <script  src="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.js" ></script>
+
+  <script>
+  (function() {
+    var enableLang = CONFIG.code_language.enable && CONFIG.code_language.default;
+    var enableCopy = CONFIG.copy_btn;
+    if (!enableLang && !enableCopy) {
+      return;
+    }
+
+    function getBgClass(ele) {
+      return Fluid.utils.getBackgroundLightness(ele) >= 0 ? 'code-widget-light' : 'code-widget-dark';
+    }
+
+    var copyTmpl = '';
+    copyTmpl += '<div class="code-widget">';
+    copyTmpl += 'LANG';
+    copyTmpl += '</div>';
+    jQuery('.markdown-body pre').each(function() {
+      var $pre = jQuery(this);
+      if ($pre.find('code.mermaid').length > 0) {
+        return;
+      }
+      if ($pre.find('span.line').length > 0) {
+        return;
+      }
+
+      var lang = '';
+
+      if (enableLang) {
+        lang = CONFIG.code_language.default;
+        if ($pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2 && $pre.children().hasClass('hljs')) {
+          lang = $pre[0].children[0].classList[1];
+        } else if ($pre[0].getAttribute('data-language')) {
+          lang = $pre[0].getAttribute('data-language');
+        } else if ($pre.parent().hasClass('sourceCode') && $pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2) {
+          lang = $pre[0].children[0].classList[1];
+          $pre.parent().addClass('code-wrapper');
+        } else if ($pre.parent().hasClass('markdown-body') && $pre[0].classList.length === 0) {
+          $pre.wrap('<div class="code-wrapper"></div>');
+        }
+        lang = lang.toUpperCase().replace('NONE', CONFIG.code_language.default);
+      }
+      $pre.append(copyTmpl.replace('LANG', lang).replace('code-widget">',
+        getBgClass($pre[0]) + (enableCopy ? ' code-widget copy-btn" data-clipboard-snippet><i class="iconfont icon-copy"></i>' : ' code-widget">')));
+
+      if (enableCopy) {
+        Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js', function() {
+          var clipboard = new window.ClipboardJS('.copy-btn', {
+            target: function(trigger) {
+              var nodes = trigger.parentNode.childNodes;
+              for (var i = 0; i < nodes.length; i++) {
+                if (nodes[i].tagName === 'CODE') {
+                  return nodes[i];
+                }
+              }
+            }
+          });
+          clipboard.on('success', function(e) {
+            e.clearSelection();
+            e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-copy', 'icon-success');
+            setTimeout(function() {
+              e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-success', 'icon-copy');
+            }, 2000);
+          });
+        });
+      }
+    });
+  })();
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
 
 
 
 
 
-
-
-
-
-<!-- 主题的启动项 保持在最底部 -->
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
 <script  src="/js/boot.js" ></script>
 
 
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 </body>
 </html>

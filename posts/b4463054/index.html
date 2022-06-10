@@ -33,40 +33,27 @@
 <meta name="twitter:image" content="https://brraida.github.io/img/cover/ttrss.png">
   
   
+  
   <title>使用docker建立ttrss - SunMonkey</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
 
+
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
 
-  
-    
-    
-      
-      
-        
-          
-          
-          
-        
-        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism-solarizedlight.min.css" />
-      
-      
-        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.css" />
-      
-    
-  
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.css" />
 
-  
-    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
-  
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
 
 
 
@@ -75,22 +62,41 @@
 
 <link  rel="stylesheet" href="/css/main.css" />
 
-<!-- 自定义样式保持在最底部 -->
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
 
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"brraida.github.io","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"brraida.github.io","root":"/","version":"1.9.1","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<!-- hexo injector head_end start --><script async defer data-website-id="4fe01508-0ef6-4111-9b3f-45ba202c37ad" src="https://huumami.herokuapp.com/umami.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="SunMonkey" type="application/atom+xml">
+
+  
+<!-- hexo injector head_end start --><script async defer data-website-id="4fe01508-0ef6-4111-9b3f-45ba202c37ad" src="https://huumami.herokuapp.com/umami.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="SunMonkey" type="application/atom+xml">
 </head>
 
 
 <body>
-  <header style="height: 70vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
       <strong>harbour</strong>
@@ -172,6 +178,7 @@
               &nbsp;<i class="iconfont icon-search"></i>&nbsp;
             </a>
           </li>
+          
         
         
           <li class="nav-item" id="color-toggle-btn">
@@ -184,52 +191,63 @@
   </div>
 </nav>
 
-    <div class="banner" id="banner" parallax=true
-         style="background: url('/img/default.png') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="使用docker建立ttrss">
-              
-            </span>
-
-            
-              <div class="mt-3">
-  
-  
-    <span class="post-meta">
-      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-08-02 09:05" pubdate>
-        2021年8月2日 上午
-      </time>
-    </span>
-  
-</div>
-
-<div class="mt-1">
   
 
-  
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-clock-fill"></i>
-      
-      
-      48 分钟
-    </span>
-  
-
-  
-  
-</div>
-
-            
-          </div>
-
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="使用docker建立ttrss"></span>
           
         </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2021-08-02 09:05" pubdate>
+          2021年8月2日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          49 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
       </div>
+
+      
     </div>
+  </div>
+</div>
+
+</div>
+
   </header>
 
   <main>
@@ -238,15 +256,20 @@
 
 <div class="container-fluid nopadding-x">
   <div class="row nomargin-x">
-    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
     <div class="col-lg-8 nopadding-x-md">
       <div class="container nopadding-x-md" id="board-ctn">
-        <div class="py-5" id="board">
+        <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
             <h1 style="display: none">使用docker建立ttrss</h1>
             
             <div class="markdown-body">
+              
               <p>​    第一次部署ttrss可能没有那么简单，需要耐点心。</p>
 <span id="more"></span>
 
@@ -299,14 +322,14 @@
 <h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>ttrss官网教程</p>
 <p><a target="_blank" rel="noopener" href="https://ttrss.henry.wang/zh/">🐋 Awesome TTRSS | 🐋 Awesome TTRSS (henry.wang)</a></p>
 <h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
-<li><p>下载[docker-compose.yml](<a target="_blank" rel="noopener" href="https://github.com/HenryQW/Awesome-TTRSS/blob/main/docker-compose.yml">Awesome-TTRSS/docker-compose.yml at main · HenryQW/Awesome-TTRSS (github.com)</a>)到一目录下。</p>
+<li><p>下载[docker-compose.yml](<a target="_blank" rel="noopener" href="https://github.com/HenryQW/Awesome-TTRSS/blob/main/docker-compose.yml">Awesome-TTRSS&#x2F;docker-compose.yml at main · HenryQW&#x2F;Awesome-TTRSS (github.com)</a>)到一目录下。</p>
 <p>用网上教程命令不行，我也不懂git命令。然后就粗暴的在根目录下创建了ttrss文件夹，命令如下:</p>
-<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mkdir ttrss
-cd ttrss</code></pre></div>
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">mkdir ttrss
+cd ttrss</code></pre></div></figure>
 
 <p>然后在Windows下创建一个docker-compose.yml ,将代码复制进去，然后使用<strong>xftp 7</strong>上传文件到linux的ttrss目录下。(解释一下为什么不直接在ttrss下创建docker-compose.yml，然后复制代码到docker-compose.yml中。首先yaml文件是对空格敏感的；其次，我复制的时候，shell自动将最后后面几行自动注释了。启动配置就失败了，改空格又麻烦，所以就直接用xftp 7了。)</p>
 <p>docker-compose.yml文件配置:</p>
-<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">version: &quot;3&quot;
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">version: &quot;3&quot;
 services:
   service.rss:
     image: wangqiru&#x2F;ttrss:latest
@@ -374,33 +397,33 @@ networks:
   service_only: # Provide the communication network between services only
     internal: true
   database_only: # Provide the communication between ttrss and database only
-    internal: true</code></pre></div>
+    internal: true</code></pre></div></figure>
 
 <p>主要修改的地方是第九行,将localhost改成ip地址，其他可以先不动。先激动的试试行不行。</p>
 </li>
 <li><p>启动</p>
 <p>在ttrss目录下执行如下命令:</p>
-<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker-compose up -d</code></pre></div>
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker-compose up -d</code></pre></div></figure>
 
 <p>第一次会下载一些镜像，花费时间就一点。</p>
 </li>
 <li><p>查看</p>
 <p>查看启动的镜像</p>
-<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker ps</code></pre></div>
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker ps</code></pre></div></figure>
 
 <p><img src="/img/article/ttrss/ttrss.png" srcset="/img/loading.gif" lazyload></p>
 <p>访问端口ip:181，可以就说明没什么问题了。</p>
 <p>P.S. 为了安全，改一下第10行和第44行的密码，并且密码要一致。</p>
 <p>重载docker-compose.yml，得先停、再编写、最后重启</p>
-<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker-compse down #stop
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker-compse down #stop
 vim docker-compose.yml #write
-docker-compose up -d #start</code></pre></div></li>
+docker-compose up -d #start</code></pre></div></figure></li>
 </ol>
 <hr>
 <h2 id="进一步"><a href="#进一步" class="headerlink" title="进一步"></a>进一步</h2><p>​    ok,以上就搞定了可以使用ip加端口部署ttrss。</p>
 <p>​    下面介绍的是nginx反向代理和上ssl锁。</p>
 <p>​    我用的是腾讯云的域名，然后可以直接申请一个免费的ssl证书。</p>
-<h3 id="nginx配置"><a href="#nginx配置" class="headerlink" title="nginx配置"></a>nginx配置</h3><p>如果你是安装nginx官网安装的话，nginx的配置文件在/etc/nginx/nginx.conf。(想说一点，官网配置中，location块是分开的，和网上教程不太一样，目的是便于管理。不知道也无所谓。)</p>
+<h3 id="nginx配置"><a href="#nginx配置" class="headerlink" title="nginx配置"></a>nginx配置</h3><p>如果你是安装nginx官网安装的话，nginx的配置文件在&#x2F;etc&#x2F;nginx&#x2F;nginx.conf。(想说一点，官网配置中，location块是分开的，和网上教程不太一样，目的是便于管理。不知道也无所谓。)</p>
 <p>参考文档:</p>
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/document/product/400/35244">SSL 证书 Nginx 服务器 SSL 证书安装部署 - 证书安装 - 文档中心 - 腾讯云 (tencent.com)</a></p>
@@ -409,7 +432,7 @@ docker-compose up -d #start</code></pre></div></li>
 <ol>
 <li><p>nginx.conf配置</p>
 <p>在hhtp块下加上以下代码(也可以选择替换# Settings for a TLS enabled server.这注释下面的代码。)</p>
-<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">server &#123;
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">server &#123;
     listen 443 ssl;
     server_name sisilly.club;
     ssl_certificate 1_sisilly.club_bundle.crt;
@@ -423,10 +446,11 @@ docker-compose up -d #start</code></pre></div></li>
 #        root html; 
 #        index  index.html index.htm;
 #    &#125;
-&#125;</code></pre></div></li>
+&#125;</code></pre></div></figure>
+</li>
 <li><p>location块配置</p>
 <p>在default.d目录下创建一个ttrss.conf</p>
-<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">vim &#x2F;etc&#x2F;nginx&#x2F;default.d&#x2F;ttrss.conf
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">vim &#x2F;etc&#x2F;nginx&#x2F;default.d&#x2F;ttrss.conf
 
 # bash
 location &#x2F; &#123;
@@ -439,16 +463,17 @@ location &#x2F; &#123;
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     proxy_set_header Upgrade-Insecure-Requests 1;
     proxy_set_header X-Forwarded-Proto https;
-  &#125;</code></pre></div></li>
+  &#125;</code></pre></div></figure>
+</li>
 <li><p>测试、启动</p>
-<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">nginx -t
-service nginx start</code></pre></div>
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nginx -t
+service nginx start</code></pre></div></figure>
 
 <p>可能会报警告，只要在nginx.conf中的http块下加</p>
-<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">proxy_headers_hash_max_size 51200;
-proxy_headers_hash_bucket_size 6400;</code></pre></div></li>
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">proxy_headers_hash_max_size 51200;
+proxy_headers_hash_bucket_size 6400;</code></pre></div></figure></li>
 </ol>
-<h3 id="ttrss的docker-compose-yml配置"><a href="#ttrss的docker-compose-yml配置" class="headerlink" title="ttrss的docker-compose.yml配置"></a>ttrss的docker-compose.yml配置</h3><p>​    将 第九行- SELF_URL_PATH=<a target="_blank" rel="noopener" href="http://localhost:181/%EF%BC%8C%E6%94%B9%E6%88%90-">http://localhost:181/，改成-</a> SELF_URL_PATH=https://域名/</p>
+<h3 id="ttrss的docker-compose-yml配置"><a href="#ttrss的docker-compose-yml配置" class="headerlink" title="ttrss的docker-compose.yml配置"></a>ttrss的docker-compose.yml配置</h3><p>​    将 第九行- SELF_URL_PATH&#x3D;<a target="_blank" rel="noopener" href="http://localhost:181/%EF%BC%8C%E6%94%B9%E6%88%90-">http://localhost:181/，改成-</a> SELF_URL_PATH&#x3D;https:&#x2F;&#x2F;域名&#x2F;</p>
 <p>  至此，结束。后面就是ttrss的配置了。可以看大佬文章。<a target="_blank" rel="noopener" href="https://blog.laoda.de/archives/tinytinyrss">【服务器能干什么】二十分钟搭建一个属于自己的RSS服务 - 二十五画生 (laoda.de)</a></p>
 <p>你可能需要:</p>
 <blockquote>
@@ -457,49 +482,88 @@ proxy_headers_hash_bucket_size 6400;</code></pre></div></li>
 <hr>
 <p>2021-08-21</p>
 <p>​    实践之后进行理论填充。之前搭建的ttrss是没有开启防火墙的情况下，看了一些书籍之后，感受到了安全的重要性。所以进行防火墙的补充、遇到问题的解决办法和懒人脚本补充。</p>
-<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">systemctl status firewalld # 防火墙状态
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">systemctl status firewalld # 防火墙状态
 systemctl stop firewalld   # 防火墙关闭
 systemctl start firewalld  # 防火墙开启
 
 firewall-cmd --zone&#x3D;public --add-port&#x3D;80&#x2F;tcp --permanent # 打开80端口
-firewall-cmd --list-all    # 查看防火墙开启的端口</code></pre></div>
+firewall-cmd --list-all    # 查看防火墙开启的端口</code></pre></div></figure>
 
-<p>问题：PostgreSQL: Could not connect to server: TCP/IP connections on port 5432</p>
+<p>问题：PostgreSQL: Could not connect to server: TCP&#x2F;IP connections on port 5432</p>
 <p>​    ttrss用的是PostgreSQL，所以别忘记开5432端口。开启后，运行<code>docker-compose down</code>，将容器停下来，然后运行<code>service docker restart</code>，不然可能遇到<strong>ERROR: Failed to Setup IP tables: Unable to enable SKIP DNAT rule</strong>，然后就可以运行<code>docker-compose up -d</code>了。</p>
 <p>​    大佬做好的一键安装脚本，容我膜拜一下。</p>
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://www.ioiox.com/archives/139.html">https://www.ioiox.com/archives/139.html</a></p>
 </blockquote>
 
+              
             </div>
-            <hr>
+            <hr/>
             <div>
-              <div class="post-metas mb-3">
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/rss/">rss</a>
-                    
-                      <a class="hover-with-bg" href="/tags/ttrss/">ttrss</a>
-                    
-                  </div>
-                
-              </div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/rss/">#rss</a>
+      
+        <a href="/tags/ttrss/">#ttrss</a>
+      
+    </div>
+  
+</div>
+
+
               
-                <p class="note note-warning">
-                  
-                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
-                  
-                </p>
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>使用docker建立ttrss</div>
+      <div>https://brraida.github.io/posts/b4463054/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Brraida Hu</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2021年8月2日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
               
-              
-                <div class="post-prevnext">
+                <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/dedab3/">
+                      <a href="/posts/dedab3/" title="右键新建Markdown文件">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">右键新建Markdown文件</span>
                         <span class="visible-mobile">上一篇</span>
@@ -509,7 +573,7 @@ firewall-cmd --list-all    # 查看防火墙开启的端口</code></pre></div>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/6bcf3639/">
+                      <a href="/posts/6bcf3639/" title="安装-redis">
                         <span class="hidden-mobile">安装-redis</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -525,19 +589,49 @@ firewall-cmd --list-all    # 查看防火墙开启的端口</code></pre></div>
         </div>
       </div>
     </div>
-    
-      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
-        <div id="toc">
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
   <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
   <div class="toc-body" id="toc-body"></div>
 </div>
 
-      </div>
-    
+
+
+  </aside>
+
+
+    </div>
   </div>
 </div>
 
-<!-- Custom -->
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
 
 
     
@@ -562,32 +656,34 @@ firewall-cmd --list-all    # 查看防火墙开启的端口</code></pre></div>
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
     </div>
   </div>
 </div>
+
     
 
     
   </main>
 
-  <footer class="text-center mt-5 py-3">
-  <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
-  </div>
+  <footer>
+    <div class="footer-inner">
   
-
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
   
-
   
-</footer>
+  
+  
+</div>
 
+  </footer>
 
-  <!-- SCRIPTS -->
+  <!-- Scripts -->
   
   <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
@@ -606,56 +702,18 @@ firewall-cmd --list-all    # 查看防火墙开启的端口</code></pre></div>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
-<!-- Plugins -->
-
-
-  <script  src="/js/local-search.js" ></script>
-
-
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
-
-
-
-  
-    
-      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js" ></script>
-      <script  src="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js" ></script>
-      
-        <script  src="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.js" ></script>
-      
-    
-  
-
-
-
-  
-    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
-  
-  
-    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
-  
-  
-    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
-  
-  
-    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
-  
-
-
-
-
-
 
   <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
   <script>
     (function (window, document) {
       var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
       
-        typing(title);
+        typing(text);
       
     })(window, document);
   </script>
@@ -665,18 +723,165 @@ firewall-cmd --list-all    # 查看防火墙开启的端口</code></pre></div>
 
 
 
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js" ></script>
+
+  <script  src="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js" ></script>
+
+  <script  src="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.js" ></script>
+
+  <script>
+  (function() {
+    var enableLang = CONFIG.code_language.enable && CONFIG.code_language.default;
+    var enableCopy = CONFIG.copy_btn;
+    if (!enableLang && !enableCopy) {
+      return;
+    }
+
+    function getBgClass(ele) {
+      return Fluid.utils.getBackgroundLightness(ele) >= 0 ? 'code-widget-light' : 'code-widget-dark';
+    }
+
+    var copyTmpl = '';
+    copyTmpl += '<div class="code-widget">';
+    copyTmpl += 'LANG';
+    copyTmpl += '</div>';
+    jQuery('.markdown-body pre').each(function() {
+      var $pre = jQuery(this);
+      if ($pre.find('code.mermaid').length > 0) {
+        return;
+      }
+      if ($pre.find('span.line').length > 0) {
+        return;
+      }
+
+      var lang = '';
+
+      if (enableLang) {
+        lang = CONFIG.code_language.default;
+        if ($pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2 && $pre.children().hasClass('hljs')) {
+          lang = $pre[0].children[0].classList[1];
+        } else if ($pre[0].getAttribute('data-language')) {
+          lang = $pre[0].getAttribute('data-language');
+        } else if ($pre.parent().hasClass('sourceCode') && $pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2) {
+          lang = $pre[0].children[0].classList[1];
+          $pre.parent().addClass('code-wrapper');
+        } else if ($pre.parent().hasClass('markdown-body') && $pre[0].classList.length === 0) {
+          $pre.wrap('<div class="code-wrapper"></div>');
+        }
+        lang = lang.toUpperCase().replace('NONE', CONFIG.code_language.default);
+      }
+      $pre.append(copyTmpl.replace('LANG', lang).replace('code-widget">',
+        getBgClass($pre[0]) + (enableCopy ? ' code-widget copy-btn" data-clipboard-snippet><i class="iconfont icon-copy"></i>' : ' code-widget">')));
+
+      if (enableCopy) {
+        Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js', function() {
+          var clipboard = new window.ClipboardJS('.copy-btn', {
+            target: function(trigger) {
+              var nodes = trigger.parentNode.childNodes;
+              for (var i = 0; i < nodes.length; i++) {
+                if (nodes[i].tagName === 'CODE') {
+                  return nodes[i];
+                }
+              }
+            }
+          });
+          clipboard.on('success', function(e) {
+            e.clearSelection();
+            e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-copy', 'icon-success');
+            setTimeout(function() {
+              e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-success', 'icon-copy');
+            }, 2000);
+          });
+        });
+      }
+    });
+  })();
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
 
 
 
 
 
-
-
-
-
-<!-- 主题的启动项 保持在最底部 -->
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
 <script  src="/js/boot.js" ></script>
 
 
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 </body>
 </html>
