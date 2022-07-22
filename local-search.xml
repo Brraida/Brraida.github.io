@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>格式化启动盘</title>
+    <link href="/posts/7e2d7be8/"/>
+    <url>/posts/7e2d7be8/</url>
+    
+    <content type="html"><![CDATA[<p>​最近把家里的老笔电换成了轻量的linux系统，但是在重新格式化启动盘出现了问题。参考了网上教程，完成了将启动盘恢复成普通的U盘。</p><span id="more"></span><ol><li>将U盘插入windows10的笔电下。</li><li><code>windows</code>+<code>R</code>，输入<code>cmd</code>，在按下<code>ctrl</code>+<code>shift</code>+<code>enter</code>打开管理员终端（防止权限不够）。</li><li>在终端输入<code>diskpart</code>。</li><li>在终端输入<code>list disk</code>，根据u盘的大小确定是哪个磁盘。</li><li>然后选择对应的磁盘，<code>select disk 2</code>。</li><li>输入<code>clean</code>（该命令将会清空磁盘，要确认选择正确的磁盘）。</li><li>在终端输入<code>create partition primary</code>。</li><li>在资源管理器中选中U盘，右键点击格式化，根据自己的需求选择<code>nfts</code>或是<code>fat32</code>，然后格式化。（可视化界面操作总是简单一些，并且还能选择快速格式化）</li></ol><p>参考:</p><blockquote><p><a href="https://blog.csdn.net/qq_40005528/article/details/107518431">(22条消息) U盘安装Linux系统后如何恢复正常容量_司文秦瘦的博客-CSDN博客</a></p><p>[2022指南：使用DiskPart和格式化軟體格式化硬碟 <a href="https://tw.easeus.com/partition-manager-tips/format-hard-drive-using-command-prompt.html#1">免費] - EaseUS</a></p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>linux</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>u盘</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>以root用户进行登录</title>
     <link href="/posts/71312d38/"/>
     <url>/posts/71312d38/</url>
@@ -338,11 +363,11 @@
   
   
   <entry>
-    <title>vscodePlugins</title>
+    <title>vscode</title>
     <link href="/posts/88bb77ff/"/>
     <url>/posts/88bb77ff/</url>
     
-    <content type="html"><![CDATA[<p>    记录一些好使的vscode插件。</p><!-- more --## Git相关的插件    **GitLens**：除了它本身现在所讲的之外，还可以将rebase命令进行可视化。> 使用rebase的参考链接：[[ 前端新手技能樹] #4-3 Learn Git Branching - 調整提交順序 - YouTube](https://youtu.be/FQP2Af63NAA)    若要将rebase命令进行可视化，则需要进行一下配置：1. 在vscode里面输入 ctrl+` ,打开终端2. 在终端键入`code --help`，确认是否安装了code3. 如果是则键入`git config --global core.editor "code --wait"`> [How to use Visual Studio Code as default editor for git? - Stack Overflow](https://stackoverflow.com/questions/30024353/how-to-use-visual-studio-code-as-default-editor-for-git)**Git Graph**:查看git的流程线，可以配合Gitlens做一些可视化操作。]]></content>
+    <content type="html"><![CDATA[<p>    记录与vscode相关的东西。</p><span id="more"></span><h1 id="Git相关的插件"><a href="#Git相关的插件" class="headerlink" title="Git相关的插件"></a>Git相关的插件</h1><p>    <strong>GitLens</strong>：除了它本身现在所讲的之外，还可以将rebase命令进行可视化。</p><blockquote><p>使用rebase的参考链接：<a href="https://youtu.be/FQP2Af63NAA">[ 前端新手技能樹] #4-3 Learn Git Branching - 調整提交順序 - YouTube</a></p></blockquote><p>    若要将rebase命令进行可视化，则需要进行一下配置：</p><ol><li><p>在vscode里面输入 ctrl+&#96; ,打开终端</p></li><li><p>在终端键入<code>code --help</code>，确认是否安装了code</p></li><li><p>如果是则键入<code>git config --global core.editor &quot;code --wait&quot;</code></p></li></ol><blockquote><p><a href="https://stackoverflow.com/questions/30024353/how-to-use-visual-studio-code-as-default-editor-for-git">How to use Visual Studio Code as default editor for git? - Stack Overflow</a></p></blockquote><p><strong>Git Graph</strong>:查看git的流程线，可以配合Gitlens做一些可视化操作。</p><h1 id="快捷"><a href="#快捷" class="headerlink" title="快捷"></a>快捷</h1><figure><div class="code-wrapper"><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">输入:#section$*5输出的结果是:  &lt;div id&#x3D;&quot;section1&quot;&gt;&lt;&#x2F;div&gt;  &lt;div id&#x3D;&quot;section2&quot;&gt;&lt;&#x2F;div&gt;  &lt;div id&#x3D;&quot;section3&quot;&gt;&lt;&#x2F;div&gt;  &lt;div id&#x3D;&quot;section4&quot;&gt;&lt;&#x2F;div&gt;  &lt;div id&#x3D;&quot;section5&quot;&gt;&lt;&#x2F;div&gt;输入:span&#123;data$&#125;*2输出:  &lt;span&gt;data1&lt;&#x2F;span&gt;&lt;span&gt;data2&lt;&#x2F;span&gt;</code></pre></div></figure>]]></content>
     
     
     <categories>
@@ -1232,6 +1257,25 @@
   
   
   <entry>
+    <title>py爆破</title>
+    <link href="/posts/3cc1efd6/"/>
+    <url>/posts/3cc1efd6/</url>
+    
+    <content type="html"><![CDATA[<p>​    有时候想白嫖一些资源，但是总会有些资源是压缩加密的。就因为这个，我对爆破很感兴趣。之后有学了python，所以就兴致冲冲地写了爆破脚本。记录一下遇到的问题和解决的方法。</p><span id="more"></span><p>​    首先，学信安的小伙伴和我讲有字典就简单，代码很简单的。所以我在github在找了如下的字典库。</p><blockquote><p><a href="https://github.com/YueYongDev/Blasting_dictionary">YueYongDev&#x2F;Blasting_dictionary: 爆破字典 (github.com)</a></p></blockquote><p>​    之后cv网上代码，他用的是zipfile模块（python内置的模块）、rarfile模块(github大佬写的，接口和zipfile差不多)。然后出现问题。</p><h2 id="使用zipfile模块"><a href="#使用zipfile模块" class="headerlink" title="使用zipfile模块"></a>使用zipfile模块</h2><p>​    用zipfile不能解压不是用传统加密的文件。经过科学上网查询得到这样的解答与解决。</p><p><img src="/img/article/py-%E7%88%86%E7%A0%B4/zipfile%E4%B8%8D%E5%8F%AF%E7%94%A8%E8%A7%A3%E7%AD%94.jpg"></p><p>​    <strong>AES</strong>：密码学中的高级加密标准（Advanced Encryption Standard，AES），又称Rijndael加密法，是美国联邦政府采用的一种区块加密标准。</p><p>​    现在加密一般都是按这个标准。</p><h2 id="使用pyzipper模块"><a href="#使用pyzipper模块" class="headerlink" title="使用pyzipper模块"></a>使用pyzipper模块</h2><p>​    所以使用pyzipper模块代替zipfile模块。</p><p>​    给上可执行正确的代码：</p><figure><div class="code-wrapper"><pre class="line-numbers language-python" data-language="python"><code class="language-python">import pyzipperf1 &#x3D; open(&#39;D:\\1\\pwd.txt&#39;, &#39;r&#39;)with pyzipper.AESZipFile(&#39;D:\\1\\test.zip&#39;, &#39;r&#39;) as f:    for i in f1:        i &#x3D; i.rstrip(&#39;\n&#39;)        f.pwd &#x3D; str.encode(i)        try:            f.extractall(&#39;D:\\1\\2&#39;)            print(&quot;The correct password is:&quot; + i)            break        except Exception:            passf1.close()</code></pre></div></figure><h2 id="rarfile模块"><a href="#rarfile模块" class="headerlink" title="rarfile模块"></a>rarfile模块</h2><p>​    使用rarfile模块解压rar文件问题就多了。它解压其实借助的是电脑的解压软件的unrar.exe进行解压。(可以在pypi中查看此模块，可以得到此模块的相关信息与工作原理)</p><p>​    然后我嫌下载unrar太麻烦，还要配置环境变量等等操作，并且我本地用的是WinRAR，所以将WinRAR所在的路径加入环境就解决了。</p><figure><div class="code-wrapper"><pre class="line-numbers language-python" data-language="python"><code class="language-python">import rarfile path1 &#x3D; &#39;D:\\1\\2.rar&#39; despath &#x3D; &#39;D:\\1\\2&#39;  rf &#x3D; rarfile.RarFile(path1)rf.extractall(path&#x3D;despath)rf.close()</code></pre></div></figure><p>​    经过测试，解压没有密码压缩的可以；解压加密的压缩包里面没有文件的可以。但是不可以解压加密的有文件的压缩包。编译错误显示下图所示：</p><p><img src="/img/article/py-%E7%88%86%E7%A0%B4/%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF%E6%98%BE%E7%A4%BA.png"></p><p>​    所以上rarfile这个项目查了一下，其他的使用者也遇到类似这样的问题。然后有人是这么解决的，如下图所示：</p><p><img src="/img/article/py-%E7%88%86%E7%A0%B4/%E6%8F%90%E9%97%AE%E8%80%85%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.png"></p><p>​    不过，这个14年提出来并解决的。我一个21年的，只能是借鉴参考了。看到后面，果然有个20年的朋友也有这样的问题。</p><p><img src="/img/article/py-%E7%88%86%E7%A0%B4/20%E5%B9%B4%E5%90%8C%E6%8F%90%E9%97%AE%E8%80%85.png"></p><p>​    所以大胆猜测，rarfile这个模块里面确实有些问题。</p><hr><p>​    同样的代码，我室友使用rarfile在他的电脑上跑出来了。</p><p>​    我是Windows10，python3.8.3，Pycharm，压缩软件WinRAR</p><p>​    室友用的是manjaro，python3.9.4，idle，压缩软件是系统自带的</p><hr><h2 id="展望"><a href="#展望" class="headerlink" title="展望"></a>展望</h2><p>​    瞅我这暴脾气，最近考试月。考试月过了，我在搞一下。</p><ol><li>Windows下，下那个unrar，搞配置尝试</li><li>1不行就去CenOs7.4服务器搭个环境尝试</li><li>2不行我也开manjaro尝试</li><li>以上都失败，就可以砸电脑了</li></ol><p>搞成功地进一步设想。</p><ol><li>zip可以了，rar可以了，怎么可以不把它们整合在一起的道理呢。</li><li>爆破怎么可以不搞多线程呢。</li><li>python怎么可以不搞封装呢。</li><li>整个界面。</li></ol>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>python</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>py指令</title>
     <link href="/posts/c669871/"/>
     <url>/posts/c669871/</url>
@@ -1245,25 +1289,6 @@
       <tag>python</tag>
       
       <tag>instruct</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>py爆破</title>
-    <link href="/posts/3cc1efd6/"/>
-    <url>/posts/3cc1efd6/</url>
-    
-    <content type="html"><![CDATA[<p>​    有时候想白嫖一些资源，但是总会有些资源是压缩加密的。就因为这个，我对爆破很感兴趣。之后有学了python，所以就兴致冲冲地写了爆破脚本。记录一下遇到的问题和解决的方法。</p><span id="more"></span><p>​    首先，学信安的小伙伴和我讲有字典就简单，代码很简单的。所以我在github在找了如下的字典库。</p><blockquote><p><a href="https://github.com/YueYongDev/Blasting_dictionary">YueYongDev&#x2F;Blasting_dictionary: 爆破字典 (github.com)</a></p></blockquote><p>​    之后cv网上代码，他用的是zipfile模块（python内置的模块）、rarfile模块(github大佬写的，接口和zipfile差不多)。然后出现问题。</p><h2 id="使用zipfile模块"><a href="#使用zipfile模块" class="headerlink" title="使用zipfile模块"></a>使用zipfile模块</h2><p>​    用zipfile不能解压不是用传统加密的文件。经过科学上网查询得到这样的解答与解决。</p><p><img src="/img/article/py-%E7%88%86%E7%A0%B4/zipfile%E4%B8%8D%E5%8F%AF%E7%94%A8%E8%A7%A3%E7%AD%94.jpg"></p><p>​    <strong>AES</strong>：密码学中的高级加密标准（Advanced Encryption Standard，AES），又称Rijndael加密法，是美国联邦政府采用的一种区块加密标准。</p><p>​    现在加密一般都是按这个标准。</p><h2 id="使用pyzipper模块"><a href="#使用pyzipper模块" class="headerlink" title="使用pyzipper模块"></a>使用pyzipper模块</h2><p>​    所以使用pyzipper模块代替zipfile模块。</p><p>​    给上可执行正确的代码：</p><figure><div class="code-wrapper"><pre class="line-numbers language-python" data-language="python"><code class="language-python">import pyzipperf1 &#x3D; open(&#39;D:\\1\\pwd.txt&#39;, &#39;r&#39;)with pyzipper.AESZipFile(&#39;D:\\1\\test.zip&#39;, &#39;r&#39;) as f:    for i in f1:        i &#x3D; i.rstrip(&#39;\n&#39;)        f.pwd &#x3D; str.encode(i)        try:            f.extractall(&#39;D:\\1\\2&#39;)            print(&quot;The correct password is:&quot; + i)            break        except Exception:            passf1.close()</code></pre></div></figure><h2 id="rarfile模块"><a href="#rarfile模块" class="headerlink" title="rarfile模块"></a>rarfile模块</h2><p>​    使用rarfile模块解压rar文件问题就多了。它解压其实借助的是电脑的解压软件的unrar.exe进行解压。(可以在pypi中查看此模块，可以得到此模块的相关信息与工作原理)</p><p>​    然后我嫌下载unrar太麻烦，还要配置环境变量等等操作，并且我本地用的是WinRAR，所以将WinRAR所在的路径加入环境就解决了。</p><figure><div class="code-wrapper"><pre class="line-numbers language-python" data-language="python"><code class="language-python">import rarfile path1 &#x3D; &#39;D:\\1\\2.rar&#39; despath &#x3D; &#39;D:\\1\\2&#39;  rf &#x3D; rarfile.RarFile(path1)rf.extractall(path&#x3D;despath)rf.close()</code></pre></div></figure><p>​    经过测试，解压没有密码压缩的可以；解压加密的压缩包里面没有文件的可以。但是不可以解压加密的有文件的压缩包。编译错误显示下图所示：</p><p><img src="/img/article/py-%E7%88%86%E7%A0%B4/%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF%E6%98%BE%E7%A4%BA.png"></p><p>​    所以上rarfile这个项目查了一下，其他的使用者也遇到类似这样的问题。然后有人是这么解决的，如下图所示：</p><p><img src="/img/article/py-%E7%88%86%E7%A0%B4/%E6%8F%90%E9%97%AE%E8%80%85%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.png"></p><p>​    不过，这个14年提出来并解决的。我一个21年的，只能是借鉴参考了。看到后面，果然有个20年的朋友也有这样的问题。</p><p><img src="/img/article/py-%E7%88%86%E7%A0%B4/20%E5%B9%B4%E5%90%8C%E6%8F%90%E9%97%AE%E8%80%85.png"></p><p>​    所以大胆猜测，rarfile这个模块里面确实有些问题。</p><hr><p>​    同样的代码，我室友使用rarfile在他的电脑上跑出来了。</p><p>​    我是Windows10，python3.8.3，Pycharm，压缩软件WinRAR</p><p>​    室友用的是manjaro，python3.9.4，idle，压缩软件是系统自带的</p><hr><h2 id="展望"><a href="#展望" class="headerlink" title="展望"></a>展望</h2><p>​    瞅我这暴脾气，最近考试月。考试月过了，我在搞一下。</p><ol><li>Windows下，下那个unrar，搞配置尝试</li><li>1不行就去CenOs7.4服务器搭个环境尝试</li><li>2不行我也开manjaro尝试</li><li>以上都失败，就可以砸电脑了</li></ol><p>搞成功地进一步设想。</p><ol><li>zip可以了，rar可以了，怎么可以不把它们整合在一起的道理呢。</li><li>爆破怎么可以不搞多线程呢。</li><li>python怎么可以不搞封装呢。</li><li>整个界面。</li></ol>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>python</tag>
       
     </tags>
     
