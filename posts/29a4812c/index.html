@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://brraida.github.io/img/cover/deploy-website-by-nginx.png">
 <meta property="article:published_time" content="2022-06-04T12:51:30.000Z">
-<meta property="article:modified_time" content="2022-07-29T14:22:38.387Z">
+<meta property="article:modified_time" content="2022-07-29T14:31:39.199Z">
 <meta property="article:author" content="Brraida Hu">
 <meta property="article:tag" content="nginx">
 <meta name="twitter:card" content="summary_large_image">
@@ -227,7 +227,7 @@
         
         
           <!-- compatible with older versions-->
-          17 分钟
+          20 分钟
         
       </span>
     
@@ -272,7 +272,7 @@
               <p>​	利用nginx部署网站。</p>
 <span id="more"></span>
 
-<p>​	防止nginx的默认配置干扰，我们可以先将默认配置去掉链接。</p>
+<h1 id="一个web服务"><a href="#一个web服务" class="headerlink" title="一个web服务"></a>一个web服务</h1><p>​	防止nginx的默认配置干扰，我们可以先将默认配置去掉链接。</p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">cd &#x2F;etc&#x2F;nginx&#x2F;sites-enabled
 
 # 检查链接情况
@@ -312,7 +312,7 @@ sudo systemctl reload nginx
 #####
 若用域名访问,则加上软连接;然后在热重载nginx
 #####
-ln -s &#x2F;etc&#x2F;nginx&#x2F;sites-available&#x2F;mysite.conf &#x2F;etc&#x2F;nginx&#x2F;sites-enabled&#x2F;</code></pre></div></figure>
+sudo ln -s &#x2F;etc&#x2F;nginx&#x2F;sites-available&#x2F;mysite.conf &#x2F;etc&#x2F;nginx&#x2F;sites-enabled&#x2F;</code></pre></div></figure>
 
 
 
@@ -390,6 +390,28 @@ ln -s &#x2F;etc&#x2F;nginx&#x2F;sites-available&#x2F;mysite.conf &#x2F;etc&#x2F;
 <p>参考：</p>
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=RzrIqzC9bQc&t=707s&ab_channel=Techbeast.org">(31) Part 1 - NGINX Web Server ( Installation &amp; Configuration ) - YouTube</a></p>
+</blockquote>
+<h1 id="多个web服务"><a href="#多个web服务" class="headerlink" title="多个web服务"></a>多个web服务</h1><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 第一个web配置内容
+server &#123;
+	# 监听80端口
+	listen 80 default_server;
+	index index.html index.htm index.php;
+	server_name mysite1.com;
+	root &#x2F;var&#x2F;www&#x2F;mysite1;	
+&#125;
+
+# 第二个web配置内容
+server &#123;
+	# 监听80端口
+	listen 80 default_server;
+	index index.html index.htm index.php;
+	server_name mysite2.com;
+	root &#x2F;var&#x2F;www&#x2F;mysite2;	
+&#125;</code></pre></div></figure>
+
+<p>​	用的都是http协议，但是通过域名来达到访问不同的服务。</p>
+<p>参考：</p>
+<blockquote>
 <p><a target="_blank" rel="noopener" href="https://webdock.io/en/docs/how-guides/shared-hosting-multiple-websites/how-configure-nginx-to-serve-multiple-websites-single-vps">Webdock : How to Configure Nginx to serve Multiple Websites on a Single VPS</a></p>
 </blockquote>
 
