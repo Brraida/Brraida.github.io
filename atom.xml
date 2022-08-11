@@ -6,7 +6,7 @@
   <link href="https://brraida.github.io/atom.xml" rel="self"/>
   
   <link href="https://brraida.github.io/"/>
-  <updated>2022-07-22T00:17:29.620Z</updated>
+  <updated>2022-08-11T12:54:30.335Z</updated>
   <id>https://brraida.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>用vscode写html和css的一些技巧</title>
+    <link href="https://brraida.github.io/posts/44f4e8ed/"/>
+    <id>https://brraida.github.io/posts/44f4e8ed/</id>
+    <published>2022-08-11T12:10:14.000Z</published>
+    <updated>2022-08-11T12:54:30.335Z</updated>
+    
+    <content type="html"><![CDATA[<p>​最近看别人打前端代码，看他们打得又优雅又快。趁机学习且记录。</p><span id="more"></span><p>​比如,</p><ol><li><p><code>span&#123;data$&#125;*2</code> &#x3D;&#x3D;&gt; <code>&lt;span&gt;data1&lt;/span&gt;&lt;span&gt;data2&lt;/span&gt;</code>;</p></li><li><p><code>.classname</code> &#x3D;&#x3D; &gt; <code>&lt;div class=&quot;classname&quot;&gt;&lt;/div&gt;</code></p></li><li><p><code>#idname</code> &#x3D;&#x3D;&gt; <code>&lt;div id=&quot;idname&quot;&gt;&lt;/div&gt;</code></p></li><li><p><code>p&gt;Lorem</code> &#x3D;&#x3D;&gt; 快速为你填写p标签内容</p></li><li><p><code>.item$*2</code>  &#x3D;&#x3D;&gt;  <code>&lt;div class=&quot;item1&quot;&gt;&lt;div&gt;&lt;div class=&quot;item2&quot;&gt;&lt;div&gt;</code></p></li></ol><p>更多其他快捷技巧可以参考一下文章:</p><blockquote><p><a href="https://blog.greenroots.info/10-vs-code-emmet-tips-to-make-you-more-productive">10 VS Code emmet tips to make you more productive (greenroots.info)</a></p></blockquote><hr><p>​但是当我使用的时候，有些不会自动换行，要达到自动换行只需要进行以下操作:</p><ol><li><p><code>ctrl+shift+p</code>打开命令行</p></li><li><p>输入<code>open setting</code></p></li><li><p>在搜索栏搜索<code>syntax pro</code></p></li><li><p>点击<code>在settings.json中编辑</code></p></li><li><p>在emmet.syntaxProfiles中添加内容</p><figure><div class="code-wrapper"><pre class="line-numbers language-json" data-language="json"><code class="language-json">&quot;emmet.syntaxProfiles&quot;: &#123;      &quot;html&quot;: &#123;        &quot;inline_break&quot;: 2      &#125;    &#125;</code></pre></div></figure></li><li><p>保存配置文件</p></li></ol><p>参考：</p><blockquote><p><a href="https://blog.csdn.net/qq_53002615/article/details/122398026">(23条消息) VSCode生成多个a&#x2F;span元素时，不会自动换行_嚴某的博客-CSDN博客_vscode不自动换行</a></p></blockquote>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;​	最近看别人打前端代码，看他们打得又优雅又快。趁机学习且记录。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="fontend" scheme="https://brraida.github.io/categories/fontend/"/>
+    
+    
+    <category term="vscode" scheme="https://brraida.github.io/tags/vscode/"/>
+    
+  </entry>
   
   <entry>
     <title>格式化启动盘</title>
