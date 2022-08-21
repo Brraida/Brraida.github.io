@@ -6,7 +6,7 @@
   <link href="https://brraida.github.io/atom.xml" rel="self"/>
   
   <link href="https://brraida.github.io/"/>
-  <updated>2022-08-11T12:54:30.335Z</updated>
+  <updated>2022-08-21T13:57:15.618Z</updated>
   <id>https://brraida.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>删除不需要的服务</title>
+    <link href="https://brraida.github.io/posts/7e1a44c2/"/>
+    <id>https://brraida.github.io/posts/7e1a44c2/</id>
+    <published>2022-08-21T04:20:59.000Z</published>
+    <updated>2022-08-21T13:57:15.618Z</updated>
+    
+    <content type="html"><![CDATA[<p>​以前在服务器上搞了nps（内网穿透工具），开了开启自启服务。不需要之后，直接将软件目录删除，但在此之前没有关闭服务。</p><p>​而nps默认配置中占用了443端口，所以在进行部署其他任务的时候，就出现了443端口被绑定的错误提示。OK，大致 情况是这样，但是前提我是不知道443端口被什么东西绑定的。</p><p>​因此讲讲在已知端口被占用中，该如何删除不需要的服务。</p><span id="more"></span><ol><li><p>根据端口检索进程的名称</p><p><code>sudo netstat -tulpn | grep &#39;:443</code></p></li><li><p>发现端口绑定的是Nps服务</p></li><li><p>下一步只要关掉即可</p><p><code>sudo systemctl disable nps</code></p></li></ol><p>​若想要进一步的删除相应的文件，Debian系统可以使用<a href="http://www.debianadmin.com/remove-unwanted-startup-files-or-services-in-debian.html">工具</a>。其他不清楚，但是可以用<code>systemctl status &lt;services name&gt;</code>命令，其中会显示服务文件的保存位置，手动删除即可。</p><hr><p>​关闭服务有两种方法，一种是stop，另一种是disable。两者的区别是，前者是暂时关闭，当重新开机后，服务会重现启动；后者是永久关闭。</p><p>​查看所用服务的命令<code>systemctl list-unit-files</code>，然后搭配管道命令进行筛选。</p><hr><p>​所以说，以后想要卸载一个软件的时候，首先得检查一下他有没有服务。可以用<code>systemctl status &lt;service name&gt;</code>来查看其状态。然后关闭自启服务，在进行命令卸载。这将会省去一些不必要的麻烦。</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;​	以前在服务器上搞了nps（内网穿透工具），开了开启自启服务。不需要之后，直接将软件目录删除，但在此之前没有关闭服务。&lt;/p&gt;
+&lt;p&gt;​	而nps默认配置中占用了443端口，所以在进行部署其他任务的时候，就出现了443端口被绑定的错误提示。OK，大致 情况是这样，但是前提我是不知道443端口被什么东西绑定的。&lt;/p&gt;
+&lt;p&gt;​	因此讲讲在已知端口被占用中，该如何删除不需要的服务。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="linux" scheme="https://brraida.github.io/categories/linux/"/>
+    
+    
+    <category term="services" scheme="https://brraida.github.io/tags/services/"/>
+    
+  </entry>
   
   <entry>
     <title>用vscode写html和css的一些技巧</title>

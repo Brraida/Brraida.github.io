@@ -16,24 +16,22 @@
   <meta name="author" content="Brraida Hu">
   <meta name="keywords" content="">
   
-    <meta name="description" content="​	最近看别人打前端代码，看他们打得又优雅又快。趁机学习且记录。">
+    <meta name="description" content="​	以前在服务器上搞了nps（内网穿透工具），开了开启自启服务。不需要之后，直接将软件目录删除，但在此之前没有关闭服务。 ​	而nps默认配置中占用了443端口，所以在进行部署其他任务的时候，就出现了443端口被绑定的错误提示。OK，大致 情况是这样，但是前提我是不知道443端口被什么东西绑定的。 ​	因此讲讲在已知端口被占用中，该如何删除不需要的服务。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用vscode写html和css的一些技巧">
-<meta property="og:url" content="https://brraida.github.io/posts/44f4e8ed/index.html">
+<meta property="og:title" content="删除不需要的服务">
+<meta property="og:url" content="https://brraida.github.io/posts/7e1a44c2/index.html">
 <meta property="og:site_name" content="SunMonkey">
-<meta property="og:description" content="​	最近看别人打前端代码，看他们打得又优雅又快。趁机学习且记录。">
+<meta property="og:description" content="​	以前在服务器上搞了nps（内网穿透工具），开了开启自启服务。不需要之后，直接将软件目录删除，但在此之前没有关闭服务。 ​	而nps默认配置中占用了443端口，所以在进行部署其他任务的时候，就出现了443端口被绑定的错误提示。OK，大致 情况是这样，但是前提我是不知道443端口被什么东西绑定的。 ​	因此讲讲在已知端口被占用中，该如何删除不需要的服务。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://brraida.github.io/img/cover/vscode-skills.png">
-<meta property="article:published_time" content="2022-08-11T12:10:14.000Z">
-<meta property="article:modified_time" content="2022-08-11T12:54:30.335Z">
+<meta property="article:published_time" content="2022-08-21T04:20:59.000Z">
+<meta property="article:modified_time" content="2022-08-21T13:57:15.618Z">
 <meta property="article:author" content="Brraida Hu">
-<meta property="article:tag" content="vscode">
+<meta property="article:tag" content="services">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://brraida.github.io/img/cover/vscode-skills.png">
   
   
   
-  <title>用vscode写html和css的一些技巧 - SunMonkey</title>
+  <title>删除不需要的服务 - SunMonkey</title>
 
   <link  rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="用vscode写html和css的一些技巧"></span>
+            <span id="subtitle" data-typed-text="删除不需要的服务"></span>
           
         </div>
 
@@ -210,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-08-11 20:10" pubdate>
-          2022年8月11日 晚上
+        <time datetime="2022-08-21 12:20" pubdate>
+          2022年8月21日 中午
         </time>
       </span>
     
@@ -227,7 +225,7 @@
         
         
           <!-- compatible with older versions-->
-          7 分钟
+          5 分钟
         
       </span>
     
@@ -265,55 +263,31 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">用vscode写html和css的一些技巧</h1>
+            <h1 style="display: none">删除不需要的服务</h1>
             
             <div class="markdown-body">
               
-              <p>​	最近看别人打前端代码，看他们打得又优雅又快。趁机学习且记录。</p>
+              <p>​	以前在服务器上搞了nps（内网穿透工具），开了开启自启服务。不需要之后，直接将软件目录删除，但在此之前没有关闭服务。</p>
+<p>​	而nps默认配置中占用了443端口，所以在进行部署其他任务的时候，就出现了443端口被绑定的错误提示。OK，大致 情况是这样，但是前提我是不知道443端口被什么东西绑定的。</p>
+<p>​	因此讲讲在已知端口被占用中，该如何删除不需要的服务。</p>
 <span id="more"></span>
 
-<p>​	比如,</p>
 <ol>
-<li><p><code>span&#123;data$&#125;*2</code> &#x3D;&#x3D;&gt; <code>&lt;span&gt;data1&lt;/span&gt;&lt;span&gt;data2&lt;/span&gt;</code>;</p>
+<li><p>根据端口检索进程的名称</p>
+<p><code>sudo netstat -tulpn | grep &#39;:443</code></p>
 </li>
-<li><p><code>.classname</code> &#x3D;&#x3D; &gt; <code>&lt;div class=&quot;classname&quot;&gt;&lt;/div&gt;</code></p>
+<li><p>发现端口绑定的是Nps服务</p>
 </li>
-<li><p><code>#idname</code> &#x3D;&#x3D;&gt; <code>&lt;div id=&quot;idname&quot;&gt;&lt;/div&gt;</code></p>
-</li>
-<li><p><code>p&gt;Lorem</code> &#x3D;&#x3D;&gt; 快速为你填写p标签内容</p>
-</li>
-<li><p><code>.item$*2</code>  &#x3D;&#x3D;&gt;  <code>&lt;div class=&quot;item1&quot;&gt;&lt;div&gt;&lt;div class=&quot;item2&quot;&gt;&lt;div&gt;</code></p>
+<li><p>下一步只要关掉即可</p>
+<p><code>sudo systemctl disable nps</code></p>
 </li>
 </ol>
-<p>更多其他快捷技巧可以参考一下文章:</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://blog.greenroots.info/10-vs-code-emmet-tips-to-make-you-more-productive">10 VS Code emmet tips to make you more productive (greenroots.info)</a></p>
-</blockquote>
+<p>​	若想要进一步的删除相应的文件，Debian系统可以使用<a target="_blank" rel="noopener" href="http://www.debianadmin.com/remove-unwanted-startup-files-or-services-in-debian.html">工具</a>。其他不清楚，但是可以用<code>systemctl status &lt;services name&gt;</code>命令，其中会显示服务文件的保存位置，手动删除即可。</p>
 <hr>
-<p>​	但是当我使用的时候，有些不会自动换行，要达到自动换行只需要进行以下操作:</p>
-<ol>
-<li><p><code>ctrl+shift+p</code>打开命令行</p>
-</li>
-<li><p>输入<code>open setting</code></p>
-</li>
-<li><p>在搜索栏搜索<code>syntax pro</code></p>
-</li>
-<li><p>点击<code>在settings.json中编辑</code></p>
-</li>
-<li><p>在emmet.syntaxProfiles中添加内容</p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-json" data-language="json"><code class="language-json">&quot;emmet.syntaxProfiles&quot;: &#123;
-      &quot;html&quot;: &#123;
-        &quot;inline_break&quot;: 2
-      &#125;
-    &#125;</code></pre></div></figure>
-</li>
-<li><p>保存配置文件</p>
-</li>
-</ol>
-<p>参考：</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_53002615/article/details/122398026">(23条消息) VSCode生成多个a&#x2F;span元素时，不会自动换行_嚴某的博客-CSDN博客_vscode不自动换行</a></p>
-</blockquote>
+<p>​	关闭服务有两种方法，一种是stop，另一种是disable。两者的区别是，前者是暂时关闭，当重新开机后，服务会重现启动；后者是永久关闭。</p>
+<p>​	查看所用服务的命令<code>systemctl list-unit-files</code>，然后搭配管道命令进行筛选。</p>
+<hr>
+<p>​	所以说，以后想要卸载一个软件的时候，首先得检查一下他有没有服务。可以用<code>systemctl status &lt;service name&gt;</code>来查看其状态。然后关闭自启服务，在进行命令卸载。这将会省去一些不必要的麻烦。</p>
 
               
             </div>
@@ -331,7 +305,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/fontend/" class="category-chain-item">fontend</a>
+  <a href="/categories/linux/" class="category-chain-item">linux</a>
   
   
 
@@ -346,7 +320,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/vscode/">#vscode</a>
+        <a href="/tags/services/">#services</a>
       
     </div>
   
@@ -358,8 +332,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>用vscode写html和css的一些技巧</div>
-      <div>https://brraida.github.io/posts/44f4e8ed/</div>
+      <div>删除不需要的服务</div>
+      <div>https://brraida.github.io/posts/7e1a44c2/</div>
     </div>
     <div class="license-meta">
       
@@ -371,7 +345,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年8月11日</div>
+          <div>2022年8月21日</div>
         </div>
       
       
@@ -401,18 +375,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/7e1a44c2/" title="删除不需要的服务">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">删除不需要的服务</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/7e2d7be8/" title="格式化启动盘">
-                        <span class="hidden-mobile">格式化启动盘</span>
+                      <a href="/posts/44f4e8ed/" title="用vscode写html和css的一些技巧">
+                        <span class="hidden-mobile">用vscode写html和css的一些技巧</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
