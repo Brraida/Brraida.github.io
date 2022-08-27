@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>curl下载文件出错问题</title>
+    <link href="/posts/970aab91/"/>
+    <url>/posts/970aab91/</url>
+    
+    <content type="html"><![CDATA[<p>​使用curl下载文件，进行解压时，出现以下问题提示。bzip2: (stdbin) is not a bzip2 file.</p><span id="more"></span><p>​一个后缀为.bz2的文件解压不出来，错误提示是:</p><p><img src="/img/article/aboutCurl.assets/image-20220827163811400.png" alt="image-20220827163811400"></p><p>​然后使用file命令查看一下:<code>file fileName.bz2</code></p><p><img src="/img/article/aboutCurl.assets/image-20220827164023745.png" alt="image-20220827164023745"></p><p>​这就清楚了，下载的文件出了问题，下载成了html文件去了。</p><p>这种情况极易出现在下载github的文件上，因为github的一些文件是需要重定向的。刚好以前看过这样的文章，其解决方法是将之前的下载命令<code>curl -O URL</code>改成<code>curl -JLO URL</code>。当然，如果还是不成功，那么极有可能就是你复制别人的文章中的官网下载链接变了，这就只需要去官网找到正确的下载文件地址就可以了。</p><p>文章链接:</p><blockquote><p>[<a href="https://linuxhandbook.com/curl-downloading-html-file/">Solved] Curl Downloading HTML Instead of Actual Zip File (linuxhandbook.com)</a></p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>linux</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>curl</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>删除不需要的服务</title>
     <link href="/posts/7e1a44c2/"/>
     <url>/posts/7e1a44c2/</url>
@@ -710,7 +735,7 @@
     <link href="/posts/855ab908/"/>
     <url>/posts/855ab908/</url>
     
-    <content type="html"><![CDATA[<p>​源码安装就会与<code>make</code>命令搭上关系，记录点make的相关知识。</p><span id="more"></span><p><strong>源码的安装</strong>一般由这三个步骤组成：</p><ol><li>配置（configure）</li><li>编译（make）</li><li>安装（make install）</li></ol><p>​    其中<strong>prefix</strong>选项就是配置安装的路径，如果不配置该选项，安装后可执行文件默认在&#x2F;usr&#x2F;local&#x2F;bin，库文件默认放在&#x2F;usr&#x2F;local&#x2F;lib，配置文件默认放在&#x2F;usr&#x2F;local&#x2F;etc，其他资源放在&#x2F;usr&#x2F;local&#x2F;share，比较分散。</p><p>​    为了便于集中管理某个软件的各种文件，可以配置-prefix。比如，配置一个Git的文件：</p><p>​    <code>./configure -prefix=/usr/local/git/</code></p><p>可以把所有资源文件放在&#x2F;usr&#x2F;local&#x2F;git的路径中，这样将会更有层次。进行一些更新卸载操作都会比较简单。</p><blockquote><p>转载：</p><p><a href="https://blog.csdn.net/u014042372/article/details/80705408">configure –prefix 的用法_wuzhan的专栏-CSDN博客_prefix</a></p></blockquote>]]></content>
+    <content type="html"><![CDATA[<p>​源码安装就会与<code>make</code>命令搭上关系，记录点make的相关知识。</p><span id="more"></span><p><strong>源码的安装</strong>一般由这三个步骤组成：</p><ol><li>配置（configure）</li><li>编译（make）</li><li>安装（make install）</li></ol><p>​    其中<strong>prefix</strong>选项就是配置安装的路径，如果不配置该选项，安装后可执行文件默认在&#x2F;usr&#x2F;local&#x2F;bin，库文件默认放在&#x2F;usr&#x2F;local&#x2F;lib，配置文件默认放在&#x2F;usr&#x2F;local&#x2F;etc，其他资源放在&#x2F;usr&#x2F;local&#x2F;share，比较分散。</p><p>​    为了便于集中管理某个软件的各种文件，可以配置-prefix。比如，配置一个Git的文件：</p><p>​    <code>./configure -prefix=/usr/local/git/</code></p><p>可以把所有资源文件放在&#x2F;usr&#x2F;local&#x2F;git的路径中，这样将会更有层次。进行一些更新卸载操作都会比较简单。</p><blockquote><p>转载：</p><p><a href="https://blog.csdn.net/u014042372/article/details/80705408">configure –prefix 的用法_wuzhan的专栏-CSDN博客_prefix</a></p></blockquote><hr><ul><li>下载源码的归档文件来获取源码</li><li>解压归档文件，将文件提取到你的电脑上</li><li>运行.&#x2F;configure来建立构建所需的配置</li><li>运行make来构建源码</li><li>运行sudo make install来将它安装到电脑上</li></ul>]]></content>
     
     
     <categories>
