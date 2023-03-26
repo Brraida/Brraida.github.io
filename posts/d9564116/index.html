@@ -16,24 +16,22 @@
   <meta name="author" content="Brraida Hu">
   <meta name="keywords" content="">
   
-    <meta name="description" content="你有一台公网ip服务器，而想要利用服务器远程登录某一内网的机器。虽然可以利用内网穿透来实现这一目标，但是绝大部分的内网是dhcp服务器，也就是说内网中的机器的ip的是动态的。这就可能需要修改内网穿透的一些相关配置了。     而反弹shell是反过来的，公网服务器开一个监听端口，内网的机器连上该端口。那么在公网服务器中即可远程登录内网的机器。">
+    <meta name="description" content="​	最近尝试使用数据的双向绑定实现数据的互通，有一个需求就是将cs文件中创建的DataTable绑定到xaml的DataGrid中，可以从DataTable获取值显示到前端界面，也可以从前端界面修改值来修改DataTable的存储。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="反弹Shell">
-<meta property="og:url" content="https://brraida.github.io/posts/eea02d15/index.html">
+<meta property="og:title" content="DataGridBindingDataTable">
+<meta property="og:url" content="https://brraida.github.io/posts/d9564116/index.html">
 <meta property="og:site_name" content="SunMonkey">
-<meta property="og:description" content="你有一台公网ip服务器，而想要利用服务器远程登录某一内网的机器。虽然可以利用内网穿透来实现这一目标，但是绝大部分的内网是dhcp服务器，也就是说内网中的机器的ip的是动态的。这就可能需要修改内网穿透的一些相关配置了。     而反弹shell是反过来的，公网服务器开一个监听端口，内网的机器连上该端口。那么在公网服务器中即可远程登录内网的机器。">
+<meta property="og:description" content="​	最近尝试使用数据的双向绑定实现数据的互通，有一个需求就是将cs文件中创建的DataTable绑定到xaml的DataGrid中，可以从DataTable获取值显示到前端界面，也可以从前端界面修改值来修改DataTable的存储。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://brraida.github.io/img/cover/rebound-shell.png">
-<meta property="article:published_time" content="2022-05-20T03:08:24.000Z">
-<meta property="article:modified_time" content="2022-06-09T01:30:22.000Z">
+<meta property="article:published_time" content="2023-03-26T08:50:21.000Z">
+<meta property="article:modified_time" content="2023-03-26T09:39:04.911Z">
 <meta property="article:author" content="Brraida Hu">
-<meta property="article:tag" content="shell">
+<meta property="article:tag" content="c#">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://brraida.github.io/img/cover/rebound-shell.png">
   
   
   
-  <title>反弹Shell - SunMonkey</title>
+  <title>DataGridBindingDataTable - SunMonkey</title>
 
   <link  rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="反弹Shell"></span>
+            <span id="subtitle" data-typed-text="DataGridBindingDataTable"></span>
           
         </div>
 
@@ -210,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-05-20 11:08" pubdate>
-          2022年5月20日 上午
+        <time datetime="2023-03-26 16:50" pubdate>
+          2023年3月26日 下午
         </time>
       </span>
     
@@ -227,7 +225,7 @@
         
         
           <!-- compatible with older versions-->
-          3 分钟
+          14 分钟
         
       </span>
     
@@ -265,26 +263,95 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">反弹Shell</h1>
+            <h1 style="display: none">DataGridBindingDataTable</h1>
             
             <div class="markdown-body">
               
-              <p>    你有一台公网ip服务器，而想要利用服务器远程登录某一内网的机器。虽然可以利用内网穿透来实现这一目标，但是绝大部分的内网是dhcp服务器，也就是说内网中的机器的ip的是动态的。这就可能需要修改内网穿透的一些相关配置了。</p>
-<p>    而反弹shell是反过来的，公网服务器开一个监听端口，内网的机器连上该端口。那么在公网服务器中即可远程登录内网的机器。</p>
+              <p>​	最近尝试使用数据的双向绑定实现数据的互通，有一个需求就是将cs文件中创建的DataTable绑定到xaml的DataGrid中，可以从DataTable获取值显示到前端界面，也可以从前端界面修改值来修改DataTable的存储。</p>
 <span id="more"></span>
 
-<p><strong>例子</strong></p>
-<p>    公网服务器A，内网机器B</p>
-<p>在A上打开监听端口：</p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nc -lvp 22222</code></pre></div></figure>
+<p>​	有几个点：</p>
+<ol>
+<li><p>数据的双向绑定绑定的一定得是属性</p>
+</li>
+<li><p>使得值有效要在后台代码初始化中添加<code>this.DataContext = this;</code></p>
+</li>
+<li><p>想要前端响应后台代码，需要使用<strong>INotifyPropertyChanged</strong></p>
+</li>
+</ol>
+<figure><div class="code-wrapper"><pre class="line-numbers language-xaml" data-language="xaml"><code class="language-xaml">&lt;DataGrid Grid.Column&#x3D;&quot;1&quot; Name&#x3D;&quot;dg&quot; ItemsSource&#x3D;&quot;&#123;Binding Path&#x3D;MyDataTable&#125;&quot; HorizontalAlignment&#x3D;&quot;Left&quot; CanUserAddRows&#x3D;&quot;False&quot;&gt;&lt;&#x2F;DataGrid&gt;</code></pre></div></figure>
 
-<p>在B上连接A</p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">bash -i &gt;&amp; &#x2F;dev&#x2F;tcp&#x2F;服务器A的ip&#x2F;A的监听端口 0&gt;&amp;1</code></pre></div></figure>
 
-<p>    然后就可以在A中控制B了。</p>
-<p>很多详细信息可以参考</p>
+
+<figure><div class="code-wrapper"><pre class="line-numbers language-c#" data-language="c#"><code class="language-c#">public partical class DataGridBindingDataTable : Window, INotifyPropertyChanged
+&#123;
+    public DataGridBindingDataTable()
+    &#123;
+        InitializeComponet();
+        
+        this.DataContext &#x3D; this;
+    &#125;
+    
+    public event PropertyChangedEventHandler PropertyChanged;
+
+protected void OnPropertyChanged(string propertyName)
+&#123;
+	PropertyChangedEventHandler handler &#x3D; PropertyChanged;
+    handler?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+&#125;
+
+private DataTable _myDataTable;
+
+public DataTable MyDataTable
+&#123;
+    get
+    &#123;
+    	return _myDataTable;    
+    &#125;
+    set
+    &#123;
+    	if(value !&#x3D; _myDataTable)&#123;
+            _myDataTable &#x3D; value;
+            OnPropertyChanged(nameof(MyDataTable));
+        &#125;    
+    &#125;
+&#125;;
+
+private DataTable CreateDataTable(int row, int col)
+&#123;
+    DataTable dt &#x3D; new DataTable();
+    for(int i &#x3D; 0; i &lt; col; i++)
+    &#123;
+        dt.Columns.Add(new Columns(&quot;column &quot; + i);
+    &#125;
+    for(int j &#x3D; 0; j &lt; row; j++)
+    &#123;
+    	DataRow dr &#x3D; new dt.Rows();
+        for(int k &#x3D; 0; k &lt; col; k++)
+        &#123;
+        	dr[k] &#x3D; &quot;&quot;;    
+        &#125;
+        dr.Rows.Add(dr);
+    &#125;
+    return dt;
+&#125;
+                       
+            
+private void btn_Click(object sender, RoutedEventArgs e)
+&#123;
+   	MyDataTable &#x3D; CreateDataTable(2, 3);
+&#125;
+&#125;
+
+</code></pre></div></figure>
+
+
+
+<p>样例项目:</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/Brraida/Demo">Brraida&#x2F;Demo (github.com)</a></p>
+<p>参考链接:</p>
 <blockquote>
-<p><a target="_blank" rel="noopener" href="https://cuiqingcai.com/36056.html">什么是反弹 Shell？ | 静觅 (cuiqingcai.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/1725554/wpf-simple-textbox-data-binding">WPF: simple TextBox data binding - Stack Overflow</a></p>
 </blockquote>
 
               
@@ -297,7 +364,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/shell/">#shell</a>
+        <a href="/tags/c/">#c#</a>
       
     </div>
   
@@ -309,8 +376,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>反弹Shell</div>
-      <div>https://brraida.github.io/posts/eea02d15/</div>
+      <div>DataGridBindingDataTable</div>
+      <div>https://brraida.github.io/posts/d9564116/</div>
     </div>
     <div class="license-meta">
       
@@ -322,7 +389,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年5月20日</div>
+          <div>2023年3月26日</div>
         </div>
       
       
@@ -352,18 +419,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/efb2d1d2/" title="便捷删除host的文件">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">便捷删除host的文件</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/bb01f2a2/" title="自动登录校园网">
-                        <span class="hidden-mobile">自动登录校园网</span>
+                      <a href="/posts/661216c3/" title="xceedUsage">
+                        <span class="hidden-mobile">xceedUsage</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
